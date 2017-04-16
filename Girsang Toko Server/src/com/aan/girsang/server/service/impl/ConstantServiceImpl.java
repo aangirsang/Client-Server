@@ -10,7 +10,9 @@ import com.aan.girsang.api.model.constant.RunningNumber;
 import com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum;
 import com.aan.girsang.api.service.ConstantService;
 import com.aan.girsang.server.dao.constant.RunningNumberDao;
+import java.util.Date;
 import java.util.List;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Service("constantService")
 @Transactional(readOnly = true)
 public class ConstantServiceImpl implements ConstantService{
+    Logger log = Logger.getLogger(ConstantServiceImpl.class.getName());
     
     @Autowired RunningNumberDao runningNumberDao;
 
@@ -46,5 +49,16 @@ public class ConstantServiceImpl implements ConstantService{
     @Transactional
     public String ambilBerikutnya(TransaksiRunningNumberEnum id) {
         return runningNumberDao.ambilBerikutnya(id);
+    }
+
+    @Override
+    public Date tanggalService() {
+        return new Date();
+    }
+
+    @Override
+    public String clientOnline(String client) {
+        log.info(client+" ONLINE");
+        return "Halo, "+client;
     }
 }

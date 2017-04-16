@@ -16,11 +16,11 @@ import javax.persistence.Table;
  * @author ifnu
  */
 @Entity
-@Table(name="RUNNINGNUMBERMASTER")
+@Table(name="RUNNINGNUMBER")
 public class RunningNumber implements Serializable{
 
     @Id
-    @Column(name="ID_RUNNINGNUMBERMASTER")
+    @Column(name="ID_RUNNINGNUMBER")
     private String id;
 
     @Column(name="NUMBER")

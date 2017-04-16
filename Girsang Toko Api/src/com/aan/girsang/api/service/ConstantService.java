@@ -8,6 +8,7 @@ package com.aan.girsang.api.service;
 import com.aan.girsang.api.model.constant.MasterRunningNumberEnum;
 import com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum;
 import com.aan.girsang.api.model.constant.RunningNumber;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -19,4 +20,6 @@ public interface ConstantService {
     public List<RunningNumber> semuaRunningNumber();
     public String ambilBerikutnya(MasterRunningNumberEnum id);
     public String ambilBerikutnya(TransaksiRunningNumberEnum id);
+    public Date tanggalService();
+    public String clientOnline(String client);
 }
