@@ -23,14 +23,14 @@ public class GenerateDatabase {
 
     public static void main(String[] args) throws SQLException {
         AbstractApplicationContext ctx =
-                new ClassPathXmlApplicationContext("serverContext.xml");
+                new ClassPathXmlApplicationContext("applicationContext.xml");
 
         DataSource dataSource = (DataSource) ctx.getBean("dataSource");
 
         Configuration cfg = new AnnotationConfiguration()
                 .configure("hibernate.cfg.xml")
                 .setProperty("hibernate.dialect",
-                        "org.hibernate.dialect.MySQL5InnoDBDialect");
+                        "org.hibernate.dialect.H2Dialect");
 
         try (Connection conn = dataSource.getConnection()) {
             new SchemaExport(cfg, conn).create(true, true);

@@ -469,3 +469,238 @@
 2017-04-16 15:32:55,902 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN (NO_REF)
 2017-04-16 15:32:55,902 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
 2017-04-16 15:33:02,248 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 17:33:28,056 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1f205aa: startup date [Sun Apr 16 17:33:28 ICT 2017]; root of context hierarchy
+2017-04-16 17:33:28,103 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 17:33:28,524 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:33:28,602 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 17:33:28,712 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:33:28,712 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:33:28,712 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:33:28,727 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:33:28,774 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:33:28,790 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:33:28,821 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:33:31,067 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+2017-04-16 17:33:31,098 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 17:33:31,098 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
+2017-04-16 17:33:31,254 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:33:31,270 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:33:31,754 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@12f11c2] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:33:31,941 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 17:37:25,126 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@18ed237: startup date [Sun Apr 16 17:37:25 ICT 2017]; root of context hierarchy
+2017-04-16 17:37:25,157 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 17:37:25,594 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:39:10,990 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1089e5f: startup date [Sun Apr 16 17:39:10 ICT 2017]; root of context hierarchy
+2017-04-16 17:39:11,036 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 17:39:11,458 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:39:11,536 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:39:11,645 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:39:11,645 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:39:11,660 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:39:11,660 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:39:11,707 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:39:11,738 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:39:11,770 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:39:12,375 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:39:12,749 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:39:12,749 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:39:13,248 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@134ac4a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:39:13,311 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 17:39:13,311 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 17:39:13,311 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 17:39:13,311 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:39:13,326 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:39:13,422 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:39:13,453 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 17:39:13,453 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG drop constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists
+2017-04-16 17:39:13,453 [main] ERROR (SchemaExport.java:426) ­ Table "BARANG" not found; SQL statement:
+
+    alter table BARANG 
+        drop constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists [42102-176]
+2017-04-16 17:39:13,453 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_l4comrgwcrqjysmh34dg52fdb if exists
+2017-04-16 17:39:13,453 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPELUNASANHUTANG" not found; SQL statement:
+
+    alter table DETAILPELUNASANHUTANG 
+        drop constraint FK_l4comrgwcrqjysmh34dg52fdb if exists [42102-176]
+2017-04-16 17:39:13,500 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_tia9imi3q96wf3sifpu6vgqls if exists
+2017-04-16 17:39:13,500 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPELUNASANHUTANG" not found; SQL statement:
+
+    alter table DETAILPELUNASANHUTANG 
+        drop constraint FK_tia9imi3q96wf3sifpu6vgqls if exists [42102-176]
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPEMBELIAN" not found; SQL statement:
+
+    alter table DETAILPEMBELIAN 
+        drop constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists [42102-176]
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPEMBELIAN" not found; SQL statement:
+
+    alter table DETAILPEMBELIAN 
+        drop constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists [42102-176]
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_bcky63m5pnyks636hd9r63fqh if exists
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILRETURPEMBELIAN" not found; SQL statement:
+
+    alter table DETAILRETURPEMBELIAN 
+        drop constraint FK_bcky63m5pnyks636hd9r63fqh if exists [42102-176]
+2017-04-16 17:39:13,515 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_4rirgcpj85ndjj9pay27qxana if exists
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILRETURPEMBELIAN" not found; SQL statement:
+
+    alter table DETAILRETURPEMBELIAN 
+        drop constraint FK_4rirgcpj85ndjj9pay27qxana if exists [42102-176]
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP drop constraint FK_8srkwbcskwao7o2umyqxayehg if exists
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:426) ­ Table "HPP" not found; SQL statement:
+
+    alter table HPP 
+        drop constraint FK_8srkwbcskwao7o2umyqxayehg if exists [42102-176]
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_ikddcfcqa61ll7376rc5wkhes if exists
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:426) ­ Table "PELUNASANHUTANG" not found; SQL statement:
+
+    alter table PELUNASANHUTANG 
+        drop constraint FK_ikddcfcqa61ll7376rc5wkhes if exists [42102-176]
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_b4otbi55gord0ovuo485xfddw if exists
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:426) ­ Table "PELUNASANHUTANG" not found; SQL statement:
+
+    alter table PELUNASANHUTANG 
+        drop constraint FK_b4otbi55gord0ovuo485xfddw if exists [42102-176]
+2017-04-16 17:39:13,531 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_10txetkot026nme5dln68kpnr if exists
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:426) ­ Table "PEMBELIAN" not found; SQL statement:
+
+    alter table PEMBELIAN 
+        drop constraint FK_10txetkot026nme5dln68kpnr if exists [42102-176]
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_tn1kp7v5p23i2wubfic405oqg if exists
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:426) ­ Table "PEMBELIAN" not found; SQL statement:
+
+    alter table PEMBELIAN 
+        drop constraint FK_tn1kp7v5p23i2wubfic405oqg if exists [42102-176]
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA drop constraint FK_d32dfcccnjpvaegtfl915b0df if exists
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:426) ­ Table "PENGGUNA" not found; SQL statement:
+
+    alter table PENGGUNA 
+        drop constraint FK_d32dfcccnjpvaegtfl915b0df if exists [42102-176]
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists
+2017-04-16 17:39:13,547 [main] ERROR (SchemaExport.java:426) ­ Table "RETURPEMBELIAN" not found; SQL statement:
+
+    alter table RETURPEMBELIAN 
+        drop constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists [42102-176]
+2017-04-16 17:39:13,562 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists
+2017-04-16 17:39:13,562 [main] ERROR (SchemaExport.java:426) ­ Table "RETURPEMBELIAN" not found; SQL statement:
+
+    alter table RETURPEMBELIAN 
+        drop constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists [42102-176]
+2017-04-16 17:39:13,562 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_otn78b4dhwu8umwrbg426ay70 if exists
+2017-04-16 17:39:13,562 [main] ERROR (SchemaExport.java:426) ­ Table "RETURPEMBELIAN" not found; SQL statement:
+
+    alter table RETURPEMBELIAN 
+        drop constraint FK_otn78b4dhwu8umwrbg426ay70 if exists [42102-176]
+2017-04-16 17:39:13,687 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 17:39:13,687 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:39:13,687 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:39:13,687 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 17:39:13,859 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 17:45:18,708 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1828a0f: startup date [Sun Apr 16 17:45:18 ICT 2017]; root of context hierarchy
+2017-04-16 17:45:18,755 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-16 17:45:19,020 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 17:45:19,145 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:45:19,254 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:45:19,364 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:45:19,364 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:45:19,379 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:45:19,379 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:45:19,395 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:45:19,410 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:45:19,442 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:45:21,626 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
+2017-04-16 17:45:21,641 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:45:21,657 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
+2017-04-16 17:45:21,828 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:45:21,828 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:45:22,328 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@4c64cd] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:45:22,390 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 17:45:32,167 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1089e5f: startup date [Sun Apr 16 17:45:32 ICT 2017]; root of context hierarchy
+2017-04-16 17:45:32,214 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-16 17:45:32,651 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:45:32,729 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:45:32,853 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:45:32,900 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:45:32,900 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:45:32,900 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:45:32,916 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:45:32,947 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:45:32,963 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:45:35,162 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
+2017-04-16 17:45:35,194 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:45:35,209 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
+2017-04-16 17:45:35,443 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:45:35,443 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:45:35,989 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@807b7] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:45:35,989 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 17:45:35,989 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 17:45:36,005 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:45:36,005 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:45:50,831 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1089e5f: startup date [Sun Apr 16 17:45:50 ICT 2017]; root of context hierarchy
+2017-04-16 17:45:50,862 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-16 17:45:51,283 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:45:51,361 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:45:51,455 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:45:51,470 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:45:51,470 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:45:51,470 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:45:51,486 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:45:51,548 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:45:51,580 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:45:53,732 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
+2017-04-16 17:45:53,764 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:45:53,779 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
+2017-04-16 17:45:53,935 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:45:53,935 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:45:54,434 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@807b7] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:45:54,434 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 17:45:54,434 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 17:45:54,450 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:45:54,450 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:46:10,696 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1089e5f: startup date [Sun Apr 16 17:46:10 ICT 2017]; root of context hierarchy
+2017-04-16 17:46:10,727 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-16 17:46:11,210 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:46:11,288 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:46:11,382 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:46:11,398 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:46:11,398 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:46:11,398 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:46:11,413 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:46:11,476 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:46:11,491 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:46:11,930 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:46:12,273 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:46:12,273 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:46:12,757 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@105f8a3] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:46:12,757 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 17:46:12,757 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 17:46:12,757 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:46:12,772 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:46:13,008 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:46:13,024 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 17:46:13,118 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 17:46:13,118 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:46:13,133 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:46:13,133 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 17:46:13,211 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 17:46:13,414 [Thread-3] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@1089e5f: startup date [Sun Apr 16 17:46:10 ICT 2017]; root of context hierarchy
+2017-04-16 17:46:19,957 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1828a0f: startup date [Sun Apr 16 17:46:19 ICT 2017]; root of context hierarchy
+2017-04-16 17:46:19,989 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-16 17:46:20,254 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 17:46:20,379 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 17:46:20,457 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-16 17:46:20,597 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 17:46:20,613 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 17:46:20,613 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 17:46:20,613 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 17:46:20,628 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: jar:file:/D:/Me/java/Client%20Server/Client-Server/Girsang%20Toko%20Api/dist/Girsang_Toko_Api.jar!/hibernate.cfg.xml
+2017-04-16 17:46:20,644 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 17:46:20,675 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 17:46:21,098 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 17:46:21,504 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 17:46:21,519 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 17:46:22,003 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@865a90] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 17:46:22,065 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090

@@ -15,7 +15,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class ServerLauncher {
     public static void main(String[] args) {
         AbstractApplicationContext ctx =
-                new ClassPathXmlApplicationContext("serverContext.xml");
+                new ClassPathXmlApplicationContext(
+                        new String[]{"applicationContext.xml","serverContext.xml"});
         
         ctx.registerShutdownHook();
         

@@ -41,7 +41,7 @@ Contributor(s):
 -->
 <hibernate-configuration>
   <session-factory>
-    <property name="hibernate.dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    <property name="hibernate.dialect">org.hibernate.dialect.H2Dialect</property>
     <mapping class="com.aan.girsang.api.model.constant.MasterRunningNumberEnum"/>
     <mapping class="com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum"/>
     <mapping class="com.aan.girsang.api.model.constant.RunningNumber"/>
