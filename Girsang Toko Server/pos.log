@@ -1,0 +1,471 @@
+2017-04-16 15:23:27,386 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1bd815b: startup date [Sun Apr 16 15:23:27 ICT 2017]; root of context hierarchy
+2017-04-16 15:23:27,512 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:23:28,433 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:23:28,634 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:23:28,964 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:23:28,977 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:23:28,984 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:23:28,989 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:23:29,032 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:23:29,087 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:23:29,148 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:23:29,980 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:23:30,457 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:23:30,466 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:23:31,575 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@15c5f2] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:25:08,439 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1bd815b: startup date [Sun Apr 16 15:25:08 ICT 2017]; root of context hierarchy
+2017-04-16 15:25:08,569 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:25:09,619 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:25:09,820 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:25:10,126 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:25:10,142 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:25:10,150 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:25:10,155 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:25:10,198 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:25:10,248 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:25:10,309 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:25:11,112 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:25:11,590 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:25:11,599 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:25:12,705 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@13f761a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:25:46,453 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1bd815b: startup date [Sun Apr 16 15:25:46 ICT 2017]; root of context hierarchy
+2017-04-16 15:25:46,568 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:25:47,486 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:25:47,691 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:25:48,001 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:25:48,014 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:25:48,019 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:25:48,023 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:25:48,067 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:25:48,118 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:25:48,178 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:25:49,008 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:25:49,482 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:25:49,491 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:25:50,610 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@13f761a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:26:37,200 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1bd815b: startup date [Sun Apr 16 15:26:37 ICT 2017]; root of context hierarchy
+2017-04-16 15:26:37,325 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:26:38,301 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:26:38,503 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:26:38,825 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:26:38,839 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:26:38,845 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:26:38,850 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:26:38,895 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:26:38,944 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:26:39,007 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:26:39,835 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:26:40,304 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:26:40,313 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:26:41,424 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@13f761a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:27:14,105 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1bd815b: startup date [Sun Apr 16 15:27:14 ICT 2017]; root of context hierarchy
+2017-04-16 15:27:14,241 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:27:15,306 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:27:15,506 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:27:15,814 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:27:15,826 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:27:15,832 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:27:15,838 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:27:15,882 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:27:15,933 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:27:15,994 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:27:16,803 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:27:17,283 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:27:17,292 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:27:18,405 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@13f761a] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:27:18,544 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 15:29:17,890 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1dac704: startup date [Sun Apr 16 15:29:17 ICT 2017]; root of context hierarchy
+2017-04-16 15:29:18,042 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:29:19,170 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:29:19,374 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:29:19,747 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:29:19,763 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:29:19,772 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:29:19,779 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:29:19,824 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:29:19,874 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:29:19,936 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:29:20,846 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:29:21,403 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:29:21,413 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:29:22,581 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@146d80f] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:29:22,716 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 15:29:22,726 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 15:29:22,726 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 15:29:22,730 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:29:22,738 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:29:22,778 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 15:29:22,780 [main] WARN (H2Dialect.java:84) ­ HHH000431: Unable to determine H2 database version, certain features may not work
+2017-04-16 15:29:22,852 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:29:22,878 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG drop constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists
+2017-04-16 15:29:22,879 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists' at line 2
+2017-04-16 15:29:22,880 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_l4comrgwcrqjysmh34dg52fdb if exists
+2017-04-16 15:29:22,881 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_l4comrgwcrqjysmh34dg52fdb if exists' at line 2
+2017-04-16 15:29:22,882 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_tia9imi3q96wf3sifpu6vgqls if exists
+2017-04-16 15:29:22,882 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_tia9imi3q96wf3sifpu6vgqls if exists' at line 2
+2017-04-16 15:29:22,884 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists
+2017-04-16 15:29:22,884 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists' at line 2
+2017-04-16 15:29:22,887 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists
+2017-04-16 15:29:22,887 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists' at line 2
+2017-04-16 15:29:22,888 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_bcky63m5pnyks636hd9r63fqh if exists
+2017-04-16 15:29:22,889 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_bcky63m5pnyks636hd9r63fqh if exists' at line 2
+2017-04-16 15:29:22,890 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_4rirgcpj85ndjj9pay27qxana if exists
+2017-04-16 15:29:22,890 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_4rirgcpj85ndjj9pay27qxana if exists' at line 2
+2017-04-16 15:29:22,891 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP drop constraint FK_8srkwbcskwao7o2umyqxayehg if exists
+2017-04-16 15:29:22,892 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_8srkwbcskwao7o2umyqxayehg if exists' at line 2
+2017-04-16 15:29:22,893 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_ikddcfcqa61ll7376rc5wkhes if exists
+2017-04-16 15:29:22,894 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_ikddcfcqa61ll7376rc5wkhes if exists' at line 2
+2017-04-16 15:29:22,895 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_b4otbi55gord0ovuo485xfddw if exists
+2017-04-16 15:29:22,896 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_b4otbi55gord0ovuo485xfddw if exists' at line 2
+2017-04-16 15:29:22,901 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_10txetkot026nme5dln68kpnr if exists
+2017-04-16 15:29:22,902 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_10txetkot026nme5dln68kpnr if exists' at line 2
+2017-04-16 15:29:22,903 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_tn1kp7v5p23i2wubfic405oqg if exists
+2017-04-16 15:29:22,904 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_tn1kp7v5p23i2wubfic405oqg if exists' at line 2
+2017-04-16 15:29:22,905 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA drop constraint FK_d32dfcccnjpvaegtfl915b0df if exists
+2017-04-16 15:29:22,906 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_d32dfcccnjpvaegtfl915b0df if exists' at line 2
+2017-04-16 15:29:22,907 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists
+2017-04-16 15:29:22,908 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists' at line 2
+2017-04-16 15:29:22,909 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists
+2017-04-16 15:29:22,910 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists' at line 2
+2017-04-16 15:29:22,912 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_otn78b4dhwu8umwrbg426ay70 if exists
+2017-04-16 15:29:22,913 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_otn78b4dhwu8umwrbg426ay70 if exists' at line 2
+2017-04-16 15:29:22,914 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table BARANG if exists
+2017-04-16 15:29:22,915 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,916 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILPELUNASANHUTANG if exists
+2017-04-16 15:29:22,916 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,917 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILPEMBELIAN if exists
+2017-04-16 15:29:22,918 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,957 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILRETURPEMBELIAN if exists
+2017-04-16 15:29:22,958 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,958 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table GOLONGANBARANG if exists
+2017-04-16 15:29:22,959 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,959 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table HPP if exists
+2017-04-16 15:29:22,960 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,960 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PELUNASANHUTANG if exists
+2017-04-16 15:29:22,961 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,961 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PEMBELIAN if exists
+2017-04-16 15:29:22,961 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,962 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PENGGUNA if exists
+2017-04-16 15:29:22,963 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,964 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table RETURPEMBELIAN if exists
+2017-04-16 15:29:22,964 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,965 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table RUNNINGNUMBERMASTER if exists
+2017-04-16 15:29:22,965 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,966 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table SATUANUMUM if exists
+2017-04-16 15:29:22,967 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,967 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table SUPPLIER if exists
+2017-04-16 15:29:22,968 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:22,969 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table TINGKATAKSES if exists
+2017-04-16 15:29:22,969 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:23,345 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE boolean not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID))
+2017-04-16 15:29:23,346 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE boolean not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN v' at line 10
+2017-04-16 15:29:25,297 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG add constraint FK_csgir8wmfrq4qb7he53n1vy3h foreign key (GOLONGAN) references GOLONGANBARANG
+2017-04-16 15:29:25,297 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:25,443 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG add constraint FK_l4comrgwcrqjysmh34dg52fdb foreign key (PELUNASAN_HUTANG) references PELUNASANHUTANG
+2017-04-16 15:29:25,443 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:25,543 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG add constraint FK_tia9imi3q96wf3sifpu6vgqls foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:25,543 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:25,556 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG
+2017-04-16 15:29:25,556 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:29:25,558 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:25,558 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:29:25,725 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN add constraint FK_bcky63m5pnyks636hd9r63fqh foreign key (BARANG) references BARANG
+2017-04-16 15:29:25,725 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:25,849 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN add constraint FK_4rirgcpj85ndjj9pay27qxana foreign key (RETURPEMBELIAN) references RETURPEMBELIAN
+2017-04-16 15:29:25,849 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:25,983 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP add constraint FK_8srkwbcskwao7o2umyqxayehg foreign key (BARANG) references BARANG
+2017-04-16 15:29:25,984 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,186 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG add constraint FK_ikddcfcqa61ll7376rc5wkhes foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:26,186 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,482 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG add constraint FK_b4otbi55gord0ovuo485xfddw foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:26,482 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,591 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN add constraint FK_10txetkot026nme5dln68kpnr foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:26,591 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,721 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN add constraint FK_tn1kp7v5p23i2wubfic405oqg foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:26,722 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,860 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA add constraint FK_d32dfcccnjpvaegtfl915b0df foreign key (TINGKATAKSES) references TINGKATAKSES
+2017-04-16 15:29:26,861 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:26,965 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_7t56el95qsfpydxhk6vbsrjd6 foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:26,966 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,067 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_el9s1akyfrart1sc0sxmn8sqv foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:27,068 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,160 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_otn78b4dhwu8umwrbg426ay70 foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:27,160 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,160 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 15:29:27,161 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 15:29:27,162 [main] WARN (H2Dialect.java:84) ­ HHH000431: Unable to determine H2 database version, certain features may not work
+2017-04-16 15:29:27,164 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-16 15:29:27,165 [main] WARN (H2Dialect.java:84) ­ HHH000431: Unable to determine H2 database version, certain features may not work
+2017-04-16 15:29:27,169 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:29:27,170 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG drop constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists
+2017-04-16 15:29:27,171 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_csgir8wmfrq4qb7he53n1vy3h if exists' at line 2
+2017-04-16 15:29:27,172 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_l4comrgwcrqjysmh34dg52fdb if exists
+2017-04-16 15:29:27,172 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_l4comrgwcrqjysmh34dg52fdb if exists' at line 2
+2017-04-16 15:29:27,173 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop constraint FK_tia9imi3q96wf3sifpu6vgqls if exists
+2017-04-16 15:29:27,174 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_tia9imi3q96wf3sifpu6vgqls if exists' at line 2
+2017-04-16 15:29:27,175 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists
+2017-04-16 15:29:27,176 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_2vk2pusi4h9ifjp6734uqkrph if exists' at line 2
+2017-04-16 15:29:27,178 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists
+2017-04-16 15:29:27,178 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni if exists' at line 2
+2017-04-16 15:29:27,179 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_bcky63m5pnyks636hd9r63fqh if exists
+2017-04-16 15:29:27,180 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_bcky63m5pnyks636hd9r63fqh if exists' at line 2
+2017-04-16 15:29:27,181 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop constraint FK_4rirgcpj85ndjj9pay27qxana if exists
+2017-04-16 15:29:27,181 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_4rirgcpj85ndjj9pay27qxana if exists' at line 2
+2017-04-16 15:29:27,182 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP drop constraint FK_8srkwbcskwao7o2umyqxayehg if exists
+2017-04-16 15:29:27,182 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_8srkwbcskwao7o2umyqxayehg if exists' at line 2
+2017-04-16 15:29:27,188 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_ikddcfcqa61ll7376rc5wkhes if exists
+2017-04-16 15:29:27,189 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_ikddcfcqa61ll7376rc5wkhes if exists' at line 2
+2017-04-16 15:29:27,190 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop constraint FK_b4otbi55gord0ovuo485xfddw if exists
+2017-04-16 15:29:27,190 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_b4otbi55gord0ovuo485xfddw if exists' at line 2
+2017-04-16 15:29:27,191 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_10txetkot026nme5dln68kpnr if exists
+2017-04-16 15:29:27,192 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_10txetkot026nme5dln68kpnr if exists' at line 2
+2017-04-16 15:29:27,193 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop constraint FK_tn1kp7v5p23i2wubfic405oqg if exists
+2017-04-16 15:29:27,193 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_tn1kp7v5p23i2wubfic405oqg if exists' at line 2
+2017-04-16 15:29:27,194 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA drop constraint FK_d32dfcccnjpvaegtfl915b0df if exists
+2017-04-16 15:29:27,194 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_d32dfcccnjpvaegtfl915b0df if exists' at line 2
+2017-04-16 15:29:27,223 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists
+2017-04-16 15:29:27,223 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_7t56el95qsfpydxhk6vbsrjd6 if exists' at line 2
+2017-04-16 15:29:27,224 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists
+2017-04-16 15:29:27,225 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_el9s1akyfrart1sc0sxmn8sqv if exists' at line 2
+2017-04-16 15:29:27,226 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop constraint FK_otn78b4dhwu8umwrbg426ay70 if exists
+2017-04-16 15:29:27,226 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'constraint FK_otn78b4dhwu8umwrbg426ay70 if exists' at line 2
+2017-04-16 15:29:27,227 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table BARANG if exists
+2017-04-16 15:29:27,228 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,229 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILPELUNASANHUTANG if exists
+2017-04-16 15:29:27,229 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,230 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILPEMBELIAN if exists
+2017-04-16 15:29:27,231 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,232 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table DETAILRETURPEMBELIAN if exists
+2017-04-16 15:29:27,232 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,234 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table GOLONGANBARANG if exists
+2017-04-16 15:29:27,234 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,235 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table HPP if exists
+2017-04-16 15:29:27,236 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,237 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PELUNASANHUTANG if exists
+2017-04-16 15:29:27,238 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,298 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PEMBELIAN if exists
+2017-04-16 15:29:27,298 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,299 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table PENGGUNA if exists
+2017-04-16 15:29:27,300 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,301 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table RETURPEMBELIAN if exists
+2017-04-16 15:29:27,301 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,302 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table RUNNINGNUMBERMASTER if exists
+2017-04-16 15:29:27,303 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,304 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table SATUANUMUM if exists
+2017-04-16 15:29:27,304 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,305 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table SUPPLIER if exists
+2017-04-16 15:29:27,306 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,307 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: drop table TINGKATAKSES if exists
+2017-04-16 15:29:27,307 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'if exists' at line 1
+2017-04-16 15:29:27,309 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table BARANG (PLU varchar(8) not null, BARCODE1 varchar(30), BARCODE2 varchar(30), HARGA_BELI decimal(19,2), HARGA_MEMBER decimal(19,2), HARGA_NORMAL decimal(19,2), ISI_PEMBELIAN integer not null, JUAL boolean not null, LIMIT_WARNING boolean not null, NAMA_BARANG varchar(100), SATUAN varchar(20), SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_Max integer not null, STOK_Min integer not null, BELIGUDANG integer not null, BELITOKO integer not null, JUALGUDANG integer not null, JUALTOKO integer not null, RETURBELIGUDANG integer not null, RETURBELITOKO integer not null, RETURJUALGUDANG integer not null, RETURJUALTOKO integer not null, STOK_TOKO integer not null, GOLONGAN varchar(6) not null, primary key (PLU))
+2017-04-16 15:29:27,370 [main] ERROR (SchemaExport.java:426) ­ Table 'barang' already exists
+2017-04-16 15:29:27,372 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPELUNASANHUTANG (ID varchar(20) not null, HUTANG_AKHIR decimal(19,2), PEMBAYARAN decimal(19,2), SISA_HUTANG decimal(19,2), PELUNASAN_HUTANG varchar(15) not null, PEMBELIAN varchar(15) not null, primary key (ID))
+2017-04-16 15:29:27,373 [main] ERROR (SchemaExport.java:426) ­ Table 'detailpelunasanhutang' already exists
+2017-04-16 15:29:27,374 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE boolean not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID))
+2017-04-16 15:29:27,374 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE boolean not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN v' at line 10
+2017-04-16 15:29:27,376 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILRETURPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, KUANTITAS_RETURPEMBELIAN integer not null, SATUAN_RETURPEMBELIAN varchar(20), SUB_TOTAL decimal(19,2) not null, BARANG varchar(8) not null, RETURPEMBELIAN varchar(15) not null, primary key (ID))
+2017-04-16 15:29:27,376 [main] ERROR (SchemaExport.java:426) ­ Table 'detailreturpembelian' already exists
+2017-04-16 15:29:27,381 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table GOLONGANBARANG (ID_GOLONGANBARANG varchar(6) not null, NAMA_GOLONGANBARANG varchar(50), primary key (ID_GOLONGANBARANG))
+2017-04-16 15:29:27,381 [main] ERROR (SchemaExport.java:426) ­ Table 'golonganbarang' already exists
+2017-04-16 15:29:27,383 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table HPP (ID_HPP varchar(8) not null, HPP decimal(19,2) not null, HPP_Satuan decimal(19,2) not null, ISI integer not null, TANGGAL timestamp, BARANG varchar(8) not null, primary key (ID_HPP))
+2017-04-16 15:29:27,383 [main] ERROR (SchemaExport.java:426) ­ Table 'hpp' already exists
+2017-04-16 15:29:27,453 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table PELUNASANHUTANG (NO_REF varchar(15) not null, JLH_BAYAR decimal(19,2), NO_KWITANSI varchar(20), TANGGAL timestamp, PEMBUAT varchar(7), SUPPLIER varchar(6), primary key (NO_REF))
+2017-04-16 15:29:27,454 [main] ERROR (SchemaExport.java:426) ­ Table 'pelunasanhutang' already exists
+2017-04-16 15:29:27,455 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table PEMBELIAN (NO_REF varchar(15) not null, JUMLAH_BAYAR decimal(19,2), JUMLAH_KREDIT decimal(19,2), SISA_KREDIT decimal(19,2), TANGGAL_TEMPO date, KREDIT boolean not null, LOKASI varchar(255), NO_FAKTUR varchar(20), TANGGAL timestamp, TOTAL decimal(19,2), PEMBUAT varchar(7), SUPPLIER varchar(6), primary key (NO_REF))
+2017-04-16 15:29:27,455 [main] ERROR (SchemaExport.java:426) ­ Table 'pembelian' already exists
+2017-04-16 15:29:27,457 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table PENGGUNA (ID_PENGGUNA varchar(7) not null, ALAMAT varchar(255), KONTAK_HP varchar(20), NAMA_LENGKAP varchar(30) not null, PASSWORD varchar(50) not null, PASSWORD_HINT varchar(255), STATUS boolean not null, KONTAK_TELEPON varchar(20), USER_NAME varchar(30) not null, TINGKATAKSES varchar(6), primary key (ID_PENGGUNA))
+2017-04-16 15:29:27,457 [main] ERROR (SchemaExport.java:426) ­ Table 'pengguna' already exists
+2017-04-16 15:29:27,459 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table RETURPEMBELIAN (NO_REF varchar(15) not null, TANGGAL timestamp, TOTALRETUR integer, PEMBELIAN varchar(15), PEMBUAT varchar(7), SUPPLIER varchar(6), primary key (NO_REF))
+2017-04-16 15:29:27,459 [main] ERROR (SchemaExport.java:426) ­ Table 'returpembelian' already exists
+2017-04-16 15:29:27,463 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table RUNNINGNUMBERMASTER (ID_RUNNINGNUMBERMASTER varchar(255) not null, NUMBER integer, primary key (ID_RUNNINGNUMBERMASTER))
+2017-04-16 15:29:27,464 [main] ERROR (SchemaExport.java:426) ­ Table 'runningnumbermaster' already exists
+2017-04-16 15:29:27,468 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table SATUANUMUM (ID_SATUANUMUM varchar(6) not null, NAMA_SATUANUMUM varchar(50), primary key (ID_SATUANUMUM))
+2017-04-16 15:29:27,468 [main] ERROR (SchemaExport.java:426) ­ Table 'satuanumum' already exists
+2017-04-16 15:29:27,531 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table SUPPLIER (ID_SUPPLIER varchar(6) not null, ALAMAT_SUPPLIER varchar(100), EMAIL varchar(50), KONTAK_HP varchar(20), KODE_POS varchar(10), KOTA varchar(20), NAMA_SUPPLIER varchar(30), SALDO_HUTANG decimal(19,2), KONTAK_TELEPON varchar(20), primary key (ID_SUPPLIER))
+2017-04-16 15:29:27,532 [main] ERROR (SchemaExport.java:426) ­ Table 'supplier' already exists
+2017-04-16 15:29:27,537 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table TINGKATAKSES (ID_TINGKATAKSES varchar(6) not null, KET_TINGKATAKSES varchar(255), NAMA_TINGKATAKSES varchar(30) not null, primary key (ID_TINGKATAKSES))
+2017-04-16 15:29:27,538 [main] ERROR (SchemaExport.java:426) ­ Table 'tingkatakses' already exists
+2017-04-16 15:29:27,539 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA add constraint UK_pdl6qn9vgo28kxyopewu5fkms  unique (USER_NAME)
+2017-04-16 15:29:27,540 [main] ERROR (SchemaExport.java:426) ­ Duplicate key name 'UK_pdl6qn9vgo28kxyopewu5fkms'
+2017-04-16 15:29:27,698 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG add constraint FK_csgir8wmfrq4qb7he53n1vy3h foreign key (GOLONGAN) references GOLONGANBARANG
+2017-04-16 15:29:27,698 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,820 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG add constraint FK_l4comrgwcrqjysmh34dg52fdb foreign key (PELUNASAN_HUTANG) references PELUNASANHUTANG
+2017-04-16 15:29:27,821 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,982 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG add constraint FK_tia9imi3q96wf3sifpu6vgqls foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:27,982 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:27,984 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG
+2017-04-16 15:29:27,984 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:29:27,985 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:27,986 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:29:28,113 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN add constraint FK_bcky63m5pnyks636hd9r63fqh foreign key (BARANG) references BARANG
+2017-04-16 15:29:28,113 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,235 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN add constraint FK_4rirgcpj85ndjj9pay27qxana foreign key (RETURPEMBELIAN) references RETURPEMBELIAN
+2017-04-16 15:29:28,235 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,373 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP add constraint FK_8srkwbcskwao7o2umyqxayehg foreign key (BARANG) references BARANG
+2017-04-16 15:29:28,373 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,512 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG add constraint FK_ikddcfcqa61ll7376rc5wkhes foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:28,512 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,609 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG add constraint FK_b4otbi55gord0ovuo485xfddw foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:28,609 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,725 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN add constraint FK_10txetkot026nme5dln68kpnr foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:28,729 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:28,893 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN add constraint FK_tn1kp7v5p23i2wubfic405oqg foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:28,894 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:29,017 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA add constraint FK_d32dfcccnjpvaegtfl915b0df foreign key (TINGKATAKSES) references TINGKATAKSES
+2017-04-16 15:29:29,018 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:29,310 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_7t56el95qsfpydxhk6vbsrjd6 foreign key (PEMBELIAN) references PEMBELIAN
+2017-04-16 15:29:29,310 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:29,549 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_el9s1akyfrart1sc0sxmn8sqv foreign key (PEMBUAT) references PENGGUNA
+2017-04-16 15:29:29,549 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:29,675 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN add constraint FK_otn78b4dhwu8umwrbg426ay70 foreign key (SUPPLIER) references SUPPLIER
+2017-04-16 15:29:29,676 [main] ERROR (SchemaExport.java:426) ­ Cannot add foreign key constraint
+2017-04-16 15:29:29,676 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 15:30:09,115 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1dac704: startup date [Sun Apr 16 15:30:09 ICT 2017]; root of context hierarchy
+2017-04-16 15:30:09,250 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:30:10,321 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:30:10,512 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:30:10,816 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:30:10,828 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:30:10,834 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:30:10,839 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:30:10,883 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:30:10,934 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:30:10,995 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:30:11,854 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:30:12,337 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:30:12,346 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:30:13,462 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@146d80f] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:30:22,253 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1dac704: startup date [Sun Apr 16 15:30:22 ICT 2017]; root of context hierarchy
+2017-04-16 15:30:22,357 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:30:23,391 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:30:23,597 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:30:23,968 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:30:23,981 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:30:23,987 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:30:23,991 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:30:24,037 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:30:24,105 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:30:24,188 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:30:25,111 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:30:25,663 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:30:25,672 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:30:26,944 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@19d011c] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:30:27,102 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 15:30:27,112 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 15:30:27,112 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 15:30:27,116 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:30:27,124 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:30:27,207 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:30:27,265 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:30:27,290 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table BARANG drop foreign key FK_csgir8wmfrq4qb7he53n1vy3h
+2017-04-16 15:30:27,291 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_csgir8wmfrq4qb7he53n1vy3h'; check that column/key exists
+2017-04-16 15:30:27,344 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop foreign key FK_l4comrgwcrqjysmh34dg52fdb
+2017-04-16 15:30:27,352 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_l4comrgwcrqjysmh34dg52fdb'; check that column/key exists
+2017-04-16 15:30:27,365 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPELUNASANHUTANG drop foreign key FK_tia9imi3q96wf3sifpu6vgqls
+2017-04-16 15:30:27,366 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_tia9imi3q96wf3sifpu6vgqls'; check that column/key exists
+2017-04-16 15:30:27,382 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_2vk2pusi4h9ifjp6734uqkrph
+2017-04-16 15:30:27,382 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:27,384 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_6qhv8vnl6kfvx8y9ati7hc9ni
+2017-04-16 15:30:27,385 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:27,402 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop foreign key FK_bcky63m5pnyks636hd9r63fqh
+2017-04-16 15:30:27,402 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_bcky63m5pnyks636hd9r63fqh'; check that column/key exists
+2017-04-16 15:30:27,417 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILRETURPEMBELIAN drop foreign key FK_4rirgcpj85ndjj9pay27qxana
+2017-04-16 15:30:27,417 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_4rirgcpj85ndjj9pay27qxana'; check that column/key exists
+2017-04-16 15:30:27,434 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table HPP drop foreign key FK_8srkwbcskwao7o2umyqxayehg
+2017-04-16 15:30:27,435 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_8srkwbcskwao7o2umyqxayehg'; check that column/key exists
+2017-04-16 15:30:27,453 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop foreign key FK_ikddcfcqa61ll7376rc5wkhes
+2017-04-16 15:30:27,454 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_ikddcfcqa61ll7376rc5wkhes'; check that column/key exists
+2017-04-16 15:30:27,469 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PELUNASANHUTANG drop foreign key FK_b4otbi55gord0ovuo485xfddw
+2017-04-16 15:30:27,469 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_b4otbi55gord0ovuo485xfddw'; check that column/key exists
+2017-04-16 15:30:27,509 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop foreign key FK_10txetkot026nme5dln68kpnr
+2017-04-16 15:30:27,509 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_10txetkot026nme5dln68kpnr'; check that column/key exists
+2017-04-16 15:30:27,525 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PEMBELIAN drop foreign key FK_tn1kp7v5p23i2wubfic405oqg
+2017-04-16 15:30:27,525 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_tn1kp7v5p23i2wubfic405oqg'; check that column/key exists
+2017-04-16 15:30:27,555 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENGGUNA drop foreign key FK_d32dfcccnjpvaegtfl915b0df
+2017-04-16 15:30:27,556 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_d32dfcccnjpvaegtfl915b0df'; check that column/key exists
+2017-04-16 15:30:27,575 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop foreign key FK_7t56el95qsfpydxhk6vbsrjd6
+2017-04-16 15:30:27,575 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_7t56el95qsfpydxhk6vbsrjd6'; check that column/key exists
+2017-04-16 15:30:27,595 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop foreign key FK_el9s1akyfrart1sc0sxmn8sqv
+2017-04-16 15:30:27,595 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_el9s1akyfrart1sc0sxmn8sqv'; check that column/key exists
+2017-04-16 15:30:27,612 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table RETURPEMBELIAN drop foreign key FK_otn78b4dhwu8umwrbg426ay70
+2017-04-16 15:30:27,613 [main] ERROR (SchemaExport.java:426) ­ Can't DROP 'FK_otn78b4dhwu8umwrbg426ay70'; check that column/key exists
+2017-04-16 15:30:28,841 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE bit not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID)) ENGINE=InnoDB
+2017-04-16 15:30:28,842 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE bit not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN varch' at line 10
+2017-04-16 15:30:31,115 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG (PLU)
+2017-04-16 15:30:31,115 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:31,128 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN (NO_REF)
+2017-04-16 15:30:31,129 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:36,931 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 15:30:36,932 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:30:36,937 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:30:36,944 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:30:37,029 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_2vk2pusi4h9ifjp6734uqkrph
+2017-04-16 15:30:37,030 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:37,031 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_6qhv8vnl6kfvx8y9ati7hc9ni
+2017-04-16 15:30:37,031 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:39,467 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE bit not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID)) ENGINE=InnoDB
+2017-04-16 15:30:39,468 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE bit not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN varch' at line 10
+2017-04-16 15:30:41,493 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG (PLU)
+2017-04-16 15:30:41,493 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:41,495 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN (NO_REF)
+2017-04-16 15:30:41,495 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:30:47,380 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 15:32:35,037 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1dac704: startup date [Sun Apr 16 15:32:35 ICT 2017]; root of context hierarchy
+2017-04-16 15:32:35,169 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-16 15:32:36,322 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-16 15:32:36,498 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: com.mysql.jdbc.Driver
+2017-04-16 15:32:36,871 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-16 15:32:36,889 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-16 15:32:36,896 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-16 15:32:36,901 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-16 15:32:36,945 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-16 15:32:36,995 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:32:37,059 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:32:38,018 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:32:38,506 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-16 15:32:38,515 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-16 15:32:39,621 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@146d80f] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-16 15:32:39,754 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-16 15:32:39,763 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-16 15:32:39,764 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-16 15:32:39,768 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-16 15:32:39,776 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-16 15:32:39,846 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:32:39,917 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:32:40,040 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_2vk2pusi4h9ifjp6734uqkrph
+2017-04-16 15:32:40,041 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:40,043 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_6qhv8vnl6kfvx8y9ati7hc9ni
+2017-04-16 15:32:40,043 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:42,181 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE bit not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID)) ENGINE=InnoDB
+2017-04-16 15:32:42,182 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE bit not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN varch' at line 10
+2017-04-16 15:32:44,622 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG (PLU)
+2017-04-16 15:32:44,622 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:44,624 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN (NO_REF)
+2017-04-16 15:32:44,624 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:50,386 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-16 15:32:50,387 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:32:50,392 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2017-04-16 15:32:50,397 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-16 15:32:50,530 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_2vk2pusi4h9ifjp6734uqkrph
+2017-04-16 15:32:50,531 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:50,533 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN drop foreign key FK_6qhv8vnl6kfvx8y9ati7hc9ni
+2017-04-16 15:32:50,534 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:53,507 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: create table DETAILPEMBELIAN (ID varchar(20) not null, HARGA_BELI decimal(19,2) not null, ISI_PEMBELIAN integer not null, KUANTITAS integer not null, SATUAN_PEMBELIAN varchar(20), STOK_GUDANG integer not null, STOK_TOKO integer not null, SUB_TOTAL decimal(19,2) not null, UPDATE bit not null, BARANG varchar(8) not null, PEMBELIAN varchar(15) not null, primary key (ID)) ENGINE=InnoDB
+2017-04-16 15:32:53,508 [main] ERROR (SchemaExport.java:426) ­ You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'UPDATE bit not null,
+        BARANG varchar(8) not null,
+        PEMBELIAN varch' at line 10
+2017-04-16 15:32:55,899 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_2vk2pusi4h9ifjp6734uqkrph foreign key (BARANG) references BARANG (PLU)
+2017-04-16 15:32:55,900 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:32:55,902 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPEMBELIAN add constraint FK_6qhv8vnl6kfvx8y9ati7hc9ni foreign key (PEMBELIAN) references PEMBELIAN (NO_REF)
+2017-04-16 15:32:55,902 [main] ERROR (SchemaExport.java:426) ­ Table 'girsangtoko.detailpembelian' doesn't exist
+2017-04-16 15:33:02,248 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete

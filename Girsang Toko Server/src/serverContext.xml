@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans 
+            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+            http://www.springframework.org/schema/context 
+            http://www.springframework.org/schema/context/spring-context-4.0.xsd
+            http://www.springframework.org/schema/tx 
+            http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    
+    <context:property-placeholder location="classpath:jdbc.properties"/>
+    <context:component-scan base-package="com.aan.girsang"/>
+    <context:annotation-config/>
+    <tx:annotation-driven/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+          p:driverClassName="${jdbc.driver}"
+          p:url="${jdbc.url}"
+          p:username="${jdbc.username}"
+          p:password="${jdbc.password}"/>
+    
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean"
+          p:dataSource-ref="dataSource"
+          p:configLocation="classpath:hibernate.cfg.xml"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+          p:sessionFactory-ref="sessionFactory"/>
+    
+    <bean class="org.springframework.remoting.support.SimpleHttpServerFactoryBean">
+        <property name="contexts">
+            <map>
+                <entry key="/ConstantService" 
+                       value-ref="constantServiceHttpInvoker"/>
+                <entry key="/MasterService" 
+                       value-ref="masterServiceHttpInvoker"/>
+                <entry key="/SecurityService" 
+                       value-ref="securityServiceHttpInvoker"/>
+                <entry key="/TransaksiService" 
+                       value-ref="transaksiServiceHttpInvoker"/>
+            </map>
+        </property>
+        <property name="port" value="9090" />
+    </bean>
+    
+    <!--  publish service dengan protokol HttpInvoker  -->
+    <bean id="constantServiceHttpInvoker" 
+          class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+          p:service-ref="constantService"
+          p:serviceInterface="com.aan.girsang.api.service.ConstantService"/>
+    <bean id="masterServiceHttpInvoker" 
+          class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+          p:service-ref="masterService"
+          p:serviceInterface="com.aan.girsang.api.service.MasterService"    />
+    <bean id="securityServiceHttpInvoker" 
+          class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+          p:service-ref="securityService"
+          p:serviceInterface="com.aan.girsang.api.service.SecurityService"    />
+    <bean id="transaksiServiceHttpInvoker" 
+          class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+          p:service-ref="transaksiService"
+          p:serviceInterface="com.aan.girsang.api.service.TransaksiService"    />
+
+</beans>
