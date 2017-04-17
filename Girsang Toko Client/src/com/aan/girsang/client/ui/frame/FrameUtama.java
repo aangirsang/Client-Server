@@ -11,6 +11,8 @@ import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.popup.PopUpMenuMaster;
 import com.aan.girsang.client.popup.PopUpMenuTransaksi;
 import com.twmacinta.util.MD5;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
@@ -110,9 +112,9 @@ public class FrameUtama extends javax.swing.JFrame {
         txtPassword = new javax.swing.JPasswordField();
         lblUser = new javax.swing.JLabel();
         lblJam = new javax.swing.JLabel();
-        jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu4 = new javax.swing.JMenu();
+        jToolBar2 = new javax.swing.JToolBar();
+        jButton2 = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -125,6 +127,7 @@ public class FrameUtama extends javax.swing.JFrame {
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton1);
 
+        btnMaster.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Master 32.png"))); // NOI18N
         btnMaster.setText("Master");
         btnMaster.setFocusable(false);
         btnMaster.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -134,6 +137,7 @@ public class FrameUtama extends javax.swing.JFrame {
         btnMaster.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(btnMaster);
 
+        btnTransaksi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Mutasi 32.png"))); // NOI18N
         btnTransaksi.setText("Transaksi");
         btnTransaksi.setFocusable(false);
         btnTransaksi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -149,7 +153,7 @@ public class FrameUtama extends javax.swing.JFrame {
         );
         panelHomeLayout.setVerticalGroup(
             panelHomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGap(0, 291, Short.MAX_VALUE)
         );
 
         tabbedPane.addTab("Home", panelHome);
@@ -161,6 +165,11 @@ public class FrameUtama extends javax.swing.JFrame {
         txtUsername.setText("jTextField1");
 
         btnLogin.setText("Login");
+        btnLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLoginActionPerformed(evt);
+            }
+        });
 
         btnBatal.setText("Batal");
 
@@ -196,7 +205,7 @@ public class FrameUtama extends javax.swing.JFrame {
         loginPanelLayout.setVerticalGroup(
             loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(loginPanelLayout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -210,7 +219,7 @@ public class FrameUtama extends javax.swing.JFrame {
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
                     .addComponent(btnBatal))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         tabbedPane.addTab("Login", loginPanel);
@@ -220,19 +229,29 @@ public class FrameUtama extends javax.swing.JFrame {
         lblJam.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblJam.setText("USER");
 
-        jMenu3.setText("File");
-        jMenuBar2.add(jMenu3);
+        jToolBar2.setBorder(null);
+        jToolBar2.setFloatable(false);
+        jToolBar2.setRollover(true);
 
-        jMenu4.setText("Edit");
-        jMenuBar2.add(jMenu4);
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(jButton2);
 
-        setJMenuBar(jMenuBar2);
+        btnKeluar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/logout-icon-32.png"))); // NOI18N
+        btnKeluar.setText("Keluar");
+        btnKeluar.setFocusable(false);
+        btnKeluar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKeluar.setMaximumSize(new java.awt.Dimension(51, 57));
+        btnKeluar.setMinimumSize(new java.awt.Dimension(51, 57));
+        btnKeluar.setPreferredSize(new java.awt.Dimension(55, 65));
+        btnKeluar.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnKeluar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(tabbedPane, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -240,14 +259,23 @@ public class FrameUtama extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblJam, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0)
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tabbedPane)
-                .addGap(2, 2, 2)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tabbedPane)
+                        .addGap(2, 2, 2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(306, 306, 306)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblJam)
                     .addComponent(lblUser))
@@ -256,6 +284,10 @@ public class FrameUtama extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLoginActionPerformed
 
     private void initListener(){
         btnLogin.addActionListener((ae) -> {
@@ -268,21 +300,51 @@ public class FrameUtama extends javax.swing.JFrame {
         btnBatal.addActionListener((ae) -> {
             System.exit(0);
         });
+        //<editor-fold defaultstate="collapsed" desc="close Windows">
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                String ObjButtons[] = {"Ya", "Tidak"};
+                int PromptResult = JOptionPane.showOptionDialog(null, 
+                        "Apakah Anda Yakin Ingin Menutup Aplikasi Ini?", 
+                        "Confirm",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null, ObjButtons, ObjButtons[1]);
+                if (PromptResult == JOptionPane.YES_OPTION) {
+                    ClientLauncher.setPenggunaAktif(null);
+                    System.exit(0);
+                }
+            }
+        });//</editor-fold>
+        btnKeluar.addActionListener((ae) -> {
+           String ObjButtons[] = {"Ya", "Tidak"};
+                int PromptResult = JOptionPane.showOptionDialog(null, 
+                        "Apakah Anda Yakin Ingin Menutup Aplikasi Ini?", 
+                        "Confirm",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null, ObjButtons, ObjButtons[1]);
+                if (PromptResult == JOptionPane.YES_OPTION) {
+                    ClientLauncher.setPenggunaAktif(null);
+                    System.exit(0);
+                }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;
+    private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnMaster;
     private javax.swing.JButton btnTransaksi;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JToolBar jToolBar1;
+    private javax.swing.JToolBar jToolBar2;
     private javax.swing.JLabel lblJam;
     private javax.swing.JLabel lblUser;
     private javax.swing.JPanel loginPanel;

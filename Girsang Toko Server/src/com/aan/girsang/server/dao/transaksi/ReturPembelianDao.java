@@ -5,6 +5,7 @@
  */
 package com.aan.girsang.server.dao.transaksi;
 
+import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.Supplier;
 import com.aan.girsang.api.model.transaksi.ReturPembelian;
 import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
@@ -47,7 +48,7 @@ public class ReturPembelianDao extends BaseDaoHibernate<ReturPembelian>{
 //<editor-fold defaultstate="collapsed" desc="Semua">
     @Override
     public List<ReturPembelian> semua() {
-        return sessionFactory.getCurrentSession().createQuery("from Pembelian p order by p.tanggal desc").list();
+        return sessionFactory.getCurrentSession().createQuery("from ReturPembelian p order by p.tanggal desc").list();
     }
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Cari Supplier">
@@ -55,6 +56,13 @@ public class ReturPembelianDao extends BaseDaoHibernate<ReturPembelian>{
         return (List<ReturPembelian>) sessionFactory.getCurrentSession().createQuery(
                 "from ReturPembelian p where p.supplier=:supplier")
                 .setParameter("supplier", s)
+                .list();
+    }
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Cari Barang">
+    public List<ReturPembelianDetail> cariBarang(Barang barang) {
+        return sessionFactory.getCurrentSession().createQuery("from ReturPembelianDetail p where p.barang=:barang order by p.pembelian.tanggal desc")
+                .setParameter("barang", barang)
                 .list();
     }
 //</editor-fold>

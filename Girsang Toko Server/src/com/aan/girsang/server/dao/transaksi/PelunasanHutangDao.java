@@ -5,12 +5,12 @@
  */
 package com.aan.girsang.server.dao.transaksi;
 
+import com.aan.girsang.api.model.master.Supplier;
 import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.server.dao.BaseDaoHibernate;
 import java.util.List;
-import java.util.function.Supplier;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
 

@@ -48,7 +48,7 @@ public class ReturPembelian implements Serializable{
     private Supplier supplier;
         
     @Column(name = "TOTALRETUR")
-    private Integer total = 0;
+    private BigDecimal total = BigDecimal.ZERO;
     
     @ManyToOne
     @JoinColumn(name="PEMBUAT")
@@ -82,11 +82,11 @@ public class ReturPembelian implements Serializable{
         this.supplier = supplier;
     }
 
-    public Integer getTotal() {
+    public BigDecimal getTotal() {
         return total;
     }
 
-    public void setTotal(Integer total) {
+    public void setTotal(BigDecimal total) {
         this.total = total;
     }
 

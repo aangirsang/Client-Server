@@ -6,7 +6,6 @@
 package com.aan.girsang.server.service.impl;
 
 import com.aan.girsang.api.model.constant.MasterRunningNumberEnum;
-import com.aan.girsang.api.model.constant.RunningNumber;
 import com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum;
 import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.HPPBarang;
@@ -15,6 +14,8 @@ import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
+import com.aan.girsang.api.model.transaksi.ReturPembelian;
+import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
 import com.aan.girsang.api.service.TransaksiService;
 import com.aan.girsang.api.util.TextComponentUtils;
 import com.aan.girsang.server.dao.master.BarangDao;
@@ -23,6 +24,7 @@ import com.aan.girsang.server.dao.constant.RunningNumberDao;
 import com.aan.girsang.server.dao.master.SupplierDao;
 import com.aan.girsang.server.dao.transaksi.PelunasanHutangDao;
 import com.aan.girsang.server.dao.transaksi.PembelianDao;
+import com.aan.girsang.server.dao.transaksi.ReturPembelianDao;
 import java.math.BigDecimal;
 import java.math.MathContext;
 import java.util.List;
@@ -46,6 +48,7 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Autowired HPPDao hPPDao;
     @Autowired SupplierDao supplierDao;
     @Autowired PelunasanHutangDao pelunasanHutangDao;
+    @Autowired ReturPembelianDao returPembelianDao;
 
     //<editor-fold defaultstate="collapsed" desc="Pembelian">
     @Transactional(isolation = Isolation.SERIALIZABLE)
@@ -134,6 +137,11 @@ public class TransaksiServiceImpl implements TransaksiService {
     }
     
     @Override
+    public List<Pembelian> cariSupplierPembelian(Supplier s){
+        return pembelianDao.cariSupplier(s);
+    }
+    
+    @Override
     public List<PembelianDetail> cariPembelianDetail(Pembelian p) {
         return pembelianDao.cariDetail(p);
     }
@@ -143,6 +151,65 @@ public class TransaksiServiceImpl implements TransaksiService {
         return pembelianDao.cariBarang(barang);
     }
 //</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Retur Pembelian">
+            @Override
+            @Transactional(isolation=Isolation.SERIALIZABLE)
+            public void simpan(ReturPembelian returPembelian) {
+                ReturPembelian rP = returPembelianDao.cariId(returPembelian.getNoRef());
+                if(rP==null){
+                    returPembelian.setNoRef(runningNumberTransaksiDao.ambilBerikutnyaDanSimpan(TransaksiRunningNumberEnum.RETURPEMBELIAN));
+                    int i = 1;
+                    for (ReturPembelianDetail detail : returPembelian.getReturPembelianDetails()) {
+                        detail.setId(returPembelian.getNoRef() + i++);
+                    }
+                }else{
+                    int i = 1;
+                    for (ReturPembelianDetail detail : returPembelian.getReturPembelianDetails()) {
+                        try {
+                            i++;
+                            if (detail.getId() == null) {
+                                detail.setId(returPembelian.getNoRef() + i++);
+                            }
+                        } catch (Exception e) {
+                            i = i + 1;
+                            if (detail.getId() == null) {
+                                detail.setId(returPembelian.getNoRef() + i++);
+                            }
+                        }
+                        if (detail.getId() == null) {
+                            detail.setId(returPembelian.getNoRef() + i++);
+                        }
+                    }
+                }
+                returPembelianDao.merge(returPembelian);
+                simpanStokReturPembelian(returPembelian);
+            }
+
+            @Override
+            public ReturPembelian cariReturPembelian(String id) {
+                return returPembelianDao.cariId(id);
+            }
+
+            @Override
+            public List<ReturPembelian> semuaReturPembelian() {
+                return returPembelianDao.semua();
+            }
+
+            @Override
+            public List<ReturPembelian> descReturPembelian() {
+                return returPembelianDao.semua();
+            }
+
+            @Override
+            public List<ReturPembelianDetail> cariReturPembelianDetail(ReturPembelian p) {
+                return returPembelianDao.cariReturBeliDetail(p);
+            }
+
+            @Override
+            public List<ReturPembelianDetail> cariBarangReturPembelian(Barang barang) {
+                return returPembelianDao.cariBarang(barang);
+            }
+        //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Pelunasan Hutang">
     @Override
     @Transactional(isolation=Isolation.SERIALIZABLE)
@@ -194,7 +261,7 @@ public class TransaksiServiceImpl implements TransaksiService {
     }
     @Override
     public List<PelunasanHutang> cariSupplier(Supplier s) {
-        return pelunasanHutangDao.cariSupplier((java.util.function.Supplier) s);
+        return pelunasanHutangDao.cariSupplier(s);
     }
     
     @Override
@@ -207,13 +274,12 @@ public class TransaksiServiceImpl implements TransaksiService {
         return pelunasanHutangDao.cariPembelian(pembelian);
     }
 //</editor-fold>
-
-    
+    //<editor-fold defaultstate="collapsed" desc="Simpan Hutang">
     private void simpanHutang(){
         List<Supplier> suppliers = supplierDao.semua();
         for(Supplier s : suppliers){
             List<Pembelian> pembelians = pembelianDao.cariSupplier(s);
-            List<PelunasanHutang> hutangs = pelunasanHutangDao.cariSupplier((java.util.function.Supplier) s);
+            List<PelunasanHutang> hutangs = pelunasanHutangDao.cariSupplier(s);
             
             BigDecimal hutangPembelian = new BigDecimal(0);
             BigDecimal pembayaranHutang = new BigDecimal(0);
@@ -232,7 +298,8 @@ public class TransaksiServiceImpl implements TransaksiService {
             supplierDao.simpan(s);
         }
     }
-    
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Simpan Stok Pembelian">
     private void simpanStokPembelian(Pembelian p) {
         Integer stokToko = 0;
         Integer stokGudang = 0;
@@ -252,5 +319,28 @@ public class TransaksiServiceImpl implements TransaksiService {
             barangDao.simpan(b);
         }
     }
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Simpan Stok Retur Pembelian">
+    private void simpanStokReturPembelian(ReturPembelian rP) {
+        Integer stokToko = 0;
+        Integer stokGudang = 0;
+        for (ReturPembelianDetail detail : rP.getReturPembelianDetails()) {
+            Barang b = barangDao.cariId(detail.getBarang().getPlu());
+            List<ReturPembelianDetail> PD = returPembelianDao.cariBarang(detail.getBarang());
+            for (ReturPembelianDetail PD1 : PD) {
+                if("Toko".equals(PD1.getReturPembelian().getPembelian().getLokasi())){
+                    stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiReturPembelian());
+                }else if("Gudang".equals(PD1.getReturPembelian().getPembelian().getLokasi())){
+                    stokGudang = stokGudang + (PD1.getKuantitas() * PD1.getIsiReturPembelian());
+                }
+            }
+            b.setStokReturBeliToko(stokToko);
+            b.setStokReturBeliGudang(stokGudang);
+            
+            barangDao.simpan(b);
+        }
+    }
+//</editor-fold>
 
+    
 }

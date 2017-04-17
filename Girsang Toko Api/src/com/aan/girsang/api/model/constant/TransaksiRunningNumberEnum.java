@@ -15,7 +15,8 @@ public enum TransaksiRunningNumberEnum {
     PEMBAYARAN("BYR", 5),
     SESI_KASSA("SES", 5),
     SALDO_STOK("SAL", 5),
-    HUTANG("HTG", 4);
+    HUTANG("HTG", 4),
+    RETURPEMBELIAN("RBL", 4);
 
     private final String id;
     private final Integer digit;

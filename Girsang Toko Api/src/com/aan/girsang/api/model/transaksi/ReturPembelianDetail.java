@@ -34,7 +34,7 @@ public class ReturPembelianDetail implements Serializable{
     @JoinColumn(name = "BARANG", nullable = false)
     private Barang barang;
     
-    @Column(name = "KUANTITAS_RETURPEMBELIAN", nullable = false)
+    @Column(name = "KUANTITAS_PEMBELIAN", nullable = false)
     private Integer kuantitas = 0;
     
     @Column(name="SATUAN_RETURPEMBELIAN",length=20)
@@ -45,6 +45,17 @@ public class ReturPembelianDetail implements Serializable{
     
     @Column(name = "SUB_TOTAL", nullable = false)
     private BigDecimal subTotal = BigDecimal.ZERO;
+    
+    @Column(name="ISI_RETURPEMBELIAN",nullable=false)
+    private Integer isiReturPembelian=0;
+
+    public Integer getIsiReturPembelian() {
+        return isiReturPembelian;
+    }
+
+    public void setIsiReturPembelian(Integer isiReturPembelian) {
+        this.isiReturPembelian = isiReturPembelian;
+    }
 
     public String getId() {
         return id;

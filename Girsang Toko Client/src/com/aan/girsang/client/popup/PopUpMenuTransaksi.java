@@ -5,8 +5,9 @@
  */
 package com.aan.girsang.client.popup;
 
-import com.aan.girsang.client.ui.tansaksi.PelunasanHutangPanel;
-import com.aan.girsang.client.ui.tansaksi.PembelianPanel;
+import com.aan.girsang.client.ui.tansaksi.pembelian.PanelPelunasanHutang;
+import com.aan.girsang.client.ui.tansaksi.pembelian.PanelPembelian;
+import com.aan.girsang.client.ui.tansaksi.pembelian.PanelReturPembelian;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
@@ -21,8 +22,6 @@ import javax.swing.JTabbedPane;
  */
 public class PopUpMenuTransaksi extends AbstractButton {
 
-    PembelianPanel pembelianPanel = new PembelianPanel();
-    PelunasanHutangPanel hutangPanel = new PelunasanHutangPanel();
     JButton actionButton;
     JPopupMenu popupMenu;
 
@@ -30,6 +29,7 @@ public class PopUpMenuTransaksi extends AbstractButton {
         popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Pembelian") {
             @Override
             public void actionPerformed(ActionEvent ae) {
+                PanelPembelian pembelianPanel = new PanelPembelian();
                 pembelianPanel.setName("Daftar Pembelian Barang");
                 if (pembelianPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(pembelianPanel.getIndexTab());
@@ -50,6 +50,7 @@ public class PopUpMenuTransaksi extends AbstractButton {
         popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Pelunasan Hutang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
+                PanelPelunasanHutang hutangPanel = new PanelPelunasanHutang();
                 hutangPanel.setName("Daftar Pelunasan Hutang");
                 if (hutangPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(hutangPanel.getIndexTab());
@@ -63,6 +64,27 @@ public class PopUpMenuTransaksi extends AbstractButton {
                         TP.remove(hutangPanel);
                         hutangPanel.setAktifPanel(hutangPanel.getAktifPanel() - 1);
                         TP.setSelectedIndex(hutangPanel.getIndexTab()-1);
+                    });
+                }
+            }
+        }));
+        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Retur Pembelian") {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                PanelReturPembelian returBeliPanel = new PanelReturPembelian();
+                returBeliPanel.setName("Daftar Pelunasan Hutang");
+                if (returBeliPanel.getAktifPanel() == 1) {
+                    TP.setSelectedIndex(returBeliPanel.getIndexTab());
+                } else {
+                    returBeliPanel.setAktifPanel(returBeliPanel.getAktifPanel() + 1);
+                    TP.addTab(returBeliPanel.getName(), returBeliPanel);
+                    returBeliPanel.setIndexTab(TP.getTabCount() - 1);
+                    TP.setSelectedIndex(returBeliPanel.getIndexTab());
+
+                    returBeliPanel.getToolbarDenganFilter1().getBtnKeluar().addActionListener((ae1) -> {
+                        TP.remove(returBeliPanel);
+                        returBeliPanel.setAktifPanel(returBeliPanel.getAktifPanel() - 1);
+                        TP.setSelectedIndex(returBeliPanel.getIndexTab()-1);
                     });
                 }
             }

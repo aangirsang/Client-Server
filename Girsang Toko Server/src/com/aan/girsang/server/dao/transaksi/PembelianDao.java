@@ -81,7 +81,7 @@ public class PembelianDao extends BaseDaoHibernate<Pembelian>{
 //<editor-fold defaultstate="collapsed" desc="Cari Supplier">
     public List<Pembelian> cariSupplier(Supplier s){
         return (List<Pembelian>) sessionFactory.getCurrentSession().createQuery(
-                "from Pembelian p where p.supplier=:supplier")
+                "from Pembelian p where p.supplier=:supplier order by p.noRef desc")
                 .setParameter("supplier", s)
                 .list();
     }

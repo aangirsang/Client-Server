@@ -1328,6 +1328,7 @@ public class BarangDialog extends javax.swing.JDialog {
             }
         });
         //</editor-fold>
+        //<editor-fold defaultstate="collapsed" desc="Tabel HPP">
         tblHPP.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
             if (tblHPP.getSelectedRow() >= 0) {
                 hPPBarang = new HPPBarang();
@@ -1341,6 +1342,7 @@ public class BarangDialog extends javax.swing.JDialog {
                 btnBaruHPP.setText("Simpan");
             }
         });
+//</editor-fold>
         //<editor-fold defaultstate="collapsed" desc="btnBaru">
         btnBaruHPP.addActionListener((ActionEvent ae) -> {
             if("Baru".equals(btnBaruHPP.getText())){

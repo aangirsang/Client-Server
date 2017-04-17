@@ -8,6 +8,7 @@ package com.aan.girsang.server.service.impl;
 import com.aan.girsang.api.model.constant.MasterRunningNumberEnum;
 import com.aan.girsang.api.model.constant.RunningNumber;
 import com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum;
+import com.aan.girsang.api.model.security.Pengguna;
 import com.aan.girsang.api.service.ConstantService;
 import com.aan.girsang.server.dao.constant.RunningNumberDao;
 import java.util.Date;
@@ -60,5 +61,18 @@ public class ConstantServiceImpl implements ConstantService{
     public String clientOnline(String client) {
         log.info(client+" ONLINE");
         return "Halo, "+client;
+    }
+
+    @Override
+    public Pengguna penggunaOnline(Pengguna p) {
+        log.info(p.getNamaLengkap()+" LOGIN");
+        return p;
+    }
+    @Override
+    public Pengguna penggunaOffline(Pengguna p) {
+        if(p!=null){
+            log.info(p.getNamaLengkap()+" LOGOUT");
+        }
+        return p;
     }
 }

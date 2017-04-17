@@ -48,8 +48,13 @@ public class ClientLauncher {
         return securityService;
     }
 
-    public static void setPenggunaAktif(Pengguna penggunaAktif) {
-        ClientLauncher.penggunaAktif = penggunaAktif;
+    public static void setPenggunaAktif(Pengguna p) {
+        if(p!=null){
+            constantService.penggunaOnline(p);
+        }else{
+            constantService.penggunaOffline(penggunaAktif);
+        }
+        ClientLauncher.penggunaAktif = p;
     }
 
     public static Pengguna getPenggunaAktif() {

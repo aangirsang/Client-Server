@@ -11,6 +11,8 @@ import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
+import com.aan.girsang.api.model.transaksi.ReturPembelian;
+import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
 import java.util.List;
 
 /**
@@ -24,8 +26,17 @@ public interface TransaksiService {
     public List<Pembelian> semuaPembelian();
     public List<Pembelian> descPembelian();
     public List<Pembelian> hutangPembelian(Supplier s);
+    public List<Pembelian> cariSupplierPembelian (Supplier s);
     public List<PembelianDetail> cariPembelianDetail(Pembelian p);
     public List<PembelianDetail> cariBarang(Barang barang);
+//</editor-fold>
+//<editor-fold defaultstate="collapsed" desc="ReturPembelian">
+    public void simpan(ReturPembelian returPembelian);
+    public ReturPembelian cariReturPembelian(String id);
+    public List<ReturPembelian> semuaReturPembelian();
+    public List<ReturPembelian> descReturPembelian();
+    public List<ReturPembelianDetail> cariReturPembelianDetail(ReturPembelian p);
+    public List<ReturPembelianDetail> cariBarangReturPembelian(Barang barang);
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Pelunasan Hutang">
     public void simpan(PelunasanHutang p);
