@@ -1,629 +1,248 @@
-2017-04-17 12:26:20,505 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 12:26:20 ICT 2017]; root of context hierarchy
-2017-04-17 12:26:20,611 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 12:26:21,196 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 12:26:21,536 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 12:26:21,724 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 12:26:22,022 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 12:26:22,037 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 12:26:22,042 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 12:26:22,048 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 12:26:22,092 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 12:26:22,143 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 12:26:22,204 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 12:26:23,018 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 12:26:23,498 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 12:26:23,512 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 12:26:24,593 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3e8306] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 12:26:24,734 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 12:26:24,743 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 12:26:38,131 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 12:26:40,488 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 12:27:42,735 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 12:34:00,815 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 12:34:00 ICT 2017]; root of context hierarchy
-2017-04-17 12:34:00,943 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 12:34:01,695 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 12:34:02,126 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 12:34:02,347 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 12:34:02,696 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 12:34:02,710 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 12:34:02,715 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 12:34:02,721 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 12:34:02,769 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 12:34:02,824 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 12:34:02,898 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 12:34:03,730 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 12:34:04,219 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 12:34:04,233 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 12:34:05,308 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@3e8306] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 12:34:05,446 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 12:34:05,455 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 12:34:12,043 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 12:34:14,525 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 12:34:48,210 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:16:25,649 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:16:25 ICT 2017]; root of context hierarchy
-2017-04-17 14:16:25,752 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:16:26,319 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:16:26,659 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:16:26,888 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:16:27,186 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:16:27,200 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:16:27,204 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:16:27,208 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:16:27,251 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:16:27,299 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:16:27,360 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:16:29,743 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:16:29,768 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:16:29,789 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
-2017-04-17 14:16:30,197 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:16:30,206 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:16:31,328 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@18524c3] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:16:31,465 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:16:31,474 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:16:41,897 [Thread-2] WARN (SqlExceptionHelper.java:144) ­ SQL Error: 90020, SQLState: 90020
-2017-04-17 14:16:41,906 [Thread-2] ERROR (SqlExceptionHelper.java:146) ­ Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:16:41,915 [Thread-2] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.ConstantService.clientOnline
-org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:517)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:420)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:257)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy24.clientOnline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
-	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy29.clientOnline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
-	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
-	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
-	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
-	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
-	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
-	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+2017-04-18 16:38:21,531 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Tue Apr 18 16:38:21 ICT 2017]; root of context hierarchy
+2017-04-18 16:38:21,635 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-18 16:38:22,424 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-18 16:38:22,791 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-18 16:38:23,009 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-18 16:38:23,315 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-18 16:38:23,330 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-18 16:38:23,334 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-18 16:38:23,338 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-18 16:38:23,385 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-18 16:38:23,492 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-18 16:38:23,554 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-18 16:38:24,412 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-18 16:38:24,978 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-18 16:38:24,992 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-18 16:38:26,153 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-18 16:38:26,407 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-18 16:38:26,416 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-18 16:38:37,081 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 16:38:52,851 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 16:39:28,457 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 16:54:52,809 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Tue Apr 18 16:54:52 ICT 2017]; root of context hierarchy
+2017-04-18 16:54:52,942 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-18 16:54:53,610 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-18 16:54:53,980 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-18 16:54:54,178 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-18 16:54:54,493 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-18 16:54:54,508 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-18 16:54:54,512 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-18 16:54:54,517 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-18 16:54:54,562 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-18 16:54:54,615 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-18 16:54:54,680 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-18 16:54:55,559 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-18 16:54:56,140 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-18 16:54:56,155 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-18 16:54:57,439 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-18 16:54:57,642 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-18 16:54:57,659 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-18 16:55:07,188 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 16:55:09,723 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 16:55:23,086 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:00:19,711 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Tue Apr 18 17:00:19 ICT 2017]; root of context hierarchy
+2017-04-18 17:00:19,816 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-18 17:00:20,420 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-18 17:00:20,780 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-18 17:00:20,978 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-18 17:00:21,283 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-18 17:00:21,298 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-18 17:00:21,303 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-18 17:00:21,307 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-18 17:00:21,354 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-18 17:00:21,406 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-18 17:00:21,471 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-18 17:00:22,316 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-18 17:00:22,843 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-18 17:00:22,858 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-18 17:00:24,002 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-18 17:00:24,148 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-18 17:00:24,159 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-18 17:00:29,695 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:00:32,128 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:00:45,269 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:09:49,180 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:09:52,291 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:10:09,415 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:22:34,421 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:22:36,552 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:27:15,265 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:27:20,538 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:27:22,610 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:27:39,601 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:29:32,257 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:29:34,215 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:31:23,909 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:31:51,574 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:31:53,596 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:32:03,823 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 17:34:51,388 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 17:34:53,238 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 17:36:47,239 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 19:24:40,689 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Tue Apr 18 19:24:40 ICT 2017]; root of context hierarchy
+2017-04-18 19:24:40,845 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-18 19:24:42,299 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-18 19:24:42,877 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-18 19:24:43,455 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-18 19:24:43,955 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-18 19:24:43,986 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-18 19:24:44,002 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-18 19:24:44,002 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-18 19:24:44,080 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-18 19:24:44,283 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-18 19:24:44,361 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-18 19:24:45,710 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-18 19:24:46,272 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-18 19:24:46,288 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-18 19:24:47,600 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-18 19:24:47,882 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-18 19:24:47,882 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-18 19:24:57,405 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 19:25:00,165 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 19:25:11,882 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 20:23:35,055 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 20:23:36,957 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 20:24:15,908 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 20:43:30,757 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 20:43:32,685 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 20:43:58,204 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 20:49:13,083 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 20:49:17,995 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 20:49:43,511 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 20:50:23,458 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 20:50:47,717 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 20:51:21,822 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:33:42,149 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Tue Apr 18 23:33:42 ICT 2017]; root of context hierarchy
+2017-04-18 23:33:42,305 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-18 23:33:43,133 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-18 23:33:43,680 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-18 23:33:43,961 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-18 23:33:44,352 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-18 23:33:44,368 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-18 23:33:44,368 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-18 23:33:44,383 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-18 23:33:44,430 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-18 23:33:44,508 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-18 23:33:44,618 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-18 23:33:45,474 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-18 23:33:46,005 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-18 23:33:46,020 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-18 23:33:47,130 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-18 23:33:47,271 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-18 23:33:47,271 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-18 23:33:53,863 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:33:57,135 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:34:35,984 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:38:11,988 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:38:14,081 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:38:52,677 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:39:32,513 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:39:34,510 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:40:11,748 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:40:19,897 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:40:22,680 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:40:43,971 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:41:03,493 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:41:32,793 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:43:05,685 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:43:13,626 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:43:16,003 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:43:36,781 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:44:33,110 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:45:03,809 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:45:24,055 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:45:29,984 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:45:42,607 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:46:05,952 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-18 23:46:25,493 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-18 23:46:27,180 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-18 23:46:51,084 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 10:53:53,811 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 10:53:53 ICT 2017]; root of context hierarchy
+2017-04-19 10:53:53,951 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 10:53:54,717 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 10:53:55,108 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 10:53:55,389 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 10:53:55,717 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 10:53:55,717 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 10:53:55,733 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 10:53:55,733 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 10:53:55,779 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 10:53:55,842 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 10:53:55,904 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 10:53:56,725 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 10:53:57,225 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 10:53:57,241 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 10:53:58,350 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 10:53:58,585 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-19 10:53:58,600 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-19 10:54:12,028 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 10:54:14,003 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 10:55:15,227 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:03:10,340 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:03:12,281 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:03:53,942 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:03:58,896 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:04:28,787 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:05:41,399 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:05:46,525 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:05:48,642 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:07:02,840 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:09:09,803 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:09:11,532 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:10:16,811 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:10:26,429 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:10:28,157 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:10:45,232 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:11:12,759 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:11:14,702 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:11:34,880 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:11:54,062 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:27:04,878 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:27:16,799 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:27:43,148 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:28:27,330 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:28:30,869 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:28:49,563 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:29:27,105 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:29:28,771 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:29:43,225 [Thread-3] WARN (SqlExceptionHelper.java:144) ­ SQL Error: 42122, SQLState: 42S22
+2017-04-19 11:29:43,227 [Thread-3] ERROR (SqlExceptionHelper.java:146) ­ Column "RETURPEMBE1_.KUANTITAS_PEMBELIAN" not found; SQL statement:
+select returpembe0_.NO_REF as NO_REF1_9_1_, returpembe0_.PEMBELIAN as PEMBELIA4_9_1_, returpembe0_.PEMBUAT as PEMBUAT5_9_1_, returpembe0_.SUPPLIER as SUPPLIER6_9_1_, returpembe0_.TANGGAL as TANGGAL2_9_1_, returpembe0_.TOTALRETUR as TOTALRET3_9_1_, returpembe1_.RETURPEMBELIAN as RETURPEM8_9_3_, returpembe1_.ID as ID1_3_3_, returpembe1_.ID as ID1_3_0_, returpembe1_.BARANG as BARANG7_3_0_, returpembe1_.HARGA_BELI as HARGA_BE2_3_0_, returpembe1_.ISI_RETURPEMBELIAN as ISI_RETU3_3_0_, returpembe1_.KUANTITAS_PEMBELIAN as KUANTITA4_3_0_, returpembe1_.RETURPEMBELIAN as RETURPEM8_3_0_, returpembe1_.SATUAN_RETURPEMBELIAN as SATUAN_R5_3_0_, returpembe1_.SUB_TOTAL as SUB_TOTA6_3_0_ from RETURPEMBELIAN returpembe0_ left outer join DETAILRETURPEMBELIAN returpembe1_ on returpembe0_.NO_REF=returpembe1_.RETURPEMBELIAN where returpembe0_.NO_REF=? [42122-176]
+2017-04-19 11:29:43,248 [Thread-3] INFO (DefaultLoadEventListener.java:158) ­ HHH000327: Error performing load command : org.hibernate.exception.SQLGrammarException: could not prepare statement
+2017-04-19 11:29:43,349 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.TransaksiService.simpan
+org.hibernate.exception.SQLGrammarException: could not prepare statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:123)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:49)
 	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:235)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:171)
-	at org.hibernate.internal.SessionImpl.connection(SessionImpl.java:446)
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:431)
-	... 37 more
-Caused by: org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
-	at org.h2.message.DbException.get(DbException.java:178)
-	at org.h2.message.DbException.get(DbException.java:154)
-	at org.h2.store.FileLock.getExceptionAlreadyInUse(FileLock.java:462)
-	at org.h2.store.FileLock.lockFile(FileLock.java:356)
-	at org.h2.store.FileLock.lock(FileLock.java:136)
-	at org.h2.engine.Database.open(Database.java:622)
-	at org.h2.engine.Database.openDatabase(Database.java:260)
-	at org.h2.engine.Database.<init>(Database.java:254)
-	at org.h2.engine.Engine.openSession(Engine.java:57)
-	at org.h2.engine.Engine.openSession(Engine.java:164)
-	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:142)
-	at org.h2.engine.Engine.createSession(Engine.java:125)
-	at org.h2.engine.Engine.createSession(Engine.java:27)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:331)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:74)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:208)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
-	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:380)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:228)
-	... 40 more
-2017-04-17 14:17:00,904 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:17:00 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:01,005 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:17:01,862 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:17:02,036 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:17:02,315 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:17:02,328 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:17:02,333 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:17:02,337 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:17:02,377 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:17:02,431 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:02,491 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:04,863 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:17:04,881 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:04,900 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
-2017-04-17 14:17:05,323 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:17:05,331 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:17:06,451 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@e6516e] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:17:06,463 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:17:06,463 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:17:06,467 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:06,475 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:14,157 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:17:14 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:14,257 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:17:15,130 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:17:15,313 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:17:15,706 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:17:15,726 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:17:15,735 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:17:15,740 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:17:15,800 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:17:15,871 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:15,967 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:18,374 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:17:18,395 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:18,429 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
-2017-04-17 14:17:18,891 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:17:18,900 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:17:20,100 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@e6516e] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:17:20,115 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:17:20,116 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:17:20,119 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:20,129 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:27,659 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:17:27 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:27,764 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:17:28,623 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:17:28,801 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:17:29,121 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:17:29,137 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:17:29,143 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:17:29,147 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:17:29,193 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:17:29,265 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:29,337 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:31,791 [main] WARN (JdbcServicesImpl.java:204) ­ HHH000342: Could not obtain connection to query metadata : Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:17:31,809 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:31,830 [main] INFO (LobCreatorBuilder.java:88) ­ HHH000422: Disabling contextual LOB creation as connection was null
-2017-04-17 14:17:32,247 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:17:32,256 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:17:33,377 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@70bd39] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:17:33,387 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:17:33,388 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:17:33,391 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:33,398 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:44,504 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:17:44 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:44,616 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:17:45,545 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:17:45,710 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:17:45,997 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:17:46,010 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:17:46,016 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:17:46,021 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:17:46,061 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:17:46,113 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:46,172 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:46,948 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:47,428 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:17:47,436 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:17:48,516 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1d69e82] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:17:48,528 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:17:48,529 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:17:48,532 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:48,539 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:48,627 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:48,691 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:17:48,861 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:17:48,862 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:48,865 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:48,870 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:17:49,080 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:17:49,157 [Thread-3] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:17:44 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:56,700 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:17:56 ICT 2017]; root of context hierarchy
-2017-04-17 14:17:56,805 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:17:57,518 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:17:57,870 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:17:58,067 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:17:58,393 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:17:58,408 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:17:58,412 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:17:58,416 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:17:58,462 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:17:58,513 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:17:58,574 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:17:59,339 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:17:59,814 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:17:59,823 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:18:00,911 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@23a01d] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:18:01,046 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:18:01,055 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:18:12,576 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:20:07,142 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:20:07 ICT 2017]; root of context hierarchy
-2017-04-17 14:20:07,257 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:20:08,100 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:20:08,480 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:20:08,678 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:20:09,032 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:20:09,048 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:20:09,054 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:20:09,058 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:20:09,107 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:20:09,190 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:20:09,266 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:20:10,089 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:20:10,587 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:20:10,596 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:20:11,766 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@23a01d] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:20:21,311 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:20:21 ICT 2017]; root of context hierarchy
-2017-04-17 14:20:21,435 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:20:22,017 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:20:22,401 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:20:22,602 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:20:22,904 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:20:22,918 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:20:22,923 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:20:22,928 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:20:22,970 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:20:23,023 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:20:23,087 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:20:23,920 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:20:24,419 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:20:24,429 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:20:25,547 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@23a01d] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:20:25,690 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:20:25,700 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:20:34,756 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:20:37,157 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:21:01,826 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:21:13,351 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:21:15,507 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:21:49,006 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:23:11,514 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:23:13,281 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:23:35,473 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:24:03,031 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:24:06,022 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:25:19,144 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:27:14,307 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:27:16,213 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:27:37,480 [Thread-3] WARN (SqlExceptionHelper.java:144) ­ SQL Error: 90020, SQLState: 90020
-2017-04-17 14:27:37,481 [Thread-3] ERROR (SqlExceptionHelper.java:146) ­ Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:27:37,493 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.ConstantService.penggunaOffline
-org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:517)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:420)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:257)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy24.penggunaOffline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
-	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy29.penggunaOffline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
-	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
-	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
-	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
-	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
-	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
-	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:235)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:171)
-	at org.hibernate.internal.SessionImpl.connection(SessionImpl.java:446)
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:431)
-	... 37 more
-Caused by: org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
-	at org.h2.message.DbException.get(DbException.java:178)
-	at org.h2.message.DbException.get(DbException.java:154)
-	at org.h2.store.FileLock.getExceptionAlreadyInUse(FileLock.java:462)
-	at org.h2.store.FileLock.lockFile(FileLock.java:356)
-	at org.h2.store.FileLock.lock(FileLock.java:136)
-	at org.h2.engine.Database.open(Database.java:622)
-	at org.h2.engine.Database.openDatabase(Database.java:260)
-	at org.h2.engine.Database.<init>(Database.java:254)
-	at org.h2.engine.Engine.openSession(Engine.java:57)
-	at org.h2.engine.Engine.openSession(Engine.java:164)
-	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:142)
-	at org.h2.engine.Engine.createSession(Engine.java:125)
-	at org.h2.engine.Engine.createSession(Engine.java:27)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:331)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:74)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:208)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
-	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:380)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:228)
-	... 40 more
-2017-04-17 14:27:42,030 [Thread-3] WARN (SqlExceptionHelper.java:144) ­ SQL Error: 90020, SQLState: 90020
-2017-04-17 14:27:42,031 [Thread-3] ERROR (SqlExceptionHelper.java:146) ­ Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-2017-04-17 14:27:42,032 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.ConstantService.penggunaOffline
-org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:517)
-	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:420)
-	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:257)
-	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy24.penggunaOffline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
-	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
-	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
-	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy29.penggunaOffline(Unknown Source)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
-	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
-	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
-	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
-	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
-	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
-	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
-	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
-	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
-	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: org.hibernate.exception.GenericJDBCException: Could not open connection
-	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
-	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:235)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:171)
-	at org.hibernate.internal.SessionImpl.connection(SessionImpl.java:446)
-	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:431)
-	... 37 more
-Caused by: org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
-	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
-	at org.h2.message.DbException.get(DbException.java:178)
-	at org.h2.message.DbException.get(DbException.java:154)
-	at org.h2.store.FileLock.getExceptionAlreadyInUse(FileLock.java:462)
-	at org.h2.store.FileLock.lockFile(FileLock.java:356)
-	at org.h2.store.FileLock.lock(FileLock.java:136)
-	at org.h2.engine.Database.open(Database.java:622)
-	at org.h2.engine.Database.openDatabase(Database.java:260)
-	at org.h2.engine.Database.<init>(Database.java:254)
-	at org.h2.engine.Engine.openSession(Engine.java:57)
-	at org.h2.engine.Engine.openSession(Engine.java:164)
-	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:142)
-	at org.h2.engine.Engine.createSession(Engine.java:125)
-	at org.h2.engine.Engine.createSession(Engine.java:27)
-	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:331)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
-	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
-	at org.h2.Driver.connect(Driver.java:74)
-	at java.sql.DriverManager.getConnection(DriverManager.java:664)
-	at java.sql.DriverManager.getConnection(DriverManager.java:208)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153)
-	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155)
-	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120)
-	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
-	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:380)
-	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:228)
-	... 40 more
-2017-04-17 14:28:22,297 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:28:34,214 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:28:34 ICT 2017]; root of context hierarchy
-2017-04-17 14:28:34,313 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:28:34,896 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:28:35,233 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:28:35,420 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:28:35,708 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:28:35,722 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:28:35,726 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:28:35,730 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:28:35,774 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:28:35,824 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:28:35,886 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:28:36,672 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:28:37,163 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:28:37,177 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:28:38,268 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:28:38,404 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:28:38,413 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:28:50,701 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:28:52,876 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:31:08,585 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:33:24,178 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:33:26,008 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:33:48,547 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:36:04,793 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1282abb: startup date [Mon Apr 17 14:36:04 ICT 2017]; root of context hierarchy
-2017-04-17 14:36:04,931 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:36:06,331 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:36:06,602 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:36:07,091 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:36:07,114 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:36:07,121 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:36:07,127 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:36:07,188 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:36:07,279 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:36:07,379 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:36:08,628 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:09,425 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:36:09,440 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:36:11,127 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@141ba0f] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:36:11,149 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:36:11,150 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:36:11,154 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:36:11,165 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:36:11,287 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:11,370 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:36:11,619 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:36:11,620 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:11,627 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:11,633 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:36:11,873 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:36:11,978 [Thread-3] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@1282abb: startup date [Mon Apr 17 14:36:04 ICT 2017]; root of context hierarchy
-2017-04-17 14:36:20,272 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:36:20 ICT 2017]; root of context hierarchy
-2017-04-17 14:36:20,389 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:36:21,437 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:36:21,666 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:36:22,012 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:36:22,026 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:36:22,032 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:36:22,037 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:36:22,080 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:36:22,138 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:36:22,200 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:36:23,147 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:23,734 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:36:23,745 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:36:25,055 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@22a348] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:36:25,069 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
-2017-04-17 14:36:25,070 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
-2017-04-17 14:36:25,074 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:36:25,085 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:36:25,184 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:25,258 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:36:25,507 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:36:25,508 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:25,512 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:36:25,517 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
-2017-04-17 14:36:25,701 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
-2017-04-17 14:36:25,758 [Thread-3] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Mon Apr 17 14:36:20 ICT 2017]; root of context hierarchy
-2017-04-17 14:37:52,489 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:37:52 ICT 2017]; root of context hierarchy
-2017-04-17 14:37:52,623 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:37:53,352 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:37:53,779 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:37:54,013 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:37:54,381 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:37:54,401 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:37:54,408 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:37:54,414 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:37:54,466 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:37:54,527 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:37:54,608 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:37:55,531 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:37:56,036 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:37:56,046 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:37:57,155 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@23a01d] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:37:57,290 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:37:57,298 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:38:13,345 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:38:44,407 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:41:10,708 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:42:26,075 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:42:28,452 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:43:56,315 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:44:28,953 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:44:30,860 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:45:59,373 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:48:11,302 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:48:13,281 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:48:29,948 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:50:26,873 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:50:28,755 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:50:42,729 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:52:22,980 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 14:52:22 ICT 2017]; root of context hierarchy
-2017-04-17 14:52:23,116 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 14:52:23,851 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 14:52:24,298 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 14:52:24,576 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 14:52:24,977 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 14:52:24,996 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 14:52:25,001 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 14:52:25,006 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 14:52:25,063 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 14:52:25,119 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 14:52:25,195 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 14:52:26,196 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 14:52:26,809 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 14:52:26,827 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 14:52:28,656 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 14:52:28,848 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 14:52:28,858 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 14:52:43,096 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:52:45,435 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:53:28,803 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 14:55:28,551 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 14:55:30,148 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 14:56:20,424 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:24:17,902 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:24:20,366 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:24:56,693 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:25:06,651 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:25:08,615 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:25:45,410 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:26:03,976 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:26:06,139 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:27:07,859 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:27:12,390 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:27:14,260 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:28:04,627 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:28:17,611 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:28:19,571 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:28:53,003 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:29:02,941 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:29:05,127 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:29:37,006 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:29:45,496 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:29:47,548 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:30:08,339 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:30:43,520 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:30:45,152 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:30:54,964 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.TransaksiService.cariPembelian
-java.lang.IllegalArgumentException: id to load is required for loading
-	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:87)
-	at org.hibernate.event.spi.LoadEvent.<init>(LoadEvent.java:59)
-	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2537)
-	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:951)
-	at com.aan.girsang.server.dao.transaksi.PembelianDao.cariId(PembelianDao.java:27)
-	at com.aan.girsang.server.service.impl.TransaksiServiceImpl.cariPembelian(TransaksiServiceImpl.java:121)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:196)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl.prepareQueryStatement(StatementPreparerImpl.java:160)
+	at org.hibernate.loader.Loader.prepareQueryStatement(Loader.java:1884)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1861)
+	at org.hibernate.loader.Loader.executeQueryStatement(Loader.java:1838)
+	at org.hibernate.loader.Loader.doQuery(Loader.java:909)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:354)
+	at org.hibernate.loader.Loader.doQueryAndInitializeNonLazyCollections(Loader.java:324)
+	at org.hibernate.loader.Loader.loadEntity(Loader.java:2146)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:78)
+	at org.hibernate.loader.entity.AbstractEntityLoader.load(AbstractEntityLoader.java:68)
+	at org.hibernate.persister.entity.AbstractEntityPersister.load(AbstractEntityPersister.java:4120)
+	at org.hibernate.event.internal.DefaultLoadEventListener.loadFromDatasource(DefaultLoadEventListener.java:502)
+	at org.hibernate.event.internal.DefaultLoadEventListener.doLoad(DefaultLoadEventListener.java:467)
+	at org.hibernate.event.internal.DefaultLoadEventListener.load(DefaultLoadEventListener.java:212)
+	at org.hibernate.event.internal.DefaultLoadEventListener.proxyOrLoad(DefaultLoadEventListener.java:274)
+	at org.hibernate.event.internal.DefaultLoadEventListener.onLoad(DefaultLoadEventListener.java:150)
+	at org.hibernate.internal.SessionImpl.fireLoad(SessionImpl.java:1066)
+	at org.hibernate.internal.SessionImpl.access$2000(SessionImpl.java:176)
+	at org.hibernate.internal.SessionImpl$IdentifierLoadAccessImpl.load(SessionImpl.java:2540)
+	at org.hibernate.internal.SessionImpl.get(SessionImpl.java:956)
+	at org.hibernate.event.internal.DefaultMergeEventListener.entityIsDetached(DefaultMergeEventListener.java:271)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:151)
+	at org.hibernate.event.internal.DefaultMergeEventListener.onMerge(DefaultMergeEventListener.java:76)
+	at org.hibernate.internal.SessionImpl.fireMerge(SessionImpl.java:872)
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:854)
+	at org.hibernate.internal.SessionImpl.merge(SessionImpl.java:859)
+	at com.aan.girsang.server.dao.BaseDaoHibernate.merge(BaseDaoHibernate.java:35)
+	at com.aan.girsang.server.service.impl.TransaksiServiceImpl.simpan(TransaksiServiceImpl.java:184)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -636,7 +255,7 @@ java.lang.IllegalArgumentException: id to load is required for loading
 	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy28.cariPembelian(Unknown Source)
+	at com.sun.proxy.$Proxy28.simpan(Unknown Source)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -647,7 +266,7 @@ java.lang.IllegalArgumentException: id to load is required for loading
 	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
 	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
 	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
-	at com.sun.proxy.$Proxy33.cariPembelian(Unknown Source)
+	at com.sun.proxy.$Proxy33.simpan(Unknown Source)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -667,85 +286,377 @@ java.lang.IllegalArgumentException: id to load is required for loading
 	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
 	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
 	at java.lang.Thread.run(Thread.java:745)
-2017-04-17 15:31:20,441 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:31:25,607 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:31:26,999 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:32:27,295 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:32:40,584 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:32:42,449 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:32:55,058 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:33:53,136 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:33:54,908 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:35:07,174 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:37:16,083 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:37:18,430 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:37:23,993 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:39:08,539 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:39:10,453 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:39:52,603 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:42:08,977 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Mon Apr 17 15:42:08 ICT 2017]; root of context hierarchy
-2017-04-17 15:42:09,095 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
-2017-04-17 15:42:09,849 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
-2017-04-17 15:42:10,357 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
-2017-04-17 15:42:10,663 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
-2017-04-17 15:42:11,103 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
-2017-04-17 15:42:11,118 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
-2017-04-17 15:42:11,122 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
-2017-04-17 15:42:11,127 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
-2017-04-17 15:42:11,175 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
-2017-04-17 15:42:11,232 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
-2017-04-17 15:42:11,299 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
-2017-04-17 15:42:12,374 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2017-04-17 15:42:13,039 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
-2017-04-17 15:42:13,056 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
-2017-04-17 15:42:14,401 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
-2017-04-17 15:42:14,581 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
-2017-04-17 15:42:14,591 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
-2017-04-17 15:42:21,406 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:42:23,750 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:43:46,862 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:43:59,614 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:44:01,670 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:44:50,255 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:45:03,639 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:45:05,446 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:46:08,661 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:46:17,100 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:46:18,885 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:47:37,591 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:47:41,944 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:47:45,159 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:52:06,396 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:53:56,451 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:53:59,178 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:54:18,983 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:54:54,376 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:54:56,129 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:56:05,799 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:56:14,544 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:56:16,316 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:57:36,183 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 15:57:49,725 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 15:57:51,604 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 15:58:40,120 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:01:11,320 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:01:12,896 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:03:07,122 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:03:15,595 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:03:19,303 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:04:24,187 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:04:56,887 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:04:58,683 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:06:15,061 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:07:21,965 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:07:26,525 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:07:52,141 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:08:19,153 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:08:21,016 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:08:56,439 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:12:23,135 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:12:25,164 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:13:24,654 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
-2017-04-17 16:13:32,808 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
-2017-04-17 16:13:34,791 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
-2017-04-17 16:14:20,777 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+Caused by: org.h2.jdbc.JdbcSQLException: Column "RETURPEMBE1_.KUANTITAS_PEMBELIAN" not found; SQL statement:
+select returpembe0_.NO_REF as NO_REF1_9_1_, returpembe0_.PEMBELIAN as PEMBELIA4_9_1_, returpembe0_.PEMBUAT as PEMBUAT5_9_1_, returpembe0_.SUPPLIER as SUPPLIER6_9_1_, returpembe0_.TANGGAL as TANGGAL2_9_1_, returpembe0_.TOTALRETUR as TOTALRET3_9_1_, returpembe1_.RETURPEMBELIAN as RETURPEM8_9_3_, returpembe1_.ID as ID1_3_3_, returpembe1_.ID as ID1_3_0_, returpembe1_.BARANG as BARANG7_3_0_, returpembe1_.HARGA_BELI as HARGA_BE2_3_0_, returpembe1_.ISI_RETURPEMBELIAN as ISI_RETU3_3_0_, returpembe1_.KUANTITAS_PEMBELIAN as KUANTITA4_3_0_, returpembe1_.RETURPEMBELIAN as RETURPEM8_3_0_, returpembe1_.SATUAN_RETURPEMBELIAN as SATUAN_R5_3_0_, returpembe1_.SUB_TOTAL as SUB_TOTA6_3_0_ from RETURPEMBELIAN returpembe0_ left outer join DETAILRETURPEMBELIAN returpembe1_ on returpembe0_.NO_REF=returpembe1_.RETURPEMBELIAN where returpembe0_.NO_REF=? [42122-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:148)
+	at org.h2.expression.Alias.optimize(Alias.java:52)
+	at org.h2.command.dml.Select.prepare(Select.java:831)
+	at org.h2.command.Parser.prepareCommand(Parser.java:248)
+	at org.h2.engine.Session.prepareLocal(Session.java:442)
+	at org.h2.engine.Session.prepareCommand(Session.java:384)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:73)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:276)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$5.doPrepare(StatementPreparerImpl.java:162)
+	at org.hibernate.engine.jdbc.internal.StatementPreparerImpl$StatementPreparationTemplate.prepareStatement(StatementPreparerImpl.java:186)
+	... 71 more
+2017-04-19 11:30:22,823 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:30:52,705 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:31:04,288 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:32:51,992 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:33:00,124 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:33:02,283 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:34:35,402 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:35:11,130 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:35:13,628 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:35:46,378 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:38:49,450 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:39:07,352 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:39:28,048 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:39:56,285 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:39:58,239 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:41:16,896 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:49:58,554 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 11:49:58 ICT 2017]; root of context hierarchy
+2017-04-19 11:49:58,668 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 11:49:59,238 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 11:49:59,564 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 11:49:59,749 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 11:50:00,028 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 11:50:00,041 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 11:50:00,045 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 11:50:00,050 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 11:50:00,093 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 11:50:00,141 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 11:50:00,202 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 11:50:00,988 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 11:50:01,477 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 11:50:01,491 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 11:50:02,562 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 11:50:02,699 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-19 11:50:02,708 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-19 11:50:08,335 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:50:10,437 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:50:22,838 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.TransaksiService.cariDetailBeli
+java.lang.ClassCastException: org.hibernate.internal.QueryImpl cannot be cast to com.aan.girsang.api.model.transaksi.PembelianDetail
+	at com.aan.girsang.server.dao.transaksi.PembelianDao.cariIDDetail(PembelianDao.java:54)
+	at com.aan.girsang.server.service.impl.TransaksiServiceImpl.cariDetailBeli(TransaksiServiceImpl.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy28.cariDetailBeli(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy33.cariDetailBeli(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
+	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
+	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
+	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
+	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
+	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
+	at java.lang.Thread.run(Thread.java:745)
+2017-04-19 11:52:12,924 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:52:16,686 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 11:52:16 ICT 2017]; root of context hierarchy
+2017-04-19 11:52:16,788 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 11:52:17,380 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 11:52:17,721 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 11:52:17,906 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 11:52:18,185 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 11:52:18,198 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 11:52:18,202 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 11:52:18,207 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 11:52:18,249 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 11:52:18,307 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 11:52:18,381 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 11:52:19,157 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 11:52:19,637 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 11:52:19,651 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 11:52:20,755 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 11:52:31,781 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 11:52:31 ICT 2017]; root of context hierarchy
+2017-04-19 11:52:31,879 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 11:52:32,450 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 11:52:32,783 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 11:52:32,965 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 11:52:33,253 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 11:52:33,266 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 11:52:33,271 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 11:52:33,275 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 11:52:33,318 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 11:52:33,367 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 11:52:33,426 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 11:52:34,200 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 11:52:34,679 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 11:52:34,693 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 11:52:35,762 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 11:52:45,292 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:52:49,277 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:52:57,916 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.TransaksiService.cariDetailBeli
+java.lang.ClassCastException: org.hibernate.internal.QueryImpl cannot be cast to com.aan.girsang.api.model.transaksi.PembelianDetail
+	at com.aan.girsang.server.dao.transaksi.PembelianDao.cariIDDetail(PembelianDao.java:54)
+	at com.aan.girsang.server.service.impl.TransaksiServiceImpl.cariDetailBeli(TransaksiServiceImpl.java:156)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:98)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:262)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy28.cariDetailBeli(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy33.cariDetailBeli(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
+	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
+	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
+	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
+	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
+	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
+	at java.lang.Thread.run(Thread.java:745)
+2017-04-19 11:54:16,983 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 11:54:16 ICT 2017]; root of context hierarchy
+2017-04-19 11:54:17,120 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 11:54:17,934 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 11:54:18,375 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 11:54:18,621 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 11:54:18,977 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 11:54:18,989 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 11:54:18,993 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 11:54:18,998 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 11:54:19,041 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 11:54:19,090 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 11:54:19,149 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 11:54:20,068 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 11:54:20,626 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 11:54:20,640 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 11:54:21,746 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 11:54:21,908 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-19 11:54:21,918 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-19 11:54:27,821 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:54:29,881 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:55:01,848 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:55:18,488 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:55:20,247 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:55:58,989 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 11:56:08,122 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 11:56:09,859 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 11:57:04,103 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:01:32,313 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:02:03,407 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:02:35,785 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:07:13,874 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:07:15,685 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:07:42,625 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:14:45,241 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:14:47,146 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:15:11,590 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:17:23,143 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:17:24,890 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:17:42,223 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:25:02,634 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:25:10,157 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:25:23,470 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:26:09,086 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:26:10,860 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:26:27,942 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:27:49,562 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:27:51,181 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:28:10,988 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:28:45,090 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:28:46,791 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:29:00,759 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:29:27,373 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:29:57,395 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:30:09,148 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:30:47,889 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:30:49,532 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:31:14,941 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:31:41,894 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:31:43,625 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:33:09,056 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:33:10,956 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:33:28,798 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:33:57,102 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:33:59,419 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:34:17,863 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:41:37,028 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:41:46,009 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:42:04,972 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 12:48:14,656 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 12:48:16,556 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 12:48:35,980 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 14:56:58,946 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 14:57:00,936 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 14:57:19,487 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 14:58:46,082 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 14:58:48,000 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 14:59:02,081 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:00:15,617 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:00:17,461 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:01:17,373 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:01:26,584 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:01:28,525 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:01:43,682 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:02:22,369 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:02:24,400 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:02:37,815 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:04:11,824 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:04:13,670 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:04:27,064 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:05:06,125 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:05:08,463 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:05:21,735 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:05:43,661 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:05:45,705 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:05:59,088 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:06:33,283 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:06:34,991 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:06:55,280 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:08:12,052 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:08:13,774 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:08:34,253 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:09:51,029 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:09:53,036 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:10:14,746 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:12:10,445 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:12:12,597 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:12:26,533 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:12:48,934 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:12:51,264 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:14:03,941 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:14:14,626 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:14:16,575 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:14:32,771 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:15:04,635 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:15:30,901 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:15:36,722 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:16:03,045 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:16:23,438 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:16:25,355 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:17:22,553 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:18:08,547 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:18:10,547 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:18:38,641 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:19:14,541 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:19:16,214 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:19:53,185 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:21:26,073 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:21:27,789 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:22:05,687 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:22:50,304 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:23:11,133 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:23:13,085 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:24:34,967 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:26:07,018 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1637f22: startup date [Wed Apr 19 15:26:07 ICT 2017]; root of context hierarchy
+2017-04-19 15:26:07,203 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-19 15:26:07,923 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-19 15:26:08,365 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-19 15:26:08,603 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-19 15:26:08,937 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-19 15:26:08,955 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-19 15:26:08,962 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-19 15:26:08,968 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-19 15:26:09,013 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-19 15:26:09,074 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-19 15:26:09,139 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-19 15:26:09,976 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-19 15:26:10,455 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-19 15:26:10,469 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-19 15:26:11,537 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@161db12] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-19 15:26:11,674 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-19 15:26:11,683 [main] INFO (ServerLauncher.java:27) ­ SERVER ONLINE
+2017-04-19 15:26:21,386 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:26:23,887 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:27:07,545 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:28:33,246 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:28:34,938 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:28:55,594 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:31:20,493 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:31:55,556 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:31:57,653 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:46:30,974 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:48:59,809 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:49:58,533 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:50:00,244 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:50:41,648 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:51:14,020 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:51:16,238 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:51:49,934 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:53:29,312 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:53:31,065 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:54:04,061 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:54:27,155 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:54:29,317 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:55:33,302 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 15:56:40,327 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 15:56:42,142 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 15:59:53,658 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 16:03:49,776 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 16:03:51,394 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 16:05:20,702 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 16:05:30,223 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 16:05:32,405 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 16:06:29,656 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 16:08:57,443 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 16:09:11,741 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 16:09:52,649 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 16:18:28,322 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 16:18:29,976 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 16:19:22,650 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-19 16:19:36,153 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ CLIENT ONLINE
+2017-04-19 16:19:38,001 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-19 16:20:23,091 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT

@@ -29,6 +29,7 @@ public interface TransaksiService {
     public List<Pembelian> cariSupplierPembelian (Supplier s);
     public List<PembelianDetail> cariPembelianDetail(Pembelian p);
     public List<PembelianDetail> cariBarang(Barang barang);
+    public PembelianDetail cariDetailBeli(String id);
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="ReturPembelian">
     public void simpan(ReturPembelian returPembelian);

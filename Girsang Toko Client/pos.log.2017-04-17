@@ -1,0 +1,196 @@
+2017-04-17 12:26:37,214 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 12:26:37 ICT 2017]; root of context hierarchy
+2017-04-17 12:26:37,315 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 12:26:37,858 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 12:27:42,774 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 12:26:37 ICT 2017]; root of context hierarchy
+2017-04-17 12:34:11,075 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 12:34:11 ICT 2017]; root of context hierarchy
+2017-04-17 12:34:11,172 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 12:34:11,742 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 12:34:48,238 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 12:34:11 ICT 2017]; root of context hierarchy
+2017-04-17 14:16:38,979 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:16:38 ICT 2017]; root of context hierarchy
+2017-04-17 14:16:39,082 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:16:39,716 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:16:42,213 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:16:38 ICT 2017]; root of context hierarchy
+2017-04-17 14:18:11,668 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:18:11 ICT 2017]; root of context hierarchy
+2017-04-17 14:18:11,768 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:18:12,306 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:18:18,445 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:18:11 ICT 2017]; root of context hierarchy
+2017-04-17 14:20:33,857 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:20:33 ICT 2017]; root of context hierarchy
+2017-04-17 14:20:33,955 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:20:34,491 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:21:01,860 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:20:33 ICT 2017]; root of context hierarchy
+2017-04-17 14:21:12,422 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:21:12 ICT 2017]; root of context hierarchy
+2017-04-17 14:21:12,536 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:21:13,143 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:21:49,038 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:21:12 ICT 2017]; root of context hierarchy
+2017-04-17 14:23:10,678 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:23:10 ICT 2017]; root of context hierarchy
+2017-04-17 14:23:10,799 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:23:11,402 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:23:35,503 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:23:10 ICT 2017]; root of context hierarchy
+2017-04-17 14:24:02,290 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:24:02 ICT 2017]; root of context hierarchy
+2017-04-17 14:24:02,387 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:24:02,927 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:25:19,288 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:24:02 ICT 2017]; root of context hierarchy
+2017-04-17 14:27:13,560 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:27:13 ICT 2017]; root of context hierarchy
+2017-04-17 14:27:13,658 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:27:14,200 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:28:22,325 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:27:13 ICT 2017]; root of context hierarchy
+2017-04-17 14:28:49,788 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:28:49 ICT 2017]; root of context hierarchy
+2017-04-17 14:28:49,888 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:28:50,426 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:31:08,694 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:28:49 ICT 2017]; root of context hierarchy
+2017-04-17 14:33:23,191 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:33:23 ICT 2017]; root of context hierarchy
+2017-04-17 14:33:23,329 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:33:24,047 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:33:48,580 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:33:23 ICT 2017]; root of context hierarchy
+2017-04-17 14:38:12,429 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:38:12 ICT 2017]; root of context hierarchy
+2017-04-17 14:38:12,527 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:38:13,072 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:38:23,982 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:38:12 ICT 2017]; root of context hierarchy
+2017-04-17 14:38:43,538 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:38:43 ICT 2017]; root of context hierarchy
+2017-04-17 14:38:43,650 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:38:44,292 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:39:55,150 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:38:43 ICT 2017]; root of context hierarchy
+2017-04-17 14:41:09,839 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:41:09 ICT 2017]; root of context hierarchy
+2017-04-17 14:41:09,956 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:41:10,582 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:41:19,721 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:41:09 ICT 2017]; root of context hierarchy
+2017-04-17 14:42:25,307 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:42:25 ICT 2017]; root of context hierarchy
+2017-04-17 14:42:25,406 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:42:25,955 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:43:56,426 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:42:25 ICT 2017]; root of context hierarchy
+2017-04-17 14:44:28,082 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:44:28 ICT 2017]; root of context hierarchy
+2017-04-17 14:44:28,202 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:44:28,850 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:45:59,469 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@2f32ff: startup date [Mon Apr 17 14:44:28 ICT 2017]; root of context hierarchy
+2017-04-17 14:48:10,427 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:48:10 ICT 2017]; root of context hierarchy
+2017-04-17 14:48:10,551 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:48:11,195 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:48:29,981 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:48:10 ICT 2017]; root of context hierarchy
+2017-04-17 14:50:26,115 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:50:26 ICT 2017]; root of context hierarchy
+2017-04-17 14:50:26,217 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:50:26,769 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:50:42,761 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:50:26 ICT 2017]; root of context hierarchy
+2017-04-17 14:52:42,025 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:52:42 ICT 2017]; root of context hierarchy
+2017-04-17 14:52:42,150 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:52:42,794 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:53:28,836 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:52:42 ICT 2017]; root of context hierarchy
+2017-04-17 14:55:27,810 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:55:27 ICT 2017]; root of context hierarchy
+2017-04-17 14:55:27,923 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 14:55:28,444 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 14:56:20,457 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 14:55:27 ICT 2017]; root of context hierarchy
+2017-04-17 15:24:17,028 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:24:17 ICT 2017]; root of context hierarchy
+2017-04-17 15:24:17,151 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:24:17,791 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:24:56,723 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:24:17 ICT 2017]; root of context hierarchy
+2017-04-17 15:25:05,708 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:25:05 ICT 2017]; root of context hierarchy
+2017-04-17 15:25:05,842 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:25:06,536 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:25:45,480 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:25:05 ICT 2017]; root of context hierarchy
+2017-04-17 15:26:02,811 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:26:02 ICT 2017]; root of context hierarchy
+2017-04-17 15:26:03,017 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:26:03,839 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:27:07,897 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:26:02 ICT 2017]; root of context hierarchy
+2017-04-17 15:27:11,668 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:27:11 ICT 2017]; root of context hierarchy
+2017-04-17 15:27:11,760 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:27:12,276 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:28:04,662 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:27:11 ICT 2017]; root of context hierarchy
+2017-04-17 15:28:16,632 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:28:16 ICT 2017]; root of context hierarchy
+2017-04-17 15:28:16,782 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:28:17,500 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:28:53,036 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:28:16 ICT 2017]; root of context hierarchy
+2017-04-17 15:29:01,941 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:29:01 ICT 2017]; root of context hierarchy
+2017-04-17 15:29:02,096 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:29:02,828 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:29:37,101 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:29:01 ICT 2017]; root of context hierarchy
+2017-04-17 15:29:44,500 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:29:44 ICT 2017]; root of context hierarchy
+2017-04-17 15:29:44,654 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:29:45,375 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:30:08,372 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:29:44 ICT 2017]; root of context hierarchy
+2017-04-17 15:30:42,571 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:30:42 ICT 2017]; root of context hierarchy
+2017-04-17 15:30:42,723 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:30:43,409 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:31:20,475 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:30:42 ICT 2017]; root of context hierarchy
+2017-04-17 15:31:24,901 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:31:24 ICT 2017]; root of context hierarchy
+2017-04-17 15:31:25,009 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:31:25,518 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:32:27,327 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:31:24 ICT 2017]; root of context hierarchy
+2017-04-17 15:32:39,718 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:32:39 ICT 2017]; root of context hierarchy
+2017-04-17 15:32:39,844 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:32:40,484 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:32:55,092 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:32:39 ICT 2017]; root of context hierarchy
+2017-04-17 15:33:52,368 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:33:52 ICT 2017]; root of context hierarchy
+2017-04-17 15:33:52,468 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:33:53,028 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:35:07,210 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:33:52 ICT 2017]; root of context hierarchy
+2017-04-17 15:37:15,326 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:37:15 ICT 2017]; root of context hierarchy
+2017-04-17 15:37:15,423 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:37:15,978 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:37:24,021 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:37:15 ICT 2017]; root of context hierarchy
+2017-04-17 15:39:07,762 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:39:07 ICT 2017]; root of context hierarchy
+2017-04-17 15:39:07,875 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:39:08,428 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:39:52,632 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:39:07 ICT 2017]; root of context hierarchy
+2017-04-17 15:42:20,511 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:42:20 ICT 2017]; root of context hierarchy
+2017-04-17 15:42:20,614 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:42:21,137 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:43:46,905 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:42:20 ICT 2017]; root of context hierarchy
+2017-04-17 15:43:58,866 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:43:58 ICT 2017]; root of context hierarchy
+2017-04-17 15:43:58,962 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:43:59,504 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:44:50,287 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:43:58 ICT 2017]; root of context hierarchy
+2017-04-17 15:45:02,766 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:45:02 ICT 2017]; root of context hierarchy
+2017-04-17 15:45:02,884 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:45:03,525 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:46:08,692 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:45:02 ICT 2017]; root of context hierarchy
+2017-04-17 15:46:16,201 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:46:16 ICT 2017]; root of context hierarchy
+2017-04-17 15:46:16,319 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:46:16,987 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:47:37,885 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:46:16 ICT 2017]; root of context hierarchy
+2017-04-17 15:47:41,105 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:47:41 ICT 2017]; root of context hierarchy
+2017-04-17 15:47:41,208 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:47:41,806 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:52:06,429 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:47:41 ICT 2017]; root of context hierarchy
+2017-04-17 15:53:55,617 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:53:55 ICT 2017]; root of context hierarchy
+2017-04-17 15:53:55,721 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:53:56,292 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:54:19,018 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:53:55 ICT 2017]; root of context hierarchy
+2017-04-17 15:54:53,431 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:54:53 ICT 2017]; root of context hierarchy
+2017-04-17 15:54:53,559 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:54:54,252 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:56:05,829 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:54:53 ICT 2017]; root of context hierarchy
+2017-04-17 15:56:13,655 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:56:13 ICT 2017]; root of context hierarchy
+2017-04-17 15:56:13,776 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:56:14,431 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:57:36,213 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:56:13 ICT 2017]; root of context hierarchy
+2017-04-17 15:57:48,833 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:57:48 ICT 2017]; root of context hierarchy
+2017-04-17 15:57:48,969 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 15:57:49,620 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 15:58:40,153 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 15:57:48 ICT 2017]; root of context hierarchy
+2017-04-17 16:01:10,423 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:01:10 ICT 2017]; root of context hierarchy
+2017-04-17 16:01:10,543 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:01:11,209 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:03:07,156 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:01:10 ICT 2017]; root of context hierarchy
+2017-04-17 16:03:14,723 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:03:14 ICT 2017]; root of context hierarchy
+2017-04-17 16:03:14,840 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:03:15,479 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:04:24,217 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:03:14 ICT 2017]; root of context hierarchy
+2017-04-17 16:04:56,146 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:04:56 ICT 2017]; root of context hierarchy
+2017-04-17 16:04:56,244 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:04:56,779 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:06:15,095 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:04:56 ICT 2017]; root of context hierarchy
+2017-04-17 16:07:21,116 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:07:21 ICT 2017]; root of context hierarchy
+2017-04-17 16:07:21,231 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:07:21,852 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:07:52,169 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:07:21 ICT 2017]; root of context hierarchy
+2017-04-17 16:08:18,272 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:08:18 ICT 2017]; root of context hierarchy
+2017-04-17 16:08:18,398 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:08:19,047 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:08:56,470 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:08:18 ICT 2017]; root of context hierarchy
+2017-04-17 16:12:22,277 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:12:22 ICT 2017]; root of context hierarchy
+2017-04-17 16:12:22,401 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:12:23,026 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:13:24,682 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:12:22 ICT 2017]; root of context hierarchy
+2017-04-17 16:13:31,933 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:13:31 ICT 2017]; root of context hierarchy
+2017-04-17 16:13:32,049 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [clientContext.xml]
+2017-04-17 16:13:32,700 [main] INFO (ClientLauncher.java:79) ­ Client Online
+2017-04-17 16:14:20,807 [Thread-2] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@e9a829: startup date [Mon Apr 17 16:13:31 ICT 2017]; root of context hierarchy

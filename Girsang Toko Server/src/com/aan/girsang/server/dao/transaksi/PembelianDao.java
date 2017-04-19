@@ -50,8 +50,8 @@ public class PembelianDao extends BaseDaoHibernate<Pembelian>{
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Cari ID Detail">
     public PembelianDetail cariIDDetail(String id) {
-        return (PembelianDetail) sessionFactory.getCurrentSession().createQuery("from PembelianDetail p where p.id=:id order by p.id asc")
-                .setParameter("id", id);
+        return (PembelianDetail) sessionFactory.getCurrentSession()
+                .get(PembelianDetail.class,id);
     }
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Kredit">

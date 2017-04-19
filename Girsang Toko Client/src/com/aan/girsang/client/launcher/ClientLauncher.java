@@ -13,11 +13,13 @@ import com.aan.girsang.api.service.TransaksiService;
 import com.aan.girsang.client.ui.frame.FrameUtama;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import org.apache.log4j.Logger;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.remoting.RemoteConnectFailureException;
 
 /**
  *
@@ -67,6 +69,7 @@ public class ClientLauncher {
             org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
             UIManager.put("RootPane.setupButtonVisible", Boolean.FALSE);
             
+            try{
         AbstractApplicationContext ctx = 
                 new ClassPathXmlApplicationContext("clientContext.xml");
         ctx.registerShutdownHook();
@@ -76,8 +79,16 @@ public class ClientLauncher {
         masterService = (MasterService) ctx.getBean("masterServiceRemote");
         transaksiService = (TransaksiService) ctx.getBean("transaksiServiceRemote");
         
-        log.info("Client Online");
         constantService.clientOnline("CLIENT");
+            }catch(RemoteConnectFailureException ex){
+                String status = "Server Offline";
+                ex.printStackTrace();
+                log.info(ex.getMessage());
+                JOptionPane.showMessageDialog(null, status);
+                System.exit(0);
+            }
+        log.info("Client Online");
+
         java.awt.EventQueue.invokeLater(() -> {
             FrameUtama fu = new FrameUtama();
             fu.setExtendedState(JFrame.MAXIMIZED_BOTH);

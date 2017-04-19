@@ -150,6 +150,11 @@ public class TransaksiServiceImpl implements TransaksiService {
     public List<PembelianDetail> cariBarang(Barang barang) {
         return pembelianDao.cariBarang(barang);
     }
+    
+    @Override
+    public PembelianDetail cariDetailBeli(String id) {
+        return pembelianDao.cariIDDetail(id);
+    }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Retur Pembelian">
             @Override
@@ -341,6 +346,4 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
-
-    
 }
