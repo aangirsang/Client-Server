@@ -38,7 +38,6 @@ import javax.swing.table.AbstractTableModel;
  */
 public class DialogReturPembelian extends javax.swing.JDialog {
     
-    private Supplier supplier;
     private ReturPembelian returPembelian;
     private ReturPembelianDetail detail;
     private List<ReturPembelianDetail> daftarDetail = new ArrayList<>();
@@ -64,6 +63,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
             clear();
         }else{
             loadModelToForm(retur);
+            
         }
         setTitle(title);
 
@@ -90,7 +90,14 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         txtPembelian.setText(retur.getPembelian().getNoRef());
         txtTanggalBeli.setValue(retur.getPembelian().getTanggal());
         txtFaktur.setText(retur.getFaktur());
+        txtAlasan.setText(retur.getAlasan());
         txtUangKembali.setText(TextComponentUtils.formatNumber(retur.getTotalRefund()));
+        daftarDetail = new ArrayList<>();
+        daftarDetail = retur.getReturPembelianDetails();
+        
+        pembelian = new Pembelian();
+        pembelian = retur.getPembelian();
+        tabel.setModel(new TabelModel(daftarDetail));
         kalkulasiTotal();
     }
     private void loadFormToModel(){
@@ -102,6 +109,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         returPembelian.setFaktur(txtFaktur.getText());
         returPembelian.setTotal(TextComponentUtils.parseNumberToBigDecimal(txtTotal.getText()));
         returPembelian.setTotalRefund(TextComponentUtils.parseNumberToBigDecimal(txtUangKembali.getText()));
+        returPembelian.setAlasan(txtAlasan.getText());
         
         txtTanggalBeli.setValue(returPembelian.getPembelian().getTanggal());
         txtKodeSupplier.setText(returPembelian.getPembelian().getSupplier().getKotaSupplier());
@@ -119,8 +127,6 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         daftarDetail = new ArrayList<>();
         if (p != null) {
             returPembelian = new ReturPembelian();
-            supplier = new Supplier();
-            supplier = p.getSupplier();
             loadFormToModel();
             for(PembelianDetail beliDetail : p.getPembelianDetails()){
                 detail = new ReturPembelianDetail();
@@ -158,10 +164,10 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         public String getColumnName(int col) {
             switch (col) {
                 case 0:return "Barang";
-                case 1:return "QTY";
-                case 2:return "Satuan Pembelian";
-                case 3:return "Harga Beli";
-                case 4:return "Jumlah Retur";
+                case 1:return "Satuan Pembelian";
+                case 2:return "Isi";
+                case 3:return "Qty";
+                case 4:return "Harga Beli";
                 case 5:return "Sub Total";
                 default:return "";
             }
@@ -173,10 +179,10 @@ public class DialogReturPembelian extends javax.swing.JDialog {
             ReturPembelianDetail p = daftarDetailRetur.get(rowIndex);
             switch (colIndex) {
                 case 0:return p.getBarang().getNamaBarang();
-                case 1:return p.getKuantitas();
-                case 2:return p.getSatuanPembelian();
-                case 3:return p.getHargaBarang();
-                case 4:return p.getIsiReturPembelian();
+                case 1:return p.getSatuanPembelian();
+                case 2:return p.getIsiReturPembelian();
+                case 3:return p.getKuantitas();
+                case 4:return p.getHargaBarang();
                 case 5:return p.getSubTotal();
                 default:return "";
             }
@@ -185,26 +191,26 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         @Override
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
-                case 1:return Integer.class;
-                case 3:return BigDecimal.class;
-                case 4:return Integer.class;
+                case 2:return Integer.class;
+                case 4:return BigDecimal.class;
+                case 3:return Integer.class;
                 case 5:return BigDecimal.class;
                 default:return String.class;
             }
         }
         @Override
         public boolean isCellEditable(int row, int columnIndex) {
-            if (columnIndex == 4){
-                return true;
-            }else{
-                return false;
+            switch(columnIndex){
+                case 2:return true;
+                case 3:return true;
+                default:return false;
             }
         }
         @Override
         public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
             ReturPembelianDetail p = daftarDetailRetur.get(rowIndex);
             switch (columnIndex) {
-            case 4:
+            case 2:
                 if((Integer) aValue > p.getKuantitas()){
                     JOptionPane.showMessageDialog(null, "Retur Tidak Bisa Melebihi QTY Pembelian");
                     break;
@@ -562,6 +568,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
     }//GEN-LAST:event_btnCariPembelianActionPerformed
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
+        returPembelian = new ReturPembelian();
         loadFormToModel();
         returPembelian.setReturPembelianDetails(daftarDetail);
         dispose();

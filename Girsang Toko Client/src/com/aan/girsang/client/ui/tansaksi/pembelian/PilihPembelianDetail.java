@@ -19,15 +19,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.RowSorter;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
-import javax.swing.table.TableColumnModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -196,7 +192,6 @@ public class PilihPembelianDetail extends javax.swing.JDialog {
         tabel.getSelectionModel().addListSelectionListener((lse) -> {
             if(tabel.getSelectedRow()>=0){
                 idSelect = tabel.getValueAt(tabel.getSelectedRow(), 6).toString();
-                System.out.println(idSelect);
             }
         });
         tabel.addMouseListener(new MouseAdapter() {

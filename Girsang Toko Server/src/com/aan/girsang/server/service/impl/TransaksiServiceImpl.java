@@ -313,14 +313,15 @@ public class TransaksiServiceImpl implements TransaksiService {
             List<PembelianDetail> PD = pembelianDao.cariBarang(detail.getBarang());
             for (PembelianDetail PD1 : PD) {
                 if("Toko".equals(PD1.getPembelian().getLokasi())){
+                    stokToko = 0;
                     stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiPembelian());
                 }else if("Gudang".equals(PD1.getPembelian().getLokasi())){
+                    stokGudang = 0;
                     stokGudang = stokGudang + (PD1.getKuantitas() * PD1.getIsiPembelian());
                 }
             }
             b.setStokPembelianToko(stokToko);
             b.setStokPembelianGudang(stokGudang);
-            
             barangDao.simpan(b);
         }
     }
@@ -335,8 +336,10 @@ public class TransaksiServiceImpl implements TransaksiService {
             for (ReturPembelianDetail PD1 : PD) {
                 System.out.println(PD1.getBarang().getNamaBarang());
                 if("Toko".equals(PD1.getReturPembelian().getPembelian().getLokasi())){
+                    stokToko = 0;
                     stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiReturPembelian());
                 }else if("Gudang".equals(PD1.getReturPembelian().getPembelian().getLokasi())){
+                    stokGudang = 0;
                     stokGudang = stokGudang + (PD1.getKuantitas() * PD1.getIsiReturPembelian());
                 }
             }

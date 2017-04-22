@@ -20,34 +20,38 @@ import javax.persistence.Table;
  * @author ITSUSAHBRO
  */
 @Entity
-@Table(name="DETAILRETURPEMBELIAN")
-public class ReturPembelianDetail implements Serializable{
+@Table(name = "DETAILRETURPEMBELIAN")
+public class ReturPembelianDetail implements Serializable {
+
     @Id
-    @Column(name="ID",length=20)
+    @Column(name = "ID", length = 20)
     private String id;
 
     @ManyToOne
     @JoinColumn(name = "RETURPEMBELIAN", nullable = false)
     private ReturPembelian returPembelian;
-    
+
     @ManyToOne
-    @JoinColumn(name = "DETAILEMBELIAN", nullable = false)
+    @JoinColumn(name = "BARANG", nullable = false)
     private Barang barang;
-    
+
     @Column(name = "KUANTITAS_PEMBELIAN", nullable = false)
-    private Integer kuantitas = 0;
-    
-    @Column(name="SATUAN_RETURPEMBELIAN",length=20)
+    private Integer totalBeli = 0;
+
+    @Column(name = "SATUAN_PEMBELIAN", length = 20)
     private String satuanPembelian;
 
     @Column(name = "HARGA_BELI", nullable = false)
     private BigDecimal hargaBarang = BigDecimal.ZERO;
-    
+
+    @Column(name = "KUANTITAS_RETURPEMBELIAN", nullable = false)
+    private Integer kuantitas = 0;
+
     @Column(name = "SUB_TOTAL", nullable = false)
     private BigDecimal subTotal = BigDecimal.ZERO;
-    
-    @Column(name="ISI_RETURPEMBELIAN",nullable=false)
-    private Integer isiReturPembelian=0;
+
+    @Column(name = "ISI_RETURPEMBELIAN", nullable = false)
+    private Integer isiReturPembelian = 0;
 
     public Integer getIsiReturPembelian() {
         return isiReturPembelian;
@@ -112,7 +116,14 @@ public class ReturPembelianDetail implements Serializable{
     public void setSubTotal(BigDecimal subTotal) {
         this.subTotal = subTotal;
     }
-    
+
+    public Integer getTotalBeli() {
+        return totalBeli;
+    }
+
+    public void setTotalBeli(Integer kuantitasBeli) {
+        this.totalBeli = kuantitasBeli;
+    }
 
     @Override
     public boolean equals(Object obj) {
@@ -132,5 +143,5 @@ public class ReturPembelianDetail implements Serializable{
         hash = 31 * hash + (this.id != null ? this.id.hashCode() : 0);
         return hash;
     }
-    
+
 }

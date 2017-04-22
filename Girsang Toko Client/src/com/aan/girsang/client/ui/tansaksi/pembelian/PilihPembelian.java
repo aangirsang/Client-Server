@@ -160,10 +160,10 @@ public class PilihPembelian extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        toolbar = new com.aangirsang.girsang.toko.toolbar.ToolBarSelect();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabel = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
+        toolbar = new com.aangirsang.girsang.toko.toolbar.ToolBarSelectTanpaInput();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -184,7 +184,6 @@ public class PilihPembelian extends javax.swing.JDialog {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -193,6 +192,7 @@ public class PilihPembelian extends javax.swing.JDialog {
                         .addGap(421, 421, 421))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
+            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -271,41 +271,6 @@ public class PilihPembelian extends javax.swing.JDialog {
             isiTabel();
         });
 
-        toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
-            isiTabel();
-            pembelian = null;
-            supplier = null;
-            title = "Tambah Data Barang";
-            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title);
-            pembelian = new Pembelian();
-            if (p != null) {
-                loadFormToModel(p);
-                pembelian.setNoRef("");
-                ClientLauncher.getTransaksiService().simpan(pembelian);
-                isiTabel();
-                JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                title = null;
-            }
-            pembelian = null;
-        });
-
-        toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
-            title = "Edit Data Barang";
-            if ("".equals(idSelect)) {
-                        JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
-                    } else {
-                        cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title);
-                        pembelian = new Pembelian();
-                        if (p != null) {
-                            loadFormToModel(p);
-                            ClientLauncher.getTransaksiService().simpan(pembelian);
-                            isiTabel();
-                            JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                            title = null;
-                        }
-                    }
-        });
         toolbar.getBtnPilih().addActionListener(((ae) -> {
             cariSelect();
             if (pembelian == null) {
@@ -335,6 +300,6 @@ public class PilihPembelian extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tabel;
-    private com.aangirsang.girsang.toko.toolbar.ToolBarSelect toolbar;
+    private com.aangirsang.girsang.toko.toolbar.ToolBarSelectTanpaInput toolbar;
     // End of variables declaration//GEN-END:variables
 }

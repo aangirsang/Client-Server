@@ -60,6 +60,9 @@ public class ReturPembelian implements Serializable{
     @Column(name="FAKTUR")
     private String faktur;
     
+    @Column(name="ALASAN")
+    private String alasan;
+    
     @OneToMany(mappedBy = "returPembelian", cascade = CascadeType.ALL)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     private List<ReturPembelianDetail> returPembelianDetails = new ArrayList<ReturPembelianDetail>();
@@ -155,6 +158,14 @@ public class ReturPembelian implements Serializable{
 
     public void setFaktur(String faktur) {
         this.faktur = faktur;
+    }
+
+    public String getAlasan() {
+        return alasan;
+    }
+
+    public void setAlasan(String alasan) {
+        this.alasan = alasan;
     }
     
 }
