@@ -50,9 +50,15 @@ public class ReturPembelian implements Serializable{
     @Column(name = "TOTALRETUR")
     private BigDecimal total = BigDecimal.ZERO;
     
+    @Column(name = "TOTALREFUND")
+    private BigDecimal totalRefund = BigDecimal.ZERO;
+    
     @ManyToOne
     @JoinColumn(name="PEMBUAT")
     private Pengguna pembuat;
+    
+    @Column(name="FAKTUR")
+    private String faktur;
     
     @OneToMany(mappedBy = "returPembelian", cascade = CascadeType.ALL)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
@@ -134,4 +140,21 @@ public class ReturPembelian implements Serializable{
         returPembelianDetails.remove(detail);
         detail.setReturPembelian(null);
     }
+
+    public BigDecimal getTotalRefund() {
+        return totalRefund;
+    }
+
+    public void setTotalRefund(BigDecimal totalRefund) {
+        this.totalRefund = totalRefund;
+    }
+
+    public String getFaktur() {
+        return faktur;
+    }
+
+    public void setFaktur(String faktur) {
+        this.faktur = faktur;
+    }
+    
 }

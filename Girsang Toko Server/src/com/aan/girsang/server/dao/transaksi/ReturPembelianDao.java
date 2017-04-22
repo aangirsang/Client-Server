@@ -61,7 +61,7 @@ public class ReturPembelianDao extends BaseDaoHibernate<ReturPembelian>{
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Cari Barang">
     public List<ReturPembelianDetail> cariBarang(Barang barang) {
-        return sessionFactory.getCurrentSession().createQuery("from ReturPembelianDetail p where p.barang=:barang order by p.pembelian.tanggal desc")
+        return sessionFactory.getCurrentSession().createQuery("from ReturPembelianDetail p where p.barang=:barang")
                 .setParameter("barang", barang)
                 .list();
     }

@@ -60,6 +60,17 @@ public class Pembelian implements Serializable{
     
     @Column(name="LOKASI")
     private String lokasi;
+    
+    @Column(name="ISRETUR")
+    private Boolean isRetur = Boolean.FALSE;
+
+    public Boolean getIsRetur() {
+        return isRetur;
+    }
+
+    public void setIsRetur(Boolean isRetur) {
+        this.isRetur = isRetur;
+    }
 
     public String getLokasi() {
         return lokasi;

@@ -333,6 +333,7 @@ public class TransaksiServiceImpl implements TransaksiService {
             Barang b = barangDao.cariId(detail.getBarang().getPlu());
             List<ReturPembelianDetail> PD = returPembelianDao.cariBarang(detail.getBarang());
             for (ReturPembelianDetail PD1 : PD) {
+                System.out.println(PD1.getBarang().getNamaBarang());
                 if("Toko".equals(PD1.getReturPembelian().getPembelian().getLokasi())){
                     stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiReturPembelian());
                 }else if("Gudang".equals(PD1.getReturPembelian().getPembelian().getLokasi())){

@@ -85,12 +85,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         idSelect = "";
     }
     private void loadFormToModel(ReturPembelian rP) {
-        returPembelian.setNoRef(rP.getNoRef());
-        returPembelian.setTanggal(rP.getTanggal());
-        returPembelian.setSupplier(rP.getSupplier());
-        returPembelian.setTotal(rP.getTotal());
-        returPembelian.setPembuat(rP.getPembuat());
-        returPembelian.setReturPembelianDetails(rP.getReturPembelianDetails());
+        returPembelian = rP;
     }
     private void cariSelect() {
         returPembelian = new ReturPembelian();
@@ -107,7 +102,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         }
         @Override
         public int getColumnCount() {
-            return 6;
+            return 7;
         }
 
         @Override
@@ -117,8 +112,9 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                 case 1:return "No. Ref";
                 case 2:return "Pembelian";
                 case 3:return "Supplier";
-                case 4:return "Total";
-                case 5:return "Pembuat";
+                case 4:return "Total Retur";
+                case 5:return "Total Refund";
+                case 6:return "Pembuat";
                 default:return "";
             }
 
@@ -130,7 +126,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
             switch (colIndex) {
                 case 0:return rP.getTanggal();
                 case 1:return rP.getNoRef();
-                case 2:return rP.getPembelian();
+                case 2:return rP.getPembelian().getNoRef();
                 case 3:
                     if(rP.getSupplier()!=null){
                         return rP.getSupplier().getNamaSupplier();
@@ -138,7 +134,8 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                         return "-";
                     }
                 case 4:return rP.getTotal();
-                case 5:return rP.getPembuat().getNamaLengkap();
+                case 5:return rP.getTotalRefund();
+                case 6:return rP.getPembuat().getIdPengguna();
                 default:return "";
             }
         }
@@ -147,7 +144,8 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
                 case 0:return Date.class;
-                case 4:return Boolean.class;
+                case 4:return BigDecimal.class;
+                case 5:return BigDecimal.class;
                 default:return String.class;
             }
         }

@@ -15,13 +15,18 @@ import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.api.util.DateRenderer;
 import com.aan.girsang.api.util.IntegerRenderer;
 import com.aan.girsang.api.util.POSTableCellRenderer;
+import com.aan.girsang.api.util.TextComponentUtils;
 import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.ui.frame.FrameUtama;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.event.TableModelEvent;
@@ -49,6 +54,9 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         tabel.setDefaultRenderer(Integer.class, new IntegerRenderer());
         tabel.setColumnSelectionAllowed(true);
         tabel.setRowSelectionAllowed(true);
+        
+        KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        manager.addKeyEventDispatcher(new MyDispatcher());
     }
     public ReturPembelian showDialog(ReturPembelian retur, String title){
         if(retur==null){
@@ -69,14 +77,21 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         txtNamaSupplier.setText("");
         txtFaktur.setText("");
         txtPembelian.setText("");
-        txtTanggalBeli.setText("");
+        txtTanggalBeli.setValue(null);
+        txtUangKembali.setText("");
+        txtTotal.setText("0");
     }
     private void loadModelToForm(ReturPembelian retur){
-        
         txtNoRef.setText(retur.getNoRef());
         txtDate.setValue(retur.getTanggal());
         txtKodeSupplier.setText(retur.getSupplier().getId());
         txtNamaSupplier.setText(retur.getSupplier().getNamaSupplier());
+        txtTanggalBeli.setValue(retur.getPembelian().getTanggal());
+        txtPembelian.setText(retur.getPembelian().getNoRef());
+        txtTanggalBeli.setValue(retur.getPembelian().getTanggal());
+        txtFaktur.setText(retur.getFaktur());
+        txtUangKembali.setText(TextComponentUtils.formatNumber(retur.getTotalRefund()));
+        kalkulasiTotal();
     }
     private void loadFormToModel(){
         returPembelian.setNoRef(txtNoRef.getText());
@@ -84,9 +99,21 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         returPembelian.setSupplier(pembelian.getSupplier());
         returPembelian.setPembelian(pembelian);
         returPembelian.setPembuat(ClientLauncher.getPenggunaAktif());
+        returPembelian.setFaktur(txtFaktur.getText());
+        returPembelian.setTotal(TextComponentUtils.parseNumberToBigDecimal(txtTotal.getText()));
+        returPembelian.setTotalRefund(TextComponentUtils.parseNumberToBigDecimal(txtUangKembali.getText()));
+        
         txtTanggalBeli.setValue(returPembelian.getPembelian().getTanggal());
         txtKodeSupplier.setText(returPembelian.getPembelian().getSupplier().getKotaSupplier());
         txtNamaSupplier.setText(returPembelian.getPembelian().getSupplier().getNamaSupplier());
+    }
+    private void loadFormToDomain(PembelianDetail detailBeli){
+        detail.setReturPembelian(returPembelian);
+        detail.setBarang(detailBeli.getBarang());
+        detail.setKuantitas(detailBeli.getKuantitas());
+        detail.setSatuanPembelian(detailBeli.getSatuanPembelian());
+        detail.setIsiReturPembelian(0);
+        detail.setHargaBarang(detailBeli.getHargaBarang());
     }
     private void tampilDetails(Pembelian p){
         daftarDetail = new ArrayList<>();
@@ -187,9 +214,29 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                         multiply(new BigDecimal(p.getIsiReturPembelian())));
                 fireTableCellUpdated(rowIndex, columnIndex); // Total may also have changed
                 fireTableCellUpdated(rowIndex, 5); // Total may also have changed
+                kalkulasiTotal();
                 break;
             }
         }
+    }
+    private class MyDispatcher implements KeyEventDispatcher {
+        @Override
+        public boolean dispatchKeyEvent(KeyEvent e) {
+            if(e.getID() == KeyEvent.KEY_PRESSED){
+                if(e.getKeyChar()==KeyEvent.VK_ESCAPE){
+                    returPembelian = null;
+                    dispose();
+                }
+            }
+            return false;
+        }
+    }
+    private void kalkulasiTotal() {
+        BigDecimal total = BigDecimal.ZERO;
+        for (ReturPembelianDetail p : daftarDetail) {
+            total = total.add(p.getSubTotal());
+        }
+        txtTotal.setText(TextComponentUtils.formatNumber(total));
     }
 
    @SuppressWarnings("unchecked")
@@ -217,14 +264,14 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         jLabel6 = new javax.swing.JLabel();
         txtFaktur = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         btnBarang = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        txtTotal = new javax.swing.JTextField();
+        txtUangKembali = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtAlasan = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -288,7 +335,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
 
         txtTanggalBeli.setEditable(false);
         txtTanggalBeli.setBackground(new java.awt.Color(255, 255, 204));
-        txtTanggalBeli.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy     hh:mm"))));
+        txtTanggalBeli.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd MMMM yyyy, HH:mm:ss"))));
 
         jLabel5.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jLabel5.text")); // NOI18N
 
@@ -297,11 +344,6 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         txtFaktur.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.txtFaktur.text")); // NOI18N
 
         jLabel7.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jLabel7.text")); // NOI18N
-
-        jTextField1.setEditable(false);
-        jTextField1.setBackground(new java.awt.Color(255, 255, 255));
-        jTextField1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jTextField1.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jTextField1.text")); // NOI18N
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
@@ -324,15 +366,20 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
-
         jLabel8.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jLabel8.text")); // NOI18N
 
         jLabel9.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jLabel9.text")); // NOI18N
 
-        jTextField2.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.jTextField2.text")); // NOI18N
+        txtTotal.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.txtTotal.text")); // NOI18N
+
+        txtUangKembali.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        txtUangKembali.setText(org.openide.util.NbBundle.getMessage(DialogReturPembelian.class, "DialogReturPembelian.txtUangKembali.text")); // NOI18N
+
+        txtAlasan.setColumns(20);
+        txtAlasan.setFont(new java.awt.Font("Monospaced", 0, 11)); // NOI18N
+        txtAlasan.setLineWrap(true);
+        txtAlasan.setRows(5);
+        jScrollPane3.setViewportView(txtAlasan);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -354,6 +401,14 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2))
+                                .addGap(53, 53, 53)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNoRef, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5))
@@ -367,53 +422,41 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                                         .addComponent(txtKodeSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(txtNamaSupplier, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(txtTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2))
-                                .addGap(53, 53, 53)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNoRef, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(166, 166, 166)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel6))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(txtTanggalBeli, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUangKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtNoRef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6)
-                            .addComponent(txtFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNoRef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addComponent(txtFaktur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(txtDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(txtUangKembali, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(txtPembelian, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -433,14 +476,14 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -448,7 +491,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                             .addComponent(btnBatal)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel9)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtTotal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -474,44 +517,34 @@ public class DialogReturPembelian extends javax.swing.JDialog {
                 }
             }
         });
+        
         btnBarang.addActionListener((ae) -> {
             boolean input=true;
-            System.out.println("awal Input "+input);
             if(pembelian==null){
                 JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
             }else{
                 PembelianDetail detailBeli = new PilihPembelianDetail().
                     showDialog(pembelian, "Pilih Barang Untuk Di Retur");
-                detail = new ReturPembelianDetail();
-                detail.setReturPembelian(returPembelian);
-                detail.setBarang(detailBeli.getBarang());
-                detail.setKuantitas(detailBeli.getKuantitas());
-                detail.setSatuanPembelian(detailBeli.getSatuanPembelian());
-                detail.setIsiReturPembelian(0);
-                detail.setHargaBarang(detailBeli.getHargaBarang());
-                if(daftarDetail.isEmpty()){
-                    System.out.println("Ada, Input = " +input);
-                    daftarDetail.add(detail);
-                    tabel.setModel(new TabelModel(daftarDetail));
-                }else{
-                    for(int i=0;i<daftarDetail.size();i++){
-                        if(!daftarDetail.get(i).getBarang().getPlu()
-                                .equals(detail.getBarang().getPlu())){
-                            System.out.println("Tidak Ada, Input = " +input);
-                            daftarDetail.add(detail);
-                            tabel.setModel(new TabelModel(daftarDetail));
-                        }else{
-                            JOptionPane.showMessageDialog(null, 
-                                    "Data Barang Sudah Terpilih");
-                            System.out.println("Ada, Input = " +input);
-                            tabel.tableChanged(
-                            new TableModelEvent(tabel.getModel(),
-                                tabel.getSelectedRow()));
+                if(detailBeli!=null){
+                    if(daftarDetail!=null){
+                        detail = new ReturPembelianDetail();
+                        for(int i=0;i<daftarDetail.size();i++){
+                            if(daftarDetail.get(i).getBarang().getPlu().
+                                    equals(detailBeli.getBarang().getPlu())){
+                                JOptionPane.showMessageDialog(null, 
+                                        "Data Barang Sudah Terpilih");
+                                input = false;
+                            }
                         }
+                    }
+                    if(input==true){
+                        loadFormToDomain(detailBeli);
+                        daftarDetail.add(detail);
+                        tabel.setModel(new TabelModel(daftarDetail));
+                        kalkulasiTotal();
                     }
                 }
             }
-            
         });
     }
     private void btnCariPembelianActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariPembelianActionPerformed
@@ -527,17 +560,16 @@ public class DialogReturPembelian extends javax.swing.JDialog {
             loadFormToModel();
         }
     }//GEN-LAST:event_btnCariPembelianActionPerformed
-
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
         // TODO add your handling code here:
-
+        loadFormToModel();
+        returPembelian.setReturPembelianDetails(daftarDetail);
+        dispose();
     }//GEN-LAST:event_btnSimpanActionPerformed
-
     private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         returPembelian = null;
         dispose();
     }//GEN-LAST:event_btnBatalActionPerformed
-
     private void txtPembelianKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPembelianKeyPressed
         // TODO add your handling code here:
         Pembelian p = ClientLauncher.getTransaksiService().cariPembelian(txtPembelian.getText());
@@ -566,13 +598,11 @@ public class DialogReturPembelian extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTable tabel;
+    private javax.swing.JTextArea txtAlasan;
     private javax.swing.JFormattedTextField txtDate;
     private javax.swing.JTextField txtFaktur;
     private javax.swing.JTextField txtKodeSupplier;
@@ -580,5 +610,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
     private javax.swing.JTextField txtNoRef;
     private javax.swing.JTextField txtPembelian;
     private javax.swing.JFormattedTextField txtTanggalBeli;
+    private javax.swing.JTextField txtTotal;
+    private javax.swing.JTextField txtUangKembali;
     // End of variables declaration//GEN-END:variables
 }

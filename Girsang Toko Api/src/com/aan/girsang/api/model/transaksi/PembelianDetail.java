@@ -42,28 +42,6 @@ public class PembelianDetail implements Serializable{
     
     @Column(name="UPDATE",nullable=false)
     private Boolean update = Boolean.TRUE;
-    
-    @Column(name = "STOK_TOKO", nullable = false)
-    private Integer stokToko = 0;
-    
-    @Column(name="STOK_GUDANG",nullable=false)
-    private Integer stokGudang=0;
-
-    public Integer getStokToko() {
-        return stokToko;
-    }
-
-    public void setStokToko(Integer stokToko) {
-        this.stokToko = stokToko;
-    }
-
-    public Integer getStokGudang() {
-        return stokGudang;
-    }
-
-    public void setStokGudang(Integer stokGudang) {
-        this.stokGudang = stokGudang;
-    }
 
     public String getId() {
         return id;

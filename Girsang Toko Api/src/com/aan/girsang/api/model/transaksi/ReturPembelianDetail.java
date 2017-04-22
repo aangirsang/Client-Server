@@ -31,7 +31,7 @@ public class ReturPembelianDetail implements Serializable{
     private ReturPembelian returPembelian;
     
     @ManyToOne
-    @JoinColumn(name = "BARANG", nullable = false)
+    @JoinColumn(name = "DETAILEMBELIAN", nullable = false)
     private Barang barang;
     
     @Column(name = "KUANTITAS_PEMBELIAN", nullable = false)

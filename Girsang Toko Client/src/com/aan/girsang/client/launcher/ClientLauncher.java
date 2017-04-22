@@ -11,6 +11,7 @@ import com.aan.girsang.api.service.MasterService;
 import com.aan.girsang.api.service.SecurityService;
 import com.aan.girsang.api.service.TransaksiService;
 import com.aan.girsang.client.ui.frame.FrameUtama;
+import java.net.InetAddress;
 import java.util.Date;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -78,8 +79,9 @@ public class ClientLauncher {
         securityService = (SecurityService) ctx.getBean("securityServiceRemote");
         masterService = (MasterService) ctx.getBean("masterServiceRemote");
         transaksiService = (TransaksiService) ctx.getBean("transaksiServiceRemote");
+        String computerName = InetAddress.getLocalHost().getHostName();
         
-        constantService.clientOnline("CLIENT");
+        constantService.clientOnline(computerName);
             }catch(RemoteConnectFailureException ex){
                 String status = "Server Offline";
                 ex.printStackTrace();
