@@ -176,11 +176,11 @@ public class PanelPelanggan extends javax.swing.JPanel {
             @Override
             public void mouseClicked(MouseEvent me) {
                 if (me.getClickCount() == 2) {
-                    title = "Edit Data Supplier";
+                    title = "Edit Data Pelanggan";
                     if (pelanggan == null) {
                         JOptionPane.showMessageDialog(null, "Data Pelanggan Belum Terpilih");
                     } else {
-                        Pelanggan p = new Pelanggan();//SupplierDialog().showDialog(supplier, title);
+                        Pelanggan p = new DialogPelanggan().showDialog(pelanggan, title);
                         pelanggan = new Pelanggan();
                         if (p != null) {
                             loadFormToModel(p);
@@ -224,11 +224,11 @@ public class PanelPelanggan extends javax.swing.JPanel {
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
             isiTabelKategori();
             pelanggan = null;
-            title = "Tambah Data Supplier";
-            Pelanggan s = new Pelanggan();//Supplier s = new SupplierDialog().showDialog(supplier, title);
+            title = "Tambah Data Pelanggan";
+            Pelanggan p = new DialogPelanggan().showDialog(pelanggan, title);
             pelanggan = new Pelanggan();
-            if (s != null) {
-                loadFormToModel(s);
+            if (p != null) {
+                loadFormToModel(p);
                 pelanggan.setIdPelanggan("");
                 ClientLauncher.getMasterService().simpan(pelanggan);
                 isiTabelKategori();
@@ -239,11 +239,11 @@ public class PanelPelanggan extends javax.swing.JPanel {
         });
 
         toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
-            title = "Edit Data Supplier";
+            title = "Edit Data Pelanggan";
             if (pelanggan == null) {
                 JOptionPane.showMessageDialog(null, "Data Pelanggan Belum Terpilih");
             } else {
-                Pelanggan p = new Pelanggan();//SupplierDialog().showDialog(supplier, title);
+                Pelanggan p = new DialogPelanggan().showDialog(pelanggan, title);
                 pelanggan = new Pelanggan();
                 if (p != null) {
                     loadFormToModel(p);

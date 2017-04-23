@@ -71,6 +71,12 @@ public class Pelanggan implements Serializable{
     
     @Column(name="POINT")
     private Integer point;
+    
+    @Column(name="ISMAXPIUTANG")
+    private Boolean isMaxPiutang;
+    
+    @Column(name="MAXPIUTANG")
+    private BigDecimal maxPiutang = BigDecimal.ZERO;
 
     public String getIdPelanggan() {
         return idPelanggan;
@@ -199,6 +205,20 @@ public class Pelanggan implements Serializable{
     public void setPoint(Integer point) {
         this.point = point;
     }
-    
-    
+
+    public Boolean getIsMaxPiutang() {
+        return isMaxPiutang;
+    }
+
+    public void setIsMaxPiutang(Boolean isMaxPiutang) {
+        this.isMaxPiutang = isMaxPiutang;
+    }
+
+    public BigDecimal getMaxPiutang() {
+        return maxPiutang;
+    }
+
+    public void setMaxPiutang(BigDecimal maxPiutang) {
+        this.maxPiutang = maxPiutang;
+    }
 }
