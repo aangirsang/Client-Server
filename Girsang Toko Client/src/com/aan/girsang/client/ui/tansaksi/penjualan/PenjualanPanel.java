@@ -212,7 +212,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
                     } else {
                         cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian,pembelian.getSupplier(), title);
+                        Pembelian p = new DialogPembelian().showDialog(pembelian,pembelian.getSupplier(), title, false);
                         pembelian = new Pembelian();
                         if (p != null) {
                             loadFormToModel(p);
@@ -258,7 +258,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
             pembelian = null;
             supplier = null;
             title = "Tambah Data Barang";
-            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title);
+            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title,false);
             pembelian = new Pembelian();
             if (p != null) {
                 loadFormToModel(p);
@@ -277,7 +277,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
                     } else {
                         cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title);
+                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title,false);
                         pembelian = new Pembelian();
                         if (p != null) {
                             loadFormToModel(p);

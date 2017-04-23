@@ -115,6 +115,14 @@ public class TransaksiServiceImpl implements TransaksiService {
         simpanHutang();
     }
     
+    @Transactional
+    @Override
+    public void hapus(Pembelian p){
+        pembelianDao.hapus(p);
+        simpanStokPembelian(p);
+        simpanHutang();
+    } 
+    
     
     @Override
     public Pembelian cariPembelian(String id) {
@@ -186,7 +194,10 @@ public class TransaksiServiceImpl implements TransaksiService {
                         }
                     }
                 }
+                Pembelian p = returPembelian.getPembelian();
+                p.setIsRetur(Boolean.TRUE);
                 returPembelianDao.merge(returPembelian);
+                pembelianDao.merge(p);
                 simpanStokReturPembelian(returPembelian);
             }
 
@@ -309,14 +320,14 @@ public class TransaksiServiceImpl implements TransaksiService {
         Integer stokToko = 0;
         Integer stokGudang = 0;
         for (PembelianDetail detail : p.getPembelianDetails()) {
+                    stokToko = 0;
+                    stokGudang = 0;
             Barang b = barangDao.cariId(detail.getBarang().getPlu());
             List<PembelianDetail> PD = pembelianDao.cariBarang(detail.getBarang());
             for (PembelianDetail PD1 : PD) {
                 if("Toko".equals(PD1.getPembelian().getLokasi())){
-                    stokToko = 0;
                     stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiPembelian());
                 }else if("Gudang".equals(PD1.getPembelian().getLokasi())){
-                    stokGudang = 0;
                     stokGudang = stokGudang + (PD1.getKuantitas() * PD1.getIsiPembelian());
                 }
             }

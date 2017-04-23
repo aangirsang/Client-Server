@@ -24,6 +24,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
@@ -118,10 +119,11 @@ public class DialogReturPembelian extends javax.swing.JDialog {
     private void loadFormToDomain(PembelianDetail detailBeli){
         detail.setReturPembelian(returPembelian);
         detail.setBarang(detailBeli.getBarang());
-        detail.setKuantitas(detailBeli.getKuantitas());
+        detail.setKuantitas(0);
         detail.setSatuanPembelian(detailBeli.getSatuanPembelian());
-        detail.setIsiReturPembelian(0);
-        detail.setHargaBarang(detailBeli.getHargaBarang());
+        detail.setIsiReturPembelian(detailBeli.getIsiPembelian());
+        detail.setHargaBarang(detailBeli.getHargaBarang()
+                .divide(new BigDecimal(detailBeli.getIsiPembelian())));
     }
     private void tampilDetails(Pembelian p){
         daftarDetail = new ArrayList<>();
@@ -164,10 +166,10 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         public String getColumnName(int col) {
             switch (col) {
                 case 0:return "Barang";
-                case 1:return "Satuan Pembelian";
+                case 1:return "Satuan";
                 case 2:return "Isi";
                 case 3:return "Qty";
-                case 4:return "Harga Beli";
+                case 4:return "Harga Satuan";
                 case 5:return "Sub Total";
                 default:return "";
             }
@@ -203,6 +205,7 @@ public class DialogReturPembelian extends javax.swing.JDialog {
             switch(columnIndex){
                 case 2:return true;
                 case 3:return true;
+                case 4:return true;
                 default:return false;
             }
         }
@@ -211,13 +214,28 @@ public class DialogReturPembelian extends javax.swing.JDialog {
             ReturPembelianDetail p = daftarDetailRetur.get(rowIndex);
             switch (columnIndex) {
             case 2:
-                if((Integer) aValue > p.getKuantitas()){
-                    JOptionPane.showMessageDialog(null, "Retur Tidak Bisa Melebihi QTY Pembelian");
-                    break;
-                }
                 p.setIsiReturPembelian((Integer) aValue);
                 p.setSubTotal(p.getHargaBarang().
-                        multiply(new BigDecimal(p.getIsiReturPembelian())));
+                        multiply(new BigDecimal(p.getIsiReturPembelian())
+                                .multiply(new BigDecimal(p.getKuantitas()))));
+                fireTableCellUpdated(rowIndex, columnIndex); // Total may also have changed
+                fireTableCellUpdated(rowIndex, 5); // Total may also have changed
+                kalkulasiTotal();
+                break;
+            case 3:
+                p.setKuantitas((Integer) aValue);
+                p.setSubTotal(p.getHargaBarang().
+                        multiply(new BigDecimal(p.getIsiReturPembelian())
+                                .multiply(new BigDecimal(p.getKuantitas()))));
+                fireTableCellUpdated(rowIndex, columnIndex); // Total may also have changed
+                fireTableCellUpdated(rowIndex, 5); // Total may also have changed
+                kalkulasiTotal();
+                break;
+            case 4:
+                p.setHargaBarang((BigDecimal) aValue);
+                p.setSubTotal(p.getHargaBarang().
+                        multiply(new BigDecimal(p.getIsiReturPembelian())
+                                .multiply(new BigDecimal(p.getKuantitas()))));
                 fireTableCellUpdated(rowIndex, columnIndex); // Total may also have changed
                 fireTableCellUpdated(rowIndex, 5); // Total may also have changed
                 kalkulasiTotal();

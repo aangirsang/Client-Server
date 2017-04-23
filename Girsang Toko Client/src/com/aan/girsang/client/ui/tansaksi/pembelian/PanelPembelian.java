@@ -43,19 +43,24 @@ public class PanelPembelian extends javax.swing.JPanel {
     int aktifPanel = 0;
     String title, idSelect;
     ToolbarDenganFilter toolBar = new ToolbarDenganFilter();
+    Boolean edit = true;
 
     public int getIndexTab() {
         return IndexTab;
     }
+
     public void setIndexTab(int IndexTab) {
         this.IndexTab = IndexTab;
     }
+
     public int getAktifPanel() {
         return aktifPanel;
     }
+
     public void setAktifPanel(int aktifPanel) {
         this.aktifPanel = aktifPanel;
     }
+
     public ToolbarDenganFilter getToolbarDenganFilter1() {
         return toolbar;
     }
@@ -68,6 +73,7 @@ public class PanelPembelian extends javax.swing.JPanel {
         tblPembelian.setDefaultRenderer(Integer.class, new IntegerRenderer());
         isiTabelKategori();
     }
+
     private void ukuranTabelBarang() {
         tblPembelian.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tblPembelian.getColumnModel().getColumn(0).setPreferredWidth(200);//Tanggal
@@ -79,6 +85,7 @@ public class PanelPembelian extends javax.swing.JPanel {
         tblPembelian.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Pembelian
         tblPembelian.getColumnModel().getColumn(7).setPreferredWidth(300);//Pembuat
     }
+
     private void isiTabelKategori() {
         pembelians = ClientLauncher.getTransaksiService().semuaPembelian();
         RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
@@ -89,6 +96,7 @@ public class PanelPembelian extends javax.swing.JPanel {
         lblJumlahData.setText(pembelians.size() + " Data Pembelian");
         idSelect = "";
     }
+
     private void loadFormToModel(Pembelian p) {
         pembelian.setNoRef(p.getNoRef());
         pembelian.setTanggal(p.getTanggal());
@@ -101,19 +109,26 @@ public class PanelPembelian extends javax.swing.JPanel {
         pembelian.setPembelianDetails(p.getPembelianDetails());
         pembelian.setLokasi(p.getLokasi());
     }
+
     private void cariSelect() {
         pembelian = new Pembelian();
         pembelian = ClientLauncher.getTransaksiService().cariPembelian(idSelect);
+        validateEdit(pembelian);
     }
+
     private class PembelianTabelModel extends AbstractTableModel {
+
         private final List<Pembelian> daftarPembelian;
+
         public PembelianTabelModel(List<Pembelian> daftarPembelian) {
             this.daftarPembelian = daftarPembelian;
         }
+
         @Override
         public int getRowCount() {
             return daftarPembelian.size();
         }
+
         @Override
         public int getColumnCount() {
             return 8;
@@ -122,15 +137,24 @@ public class PanelPembelian extends javax.swing.JPanel {
         @Override
         public String getColumnName(int col) {
             switch (col) {
-                case 0:return "Tanggal";
-                case 1:return "No. Ref";
-                case 2:return "No. Faktur";
-                case 3:return "Supplier";
-                case 4:return "Kredit";
-                case 5:return "Tgl. Tempo";
-                case 6:return "Jlh. Pembelian";
-                case 7:return "Pembuat";
-                default:return "";
+                case 0:
+                    return "Tanggal";
+                case 1:
+                    return "No. Ref";
+                case 2:
+                    return "No. Faktur";
+                case 3:
+                    return "Supplier";
+                case 4:
+                    return "Kredit";
+                case 5:
+                    return "Tgl. Tempo";
+                case 6:
+                    return "Jlh. Pembelian";
+                case 7:
+                    return "Pembuat";
+                default:
+                    return "";
             }
 
         }
@@ -139,44 +163,65 @@ public class PanelPembelian extends javax.swing.JPanel {
         public Object getValueAt(int rowIndex, int colIndex) {
             Pembelian p = pembelians.get(rowIndex);
             switch (colIndex) {
-                case 0:return p.getTanggal();
-                case 1:return p.getNoRef();
+                case 0:
+                    return p.getTanggal();
+                case 1:
+                    return p.getNoRef();
                 case 2:
-                    if(p.getNoFaktur()!=""){
+                    if (p.getNoFaktur() != "") {
                         return p.getNoFaktur();
-                    }else{
+                    } else {
                         return "-";
                     }
                 case 3:
-                    if(p.getSupplier()!=null){
+                    if (p.getSupplier() != null) {
                         return p.getSupplier().getNamaSupplier();
-                    }else{
+                    } else {
                         return "-";
                     }
-                case 4:return p.getKredit();
+                case 4:
+                    return p.getKredit();
                 case 5:
-                if(p.getKredit()==true){
-                    return p.getDaftarKredit().getTanggalTempo();
-                }else{
-                    return "-";
-                }
-                case 6:return p.getTotal();
-                case 7:return p.getPembuat().getNamaLengkap();
-                default:return "";
+                    if (p.getKredit() == true) {
+                        return p.getDaftarKredit().getTanggalTempo();
+                    } else {
+                        return "-";
+                    }
+                case 6:
+                    return p.getTotal();
+                case 7:
+                    return p.getPembuat().getNamaLengkap();
+                default:
+                    return "";
             }
         }
 
         @Override
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
-                case 0:return Date.class;
-                case 4:return Boolean.class;
-                case 6:return BigDecimal.class;
-                default:return String.class;
+                case 0:
+                    return Date.class;
+                case 4:
+                    return Boolean.class;
+                case 6:
+                    return BigDecimal.class;
+                default:
+                    return String.class;
             }
         }
     }
-    
+
+    private void validateEdit(Pembelian p) {
+        if (p.getIsRetur() == true) {
+            JOptionPane.showMessageDialog(this,
+                    "Pembelian Telah Diretur, Tidak Dapat Diedit Maupun Dihapus",
+                    "Perhatian",
+                    JOptionPane.WARNING_MESSAGE);
+            edit = false;
+        } else {
+            edit = true;
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -294,7 +339,7 @@ public class PanelPembelian extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
                     } else {
                         cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian,pembelian.getSupplier(), title);
+                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
                         pembelian = new Pembelian();
                         if (p != null) {
                             loadFormToModel(p);
@@ -340,7 +385,8 @@ public class PanelPembelian extends javax.swing.JPanel {
             pembelian = null;
             supplier = null;
             title = "Tambah Data Barang";
-            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title);
+            edit = true;
+            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title, edit);
             pembelian = new Pembelian();
             if (p != null) {
                 loadFormToModel(p);
@@ -356,29 +402,30 @@ public class PanelPembelian extends javax.swing.JPanel {
         toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
             title = "Edit Data Barang";
             if ("".equals(idSelect)) {
-                        JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
-                    } else {
-                        cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title);
-                        pembelian = new Pembelian();
-                        if (p != null) {
-                            loadFormToModel(p);
-                            ClientLauncher.getTransaksiService().simpan(pembelian);
-                            isiTabelKategori();
-                            JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                            title = null;
-                        }
-                    }
+                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
+            } else {
+                cariSelect();
+                Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
+                pembelian = new Pembelian();
+                if (p != null) {
+                    loadFormToModel(p);
+                    ClientLauncher.getTransaksiService().simpan(pembelian);
+                    isiTabelKategori();
+                    JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
+                    title = null;
+                }
+            }
         });
 
         toolbar.getBtnHapus().addActionListener((ActionEvent ae) -> {
-            /*if (pembelian == null) {
-            JOptionPane.showMessageDialog(null, "Data Barang Belum Terpilih");
+            if ("".equals(idSelect)) {
+                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
             } else {
-            FrameUtama.getMasterService().hapus(pembelian);
-            isiTabelKategori();
-            JOptionPane.showMessageDialog(null, "Hapus Data Berhasil");
-            }*/
+                cariSelect();
+                ClientLauncher.getTransaksiService().hapus(pembelian);
+                JOptionPane.showMessageDialog(null, "Hapus Data Pembelian Berhasil");
+                isiTabelKategori();
+            }
         });
         toolbar.getBtnFilter().addActionListener((ActionEvent ae) -> {
             /*List <Barang> list = new FilterBarang().showDialog();

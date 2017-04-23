@@ -24,16 +24,21 @@ public class PopUpMenuTransaksi extends AbstractButton {
 
     JButton actionButton;
     JPopupMenu popupMenu;
+    
+    PanelReturPembelian returBeliPanel = new PanelReturPembelian();
+    PanelPembelian pembelianPanel = new PanelPembelian();
+    PanelPelunasanHutang hutangPanel = new PanelPelunasanHutang();
+
 
     public PopUpMenuTransaksi(JTabbedPane TP, JPopupMenu popupMenuTransaksi, JButton btnTransaksi) {
         popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Pembelian") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                PanelPembelian pembelianPanel = new PanelPembelian();
-                pembelianPanel.setName("Daftar Pembelian Barang");
                 if (pembelianPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(pembelianPanel.getIndexTab());
                 } else {
+                    pembelianPanel = new PanelPembelian();
+                    pembelianPanel.setName("Daftar Pembelian Barang");
                     pembelianPanel.setAktifPanel(pembelianPanel.getAktifPanel() + 1);
                     TP.addTab(pembelianPanel.getName(), pembelianPanel);
                     pembelianPanel.setIndexTab(TP.getTabCount() - 1);
@@ -47,14 +52,14 @@ public class PopUpMenuTransaksi extends AbstractButton {
                 }
             }
         }));
-        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Pelunasan Hutang") {
+        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Daftar Pelunasan Hutang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                PanelPelunasanHutang hutangPanel = new PanelPelunasanHutang();
-                hutangPanel.setName("Daftar Pelunasan Hutang");
                 if (hutangPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(hutangPanel.getIndexTab());
                 } else {
+                    hutangPanel = new PanelPelunasanHutang();
+                    hutangPanel.setName("Daftar Pelunasan Hutang");
                     hutangPanel.setAktifPanel(hutangPanel.getAktifPanel() + 1);
                     TP.addTab(hutangPanel.getName(), hutangPanel);
                     hutangPanel.setIndexTab(TP.getTabCount() - 1);
@@ -68,14 +73,14 @@ public class PopUpMenuTransaksi extends AbstractButton {
                 }
             }
         }));
-        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Retur Pembelian") {
+        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Daftar Retur Pembelian") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                PanelReturPembelian returBeliPanel = new PanelReturPembelian();
-                returBeliPanel.setName("Daftar Pelunasan Hutang");
                 if (returBeliPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(returBeliPanel.getIndexTab());
                 } else {
+                    returBeliPanel = new PanelReturPembelian();
+                    returBeliPanel.setName("Daftar Retur Pembelian");
                     returBeliPanel.setAktifPanel(returBeliPanel.getAktifPanel() + 1);
                     TP.addTab(returBeliPanel.getName(), returBeliPanel);
                     returBeliPanel.setIndexTab(TP.getTabCount() - 1);

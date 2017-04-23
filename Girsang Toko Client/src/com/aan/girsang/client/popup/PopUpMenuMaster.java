@@ -28,15 +28,23 @@ public class PopUpMenuMaster extends AbstractButton {
     JButton actionButton;
     JPopupMenu popupMenu;
 
+    PanelGolonganBarang golonganBarangPanel = new PanelGolonganBarang();
+    BarangPanel barangPanel = new BarangPanel();
+    SatuanBarangPanel satuanBarangPanel = new SatuanBarangPanel();
+    SupplierPanel supplierPanel = new SupplierPanel();
+    PenggunaPanel penggunaPanel = new PenggunaPanel();
+    TingkatAksesPanel aksesPanel = new TingkatAksesPanel();
+    
+    
     public PopUpMenuMaster(JTabbedPane TP, JPopupMenu popupMenuMaster, JButton btnMaster) {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Golongan Barang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                PanelGolonganBarang golonganBarangPanel = new PanelGolonganBarang();
-                golonganBarangPanel.setName("Daftar Kategori Barang");
                 if (golonganBarangPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(golonganBarangPanel.getIndexTab());
                 } else {
+                    golonganBarangPanel = new PanelGolonganBarang();
+                    golonganBarangPanel.setName("Daftar Kategori Barang");
                     golonganBarangPanel.setAktifPanel(golonganBarangPanel.getAktifPanel() + 1);
                     TP.addTab(golonganBarangPanel.getName(), golonganBarangPanel);
                     golonganBarangPanel.setIndexTab(TP.getTabCount() - 1);
@@ -53,11 +61,11 @@ public class PopUpMenuMaster extends AbstractButton {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Barang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                BarangPanel barangPanel = new BarangPanel();
-                barangPanel.setName("Daftar Barang");
                 if (barangPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(barangPanel.getIndexTab());
                 } else {
+                    barangPanel = new BarangPanel();
+                    barangPanel.setName("Daftar Barang");
                     barangPanel.setAktifPanel(barangPanel.getAktifPanel() + 1);
                     TP.addTab(barangPanel.getName(), barangPanel);
                     barangPanel.setIndexTab(TP.getTabCount() - 1);
@@ -74,11 +82,11 @@ public class PopUpMenuMaster extends AbstractButton {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Satuan Barang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                SatuanBarangPanel satuanBarangPanel = new SatuanBarangPanel();
-                satuanBarangPanel.setName("Daftar Satuan Barang");
                 if (satuanBarangPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(satuanBarangPanel.getIndexTab());
                 } else {
+                    satuanBarangPanel = new SatuanBarangPanel();
+                    satuanBarangPanel.setName("Daftar Satuan Barang");
                     satuanBarangPanel.setAktifPanel(satuanBarangPanel.getAktifPanel() + 1);
                     TP.addTab(satuanBarangPanel.getName(), satuanBarangPanel);
                     satuanBarangPanel.setIndexTab(TP.getTabCount() - 1);
@@ -95,11 +103,11 @@ public class PopUpMenuMaster extends AbstractButton {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Supplier") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                SupplierPanel supplierPanel = new SupplierPanel();
-                supplierPanel.setName("Daftar Supplier");
                 if (supplierPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(supplierPanel.getIndexTab());
                 } else {
+                    supplierPanel = new SupplierPanel();
+                    supplierPanel.setName("Daftar Supplier");
                     supplierPanel.setAktifPanel(supplierPanel.getAktifPanel() + 1);
                     TP.addTab(supplierPanel.getName(), supplierPanel);
                     supplierPanel.setIndexTab(TP.getTabCount() - 1);
@@ -117,11 +125,11 @@ public class PopUpMenuMaster extends AbstractButton {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Pengguna") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                PenggunaPanel penggunaPanel = new PenggunaPanel();
-                penggunaPanel.setName("Daftar Pengguna");
                 if (penggunaPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(penggunaPanel.getIndexTab());
                 } else {
+                    penggunaPanel = new PenggunaPanel();
+                    penggunaPanel.setName("Daftar Pengguna");
                     penggunaPanel.setAktifPanel(penggunaPanel.getAktifPanel() + 1);
                     TP.addTab(penggunaPanel.getName(), penggunaPanel);
                     penggunaPanel.setIndexTab(TP.getTabCount() - 1);
@@ -138,11 +146,11 @@ public class PopUpMenuMaster extends AbstractButton {
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Tingkat Akses") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                TingkatAksesPanel aksesPanel = new TingkatAksesPanel();
-                aksesPanel.setName("Daftar Tingkat Akses");
                 if (aksesPanel.getAktifPanel() == 1) {
                     TP.setSelectedIndex(aksesPanel.getIndexTab());
                 } else {
+                    aksesPanel = new TingkatAksesPanel();
+                    aksesPanel.setName("Daftar Tingkat Akses");
                     aksesPanel.setAktifPanel(aksesPanel.getAktifPanel() + 1);
                     TP.addTab(aksesPanel.getName(), aksesPanel);
                     aksesPanel.setIndexTab(TP.getTabCount() - 1);

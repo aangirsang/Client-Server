@@ -22,6 +22,7 @@ import java.util.List;
 public interface TransaksiService {
 //<editor-fold defaultstate="collapsed" desc="Pembelian">
     public void simpan(Pembelian pembelian);
+    public void hapus(Pembelian p);
     public Pembelian cariPembelian(String id);
     public List<Pembelian> semuaPembelian();
     public List<Pembelian> descPembelian();
