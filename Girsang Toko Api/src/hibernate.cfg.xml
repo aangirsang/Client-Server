@@ -58,5 +58,6 @@ Contributor(s):
     <mapping class="com.aan.girsang.api.model.transaksi.PelunasanHutang"/>
     <mapping class="com.aan.girsang.api.model.transaksi.PelunasanHutangDetail"/>
     <mapping class="com.aan.girsang.api.model.transaksi.PembelianDetail"/>
+    <mapping class="com.aan.girsang.api.model.master.Pelanggan"/>
   </session-factory>
 </hibernate-configuration>

@@ -9,6 +9,7 @@ import com.aan.girsang.api.model.constant.MasterRunningNumberEnum;
 import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.GolonganBarang;
 import com.aan.girsang.api.model.master.HPPBarang;
+import com.aan.girsang.api.model.master.Pelanggan;
 import com.aan.girsang.api.model.master.SatuanBarang;
 import com.aan.girsang.api.model.master.Supplier;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
@@ -17,6 +18,7 @@ import com.aan.girsang.server.dao.master.BarangDao;
 import com.aan.girsang.server.dao.master.GolonganBarangDao;
 import com.aan.girsang.server.dao.master.HPPDao;
 import com.aan.girsang.server.dao.constant.RunningNumberDao;
+import com.aan.girsang.server.dao.master.PelangganDao;
 import com.aan.girsang.server.dao.master.SatuanBarangDao;
 import com.aan.girsang.server.dao.master.SupplierDao;
 import java.util.List;
@@ -36,6 +38,7 @@ public class MasterServiceImpl implements MasterService{
     @Autowired GolonganBarangDao golonganBarangDao;
     @Autowired RunningNumberDao runningNumberDao;
     @Autowired SatuanBarangDao satuanBarangDao;
+    @Autowired PelangganDao pelangganDao;
     @Autowired SupplierDao supplierDao;
     @Autowired BarangDao barangDao;
     @Autowired HPPDao hPPDao;
@@ -191,5 +194,35 @@ public class MasterServiceImpl implements MasterService{
     }
     
 //</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Pelanggan">
+    @Override
+    @Transactional(isolation=Isolation.SERIALIZABLE)
+    public void simpan(Pelanggan pelanggan) {
+        if("".equals(pelanggan.getIdPelanggan())){
+            pelanggan.setIdPelanggan(runningNumberDao.ambilBerikutnyaDanSimpan(MasterRunningNumberEnum.PELANGGAN));
+        }
+        pelangganDao.simpan(pelanggan);
+    }
     
+    @Override
+    @Transactional
+    public void hapus(Pelanggan pelanggan) {
+        pelangganDao.hapus(pelanggan);
+    }
+    
+    @Override
+    public List<Pelanggan> semuaPelanggan() {
+        return pelangganDao.semua();
+    }
+    
+    @Override
+    public List<Pelanggan> cariNamaPelanggan(String nama) {
+        return pelangganDao.cariNama(nama);
+    }
+    
+    @Override
+    public Pelanggan cariIdPelanggan(String id) {
+        return pelangganDao.cariId(id);
+    }
+//</editor-fold>
 }

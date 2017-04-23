@@ -7,6 +7,7 @@ package com.aan.girsang.client.popup;
 
 import com.aan.girsang.client.ui.master.barang.BarangPanel;
 import com.aan.girsang.client.ui.master.golongan.PanelGolonganBarang;
+import com.aan.girsang.client.ui.master.pelanggan.PanelPelanggan;
 import com.aan.girsang.client.ui.master.satuan.SatuanBarangPanel;
 import com.aan.girsang.client.ui.master.supplier.SupplierPanel;
 import com.aan.girsang.client.ui.security.pengguna.PenggunaPanel;
@@ -34,6 +35,7 @@ public class PopUpMenuMaster extends AbstractButton {
     SupplierPanel supplierPanel = new SupplierPanel();
     PenggunaPanel penggunaPanel = new PenggunaPanel();
     TingkatAksesPanel aksesPanel = new TingkatAksesPanel();
+    PanelPelanggan panelPelanggan = new PanelPelanggan();
     
     
     public PopUpMenuMaster(JTabbedPane TP, JPopupMenu popupMenuMaster, JButton btnMaster) {
@@ -160,6 +162,27 @@ public class PopUpMenuMaster extends AbstractButton {
                         TP.remove(aksesPanel);
                         aksesPanel.setAktifPanel(aksesPanel.getAktifPanel() - 1);
                         TP.setSelectedIndex(aksesPanel.getIndexTab()-1);
+                    });
+                }
+            }
+        }));
+        popupMenuMaster.add(new JMenuItem(new AbstractAction("Pelanggan") {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                if (panelPelanggan.getAktifPanel() == 1) {
+                    TP.setSelectedIndex(panelPelanggan.getIndexTab());
+                } else {
+                    panelPelanggan = new PanelPelanggan();
+                    panelPelanggan.setName("Daftar Tingkat Akses");
+                    panelPelanggan.setAktifPanel(panelPelanggan.getAktifPanel() + 1);
+                    TP.addTab(panelPelanggan.getName(), panelPelanggan);
+                    panelPelanggan.setIndexTab(TP.getTabCount() - 1);
+                    TP.setSelectedIndex(panelPelanggan.getIndexTab());
+                    
+                    panelPelanggan.getBtnKeluar().getBtnKeluar().addActionListener((ae1) -> {
+                        TP.remove(panelPelanggan);
+                        panelPelanggan.setAktifPanel(panelPelanggan.getAktifPanel() - 1);
+                        TP.setSelectedIndex(panelPelanggan.getIndexTab()-1);
                     });
                 }
             }
