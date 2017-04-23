@@ -9,11 +9,15 @@ import com.aan.girsang.api.model.constant.MasterRunningNumberEnum;
 import com.aan.girsang.api.model.constant.TransaksiRunningNumberEnum;
 import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.HPPBarang;
+import com.aan.girsang.api.model.master.Pelanggan;
 import com.aan.girsang.api.model.master.Supplier;
+import com.aan.girsang.api.model.security.Pengguna;
 import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
+import com.aan.girsang.api.model.transaksi.Penjualan;
+import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.api.model.transaksi.ReturPembelian;
 import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
 import com.aan.girsang.api.service.TransaksiService;
@@ -24,6 +28,7 @@ import com.aan.girsang.server.dao.constant.RunningNumberDao;
 import com.aan.girsang.server.dao.master.SupplierDao;
 import com.aan.girsang.server.dao.transaksi.PelunasanHutangDao;
 import com.aan.girsang.server.dao.transaksi.PembelianDao;
+import com.aan.girsang.server.dao.transaksi.PenjualanDao;
 import com.aan.girsang.server.dao.transaksi.ReturPembelianDao;
 import java.math.BigDecimal;
 import java.math.MathContext;
@@ -49,6 +54,7 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Autowired SupplierDao supplierDao;
     @Autowired PelunasanHutangDao pelunasanHutangDao;
     @Autowired ReturPembelianDao returPembelianDao;
+    @Autowired PenjualanDao penjualanDao;
 
     //<editor-fold defaultstate="collapsed" desc="Pembelian">
     @Transactional(isolation = Isolation.SERIALIZABLE)
@@ -361,4 +367,71 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
+
+    @Override
+    @Transactional(isolation=Isolation.SERIALIZABLE)
+    public void simpan(Penjualan p) {
+        Penjualan penjualan = penjualanDao.cariId(p.getNoRef());
+        if(penjualan == null){
+            p.setNoRef(runningNumberDao.ambilBerikutnyaDanSimpan(TransaksiRunningNumberEnum.PENJUALAN));
+            int i = 1;
+            for(PenjualanDetail detail : p.getPenjualanDetails()){
+                detail.setId(p.getNoRef() + i++);
+            }
+        }else{
+            int i = 1;
+            for(PenjualanDetail detail : p.getPenjualanDetails()){
+                try {
+                    i++;
+                    if (detail.getId() == null) {
+                        detail.setId(p.getNoRef() + i++);
+                    }
+                } catch (Exception e) {
+                    i = i + 1;
+                    if (detail.getId() == null) {
+                        detail.setId(p.getNoRef() + i++);
+                    }
+                }
+                if (detail.getId() == null) {
+                    detail.setId(p.getNoRef() + i++);
+                }
+            }
+        }
+        penjualanDao.merge(p);
+    }
+
+    @Override
+    public void hapus(Penjualan p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Penjualan cariIDPenjualan(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Penjualan> semuaPenjualan() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Penjualan> cariPelanggan(Pelanggan p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Penjualan> cariPiutang(Pelanggan p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<Penjualan> cariKasir(Pengguna p) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public List<PenjualanDetail> cariBarangJual(Barang b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

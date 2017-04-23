@@ -6,11 +6,15 @@
 package com.aan.girsang.api.service;
 
 import com.aan.girsang.api.model.master.Barang;
+import com.aan.girsang.api.model.master.Pelanggan;
 import com.aan.girsang.api.model.master.Supplier;
+import com.aan.girsang.api.model.security.Pengguna;
 import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
+import com.aan.girsang.api.model.transaksi.Penjualan;
+import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.api.model.transaksi.ReturPembelian;
 import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
 import java.util.List;
@@ -49,5 +53,12 @@ public interface TransaksiService {
     public List<PelunasanHutangDetail> cariDetail(PelunasanHutang p);
     public List<PelunasanHutangDetail> cariPembelian(Pembelian pembelian);
 //</editor-fold>
-    
+    public void simpan(Penjualan p);
+    public void hapus(Penjualan p);
+    public Penjualan cariIDPenjualan(String id);
+    public List<Penjualan> semuaPenjualan();
+    public List<Penjualan> cariPelanggan(Pelanggan p);
+    public List<Penjualan> cariPiutang(Pelanggan p);
+    public List<Penjualan> cariKasir(Pengguna p);
+    public List<PenjualanDetail> cariBarangJual(Barang b);
 }

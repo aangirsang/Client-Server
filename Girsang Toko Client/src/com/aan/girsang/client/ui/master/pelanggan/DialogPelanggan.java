@@ -11,10 +11,6 @@ import com.aan.girsang.api.util.TextComponentUtils;
 import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.ui.frame.FrameUtama;
 
-/**
- *
- * @author ITSUSAHBRO
- */
 public class DialogPelanggan extends javax.swing.JDialog {
     
     private Pelanggan pelanggan;
@@ -27,6 +23,15 @@ public class DialogPelanggan extends javax.swing.JDialog {
         initComponents();
         initListener();
         isiCombo();
+        TextComponentUtils.setAutoUpperCaseText(30, txtNamaPelanggan);
+        TextComponentUtils.setAutoUpperCaseText(20, txtTempatLahir);
+        TextComponentUtils.setAutoUpperCaseText(20, txtKota);
+        TextComponentUtils.setAutoUpperCaseText(50, txtProvinsi);
+        TextComponentUtils.setCurrency(txtDisc);
+        TextComponentUtils.setCurrency(txtMaxPiutang);
+        TextComponentUtils.setCurrency(txtSaldoPiutang);
+        TextComponentUtils.setCurrency(txtPoint);
+        
     }
     public Pelanggan showDialog(Pelanggan p, String tilte){
         if(p==null){
@@ -35,9 +40,9 @@ public class DialogPelanggan extends javax.swing.JDialog {
             loadModelToForm(p);
         }
         pack();
+        setTitle(tilte);
         setLocationRelativeTo(null);
         setVisible(true);
-        setTitle(tilte);
         return this.pelanggan;
     }
     private void isiCombo(){
@@ -176,6 +181,7 @@ public class DialogPelanggan extends javax.swing.JDialog {
         btnBatal = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle(org.openide.util.NbBundle.getMessage(DialogPelanggan.class, "DialogPelanggan.title")); // NOI18N
 
         jLabel5.setText(org.openide.util.NbBundle.getMessage(DialogPelanggan.class, "DialogPelanggan.jLabel5.text")); // NOI18N
 

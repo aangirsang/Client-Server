@@ -100,9 +100,9 @@ public class PenjualanPanel extends javax.swing.JPanel {
     }
     private void isiTabelKategori() {
         pembelians = ClientLauncher.getTransaksiService().semuaPembelian();
-        RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
+        RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(pembelians));
         tblPenjualan.setRowSorter(sorter);
-        tblPenjualan.setModel(new PembelianTabelModel(pembelians));
+        tblPenjualan.setModel(new TabelModel(pembelians));
         toolbar.getTxtCari().setText("");
         ukuranTabelBarang();
         lblJumlahData.setText(pembelians.size() + " Data Pembelian");
@@ -125,9 +125,9 @@ public class PenjualanPanel extends javax.swing.JPanel {
         pembelian = new Pembelian();
         pembelian = ClientLauncher.getTransaksiService().cariPembelian(idSelect);
     }
-    private class PembelianTabelModel extends AbstractTableModel {
+    private class TabelModel extends AbstractTableModel {
         private final List<Pembelian> daftarPembelian;
-        public PembelianTabelModel(List<Pembelian> daftarPembelian) {
+        public TabelModel(List<Pembelian> daftarPembelian) {
             this.daftarPembelian = daftarPembelian;
         }
         @Override
@@ -232,8 +232,8 @@ public class PenjualanPanel extends javax.swing.JPanel {
                     isiTabelKategori();
                 } else {
                     pembelians = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
-                    tblPenjualan.setModel(new PembelianTabelModel(pembelians));
-                    RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
+                    tblPenjualan.setModel(new TabelModel(pembelians));
+                    RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(pembelians));
                     tblPenjualan.setRowSorter(sorter);
                     ukuranTabelBarang();
                     int jml = pembelians.size();
