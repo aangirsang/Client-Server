@@ -7,10 +7,13 @@ package com.aan.girsang.client.ui.tansaksi.penjualan;
 
 import com.aan.girsang.api.model.master.Supplier;
 import com.aan.girsang.api.model.transaksi.Pembelian;
+import com.aan.girsang.api.model.transaksi.PembelianDetail;
+import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.api.util.DateRenderer;
 import com.aan.girsang.api.util.IntegerRenderer;
 import com.aan.girsang.client.launcher.ClientLauncher;
+import com.aan.girsang.client.ui.frame.FrameUtama;
 import com.aan.girsang.client.ui.tansaksi.pembelian.DialogPembelian;
 import com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter;
 import java.awt.event.ActionEvent;
@@ -18,9 +21,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.beans.PropertyVetoException;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
@@ -31,14 +32,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.util.CellRangeAddress;
+import org.openide.util.Exceptions;
 
 /**
  *
@@ -49,6 +43,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
     private List<Pembelian> pembelians;
     private Pembelian pembelian;
     private Supplier supplier;
+
 
     int IndexTab = 0;
     int aktifPanel = 0;
@@ -254,21 +249,8 @@ public class PenjualanPanel extends javax.swing.JPanel {
         });
 
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
-            pembelian = null;
-            supplier = null;
-            title = "Tambah Data Barang";
-            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title,false);
-            pembelian = new Pembelian();
-            if (p != null) {
-                loadFormToModel(p);
-                pembelian.setNoRef("");
-                ClientLauncher.getTransaksiService().simpan(pembelian);
-                isiTabelKategori();
-                JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                title = null;
-            }
-            pembelian = null;
+            Penjualan d = (Penjualan) new DialogKasir().showDialog(null);
+            
         });
 
         toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {

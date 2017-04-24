@@ -8,6 +8,7 @@ package com.aan.girsang.client.popup;
 import com.aan.girsang.client.ui.tansaksi.pembelian.PanelPelunasanHutang;
 import com.aan.girsang.client.ui.tansaksi.pembelian.PanelPembelian;
 import com.aan.girsang.client.ui.tansaksi.pembelian.PanelReturPembelian;
+import com.aan.girsang.client.ui.tansaksi.penjualan.PenjualanPanel;
 import java.awt.event.ActionEvent;
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
@@ -28,9 +29,31 @@ public class PopUpMenuTransaksi extends AbstractButton {
     PanelReturPembelian returBeliPanel = new PanelReturPembelian();
     PanelPembelian pembelianPanel = new PanelPembelian();
     PanelPelunasanHutang hutangPanel = new PanelPelunasanHutang();
+    PenjualanPanel penjualanPanel = new PenjualanPanel();
 
 
     public PopUpMenuTransaksi(JTabbedPane TP, JPopupMenu popupMenuTransaksi, JButton btnTransaksi) {
+        popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Penjualan") {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                if (penjualanPanel.getAktifPanel() == 1) {
+                    TP.setSelectedIndex(penjualanPanel.getIndexTab());
+                } else {
+                    penjualanPanel = new PenjualanPanel();
+                    penjualanPanel.setName("Daftar Penjualan Barang");
+                    penjualanPanel.setAktifPanel(penjualanPanel.getAktifPanel() + 1);
+                    TP.addTab(penjualanPanel.getName(), penjualanPanel);
+                    penjualanPanel.setIndexTab(TP.getTabCount() - 1);
+                    TP.setSelectedIndex(penjualanPanel.getIndexTab());
+
+                    penjualanPanel.getToolbarDenganFilter1().getBtnKeluar().addActionListener((ae1) -> {
+                        TP.remove(penjualanPanel);
+                        penjualanPanel.setAktifPanel(penjualanPanel.getAktifPanel() - 1);
+                        TP.setSelectedIndex(penjualanPanel.getIndexTab() - 1);
+                    });
+                }
+            }
+        }));
         popupMenuTransaksi.add(new JMenuItem(new AbstractAction("Pembelian") {
             @Override
             public void actionPerformed(ActionEvent ae) {
