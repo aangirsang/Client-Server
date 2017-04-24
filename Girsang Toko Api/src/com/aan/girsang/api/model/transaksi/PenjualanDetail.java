@@ -27,7 +27,7 @@ public class PenjualanDetail implements Serializable{
     private String id;
     
     @ManyToOne
-    @Column(name="PENJUALAN")
+    @JoinColumn(name="PENJUALAN")
     private Penjualan penjualan;
     
     @ManyToOne

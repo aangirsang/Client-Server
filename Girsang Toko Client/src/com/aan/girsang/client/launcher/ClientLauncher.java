@@ -11,13 +11,17 @@ import com.aan.girsang.api.service.MasterService;
 import com.aan.girsang.api.service.SecurityService;
 import com.aan.girsang.api.service.TransaksiService;
 import com.aan.girsang.client.ui.frame.FrameUtama;
+import com.toedter.calendar.JDateChooser;
 import java.net.InetAddress;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import org.apache.log4j.Logger;
 import org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper;
+import org.openide.util.Exceptions;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.remoting.RemoteConnectFailureException;
@@ -62,6 +66,21 @@ public class ClientLauncher {
 
     public static Pengguna getPenggunaAktif() {
         return penggunaAktif;
+    }
+    public static void jam(JLabel lbl) {
+        Thread t = new Thread(() -> {
+            while(true){
+                lbl.setText(new SimpleDateFormat(
+                        "EEEE, dd MMMM yyyy HH:mm:ss")
+                        .format(new Date()));
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                    Exceptions.printStackTrace(ex);
+                }
+            }
+        });
+        t.start();
     }
     
     public static void main(String[] args) throws Exception {
