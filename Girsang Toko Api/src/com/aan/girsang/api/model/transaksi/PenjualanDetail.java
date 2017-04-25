@@ -34,6 +34,9 @@ public class PenjualanDetail implements Serializable{
     @JoinColumn(name = "BARANG", nullable = false)
     private Barang barang;
     
+    @Column(name="SATUAN",length=20)
+    private String satuan;
+    
     @Column(name = "KUANTITAS", nullable = false)
     private Integer kuantitas = 0;
     
@@ -42,6 +45,9 @@ public class PenjualanDetail implements Serializable{
     
     @Column(name="HPP")
     private BigDecimal hpp=BigDecimal.ZERO;
+    
+    @Column(name="SUBTOTAL")
+    private BigDecimal subTotal=BigDecimal.ZERO;
 
     public String getId() {
         return id;
@@ -67,6 +73,14 @@ public class PenjualanDetail implements Serializable{
         this.barang = barang;
     }
 
+    public String getSatuan() {
+        return satuan;
+    }
+
+    public void setSatuan(String satuan) {
+        this.satuan = satuan;
+    }
+
     public Integer getKuantitas() {
         return kuantitas;
     }
@@ -89,6 +103,14 @@ public class PenjualanDetail implements Serializable{
 
     public void setHpp(BigDecimal hpp) {
         this.hpp = hpp;
+    }
+
+    public BigDecimal getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(BigDecimal subTotal) {
+        this.subTotal = subTotal;
     }
     
     

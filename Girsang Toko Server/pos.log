@@ -572,3 +572,599 @@ Caused by: org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked
 2017-04-24 21:14:18,357 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ ITSUSAHBRO-PC ONLINE
 2017-04-24 21:14:23,232 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
 2017-04-24 21:15:51,517 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:19:18,604 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Tue Apr 25 13:19:18 ICT 2017]; root of context hierarchy
+2017-04-25 13:19:18,710 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 13:19:19,306 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-25 13:19:19,652 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 13:19:19,843 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 13:19:20,130 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 13:19:20,144 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 13:19:20,154 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 13:19:20,159 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 13:19:20,197 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 13:19:20,246 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 13:19:20,311 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 13:19:21,111 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 13:19:21,810 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 13:19:21,820 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 13:19:22,999 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1201592] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 13:19:23,137 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-25 13:19:23,146 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-25 13:19:30,429 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:19:35,558 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:20:14,836 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:21:56,768 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:22:00,425 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:22:16,388 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:23:14,621 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:23:19,080 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:23:31,705 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:24:36,992 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:24:42,342 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:25:01,508 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:25:31,575 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:25:35,154 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:25:45,411 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:26:24,707 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:26:28,549 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:26:42,580 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:27:16,991 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:27:20,290 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:27:37,273 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:28:43,081 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:28:47,287 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:29:05,678 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:30:04,827 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:30:08,157 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:30:46,727 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:31:27,886 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:31:31,211 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:31:40,480 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:31:53,310 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:31:56,670 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:32:10,466 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:32:28,873 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:32:33,806 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:33:25,366 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:33:46,591 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:33:50,212 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:34:06,286 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:35:46,730 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:35:50,820 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:35:55,968 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:40:13,648 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:40:17,197 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 13:40:46,353 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 13:55:55,201 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 13:55:59,547 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:17:20,871 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:17:30,569 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:17:34,423 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:17:54,763 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:18:40,631 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:18:45,168 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:19:03,758 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:19:33,785 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:19:37,582 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:20:09,474 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:21:37,840 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:21:41,340 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:22:04,947 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:22:47,706 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:22:50,840 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:23:31,619 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:38:03,768 [Thread-3] WARN (SqlExceptionHelper.java:144) ­ SQL Error: 90020, SQLState: 90020
+2017-04-25 14:38:03,770 [Thread-3] ERROR (SqlExceptionHelper.java:146) ­ Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
+2017-04-25 14:38:03,825 [Thread-3] WARN (RemoteInvocationTraceInterceptor.java:88) ­ Processing of SimpleHttpInvokerServiceExporter remote call resulted in fatal exception: com.aan.girsang.api.service.ConstantService.clientOnline
+org.springframework.transaction.CannotCreateTransactionException: Could not open Hibernate Session for transaction; nested exception is org.hibernate.exception.GenericJDBCException: Could not open connection
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:517)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:373)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:420)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:257)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:95)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy24.clientOnline(Unknown Source)
+	at sun.reflect.GeneratedMethodAccessor25.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:317)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:157)
+	at org.springframework.remoting.support.RemoteInvocationTraceInterceptor.invoke(RemoteInvocationTraceInterceptor.java:78)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:207)
+	at com.sun.proxy.$Proxy29.clientOnline(Unknown Source)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.remoting.support.RemoteInvocation.invoke(RemoteInvocation.java:212)
+	at org.springframework.remoting.support.DefaultRemoteInvocationExecutor.invoke(DefaultRemoteInvocationExecutor.java:39)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invoke(RemoteInvocationBasedExporter.java:78)
+	at org.springframework.remoting.support.RemoteInvocationBasedExporter.invokeAndCreateResult(RemoteInvocationBasedExporter.java:114)
+	at org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter.handle(SimpleHttpInvokerServiceExporter.java:68)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.AuthFilter.doFilter(AuthFilter.java:83)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:82)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(ServerImpl.java:675)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Filter.java:79)
+	at sun.net.httpserver.ServerImpl$Exchange.run(ServerImpl.java:647)
+	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(ServerImpl.java:158)
+	at sun.net.httpserver.ServerImpl$Dispatcher.handle(ServerImpl.java:431)
+	at sun.net.httpserver.ServerImpl$Dispatcher.run(ServerImpl.java:396)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: org.hibernate.exception.GenericJDBCException: Could not open connection
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:54)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:126)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:112)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:235)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.getConnection(LogicalConnectionImpl.java:171)
+	at org.hibernate.internal.SessionImpl.connection(SessionImpl.java:446)
+	at org.springframework.orm.hibernate4.HibernateTransactionManager.doBegin(HibernateTransactionManager.java:431)
+	... 36 more
+Caused by: org.h2.jdbc.JdbcSQLException: Database may be already in use: "Locked by another process". Possible solutions: close all other connection(s); use the server mode [90020-176]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:344)
+	at org.h2.message.DbException.get(DbException.java:178)
+	at org.h2.message.DbException.get(DbException.java:154)
+	at org.h2.store.FileLock.getExceptionAlreadyInUse(FileLock.java:462)
+	at org.h2.store.FileLock.lockFile(FileLock.java:356)
+	at org.h2.store.FileLock.lock(FileLock.java:136)
+	at org.h2.engine.Database.open(Database.java:622)
+	at org.h2.engine.Database.openDatabase(Database.java:260)
+	at org.h2.engine.Database.<init>(Database.java:254)
+	at org.h2.engine.Engine.openSession(Engine.java:57)
+	at org.h2.engine.Engine.openSession(Engine.java:164)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:142)
+	at org.h2.engine.Engine.createSession(Engine.java:125)
+	at org.h2.engine.Engine.createSession(Engine.java:27)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:331)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:107)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:91)
+	at org.h2.Driver.connect(Driver.java:74)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:153)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:144)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:155)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:120)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:139)
+	at org.hibernate.internal.AbstractSessionImpl$NonContextualJdbcConnectionAccess.obtainConnection(AbstractSessionImpl.java:380)
+	at org.hibernate.engine.jdbc.internal.LogicalConnectionImpl.obtainConnection(LogicalConnectionImpl.java:228)
+	... 39 more
+2017-04-25 14:38:33,302 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:38:36,906 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:38:56,811 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:39:53,863 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:39:57,235 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:40:09,428 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:41:12,783 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:41:15,977 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:42:45,936 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:42:49,759 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:43:02,552 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:44:10,263 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:44:13,558 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:44:29,127 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 14:45:38,183 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 14:45:41,648 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 14:46:24,441 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:09:55,926 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:09:59,348 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:10:18,760 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:15:20,066 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:15:23,668 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:15:39,711 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:16:13,756 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:16:17,302 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:16:34,228 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:17:51,661 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:17:55,376 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:18:12,845 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:18:58,142 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:19:01,471 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:19:30,008 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 15:20:27,711 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 15:20:32,420 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 15:20:46,493 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 17:35:26,867 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Tue Apr 25 17:35:26 ICT 2017]; root of context hierarchy
+2017-04-25 17:35:26,968 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 17:35:27,564 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-25 17:35:27,896 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 17:35:28,086 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 17:35:28,365 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 17:35:28,378 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 17:35:28,388 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 17:35:28,392 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 17:35:28,430 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 17:35:28,478 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 17:35:28,540 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 17:35:29,314 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 17:35:29,837 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 17:35:29,846 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 17:35:31,016 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1da14d0] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 17:35:31,151 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-25 17:35:31,160 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-25 17:35:39,881 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 17:35:43,989 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 17:36:26,620 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 17:40:15,694 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 17:40:19,358 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 17:40:49,610 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 18:37:33,261 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 18:37:35,559 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 18:38:00,123 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:05:02,252 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Tue Apr 25 19:05:02 ICT 2017]; root of context hierarchy
+2017-04-25 19:05:02,370 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 19:05:03,653 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-25 19:05:04,082 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 19:05:04,403 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 19:05:04,702 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 19:05:04,740 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 19:05:04,750 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 19:05:04,755 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 19:05:04,793 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 19:05:05,014 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 19:05:05,078 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 19:05:06,013 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 19:05:06,590 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 19:05:06,599 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 19:05:07,814 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1da14d0] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 19:05:08,136 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-25 19:05:08,146 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-25 19:05:14,630 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:05:19,568 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:06:49,752 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:06:55,132 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:06:59,112 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:07:18,722 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:08:29,985 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:08:33,955 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:08:51,114 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:12:59,889 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:13:03,367 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:17:37,129 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:17:38,238 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:17:47,993 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:19:17,566 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:19:32,585 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:19:53,085 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:19:56,971 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:20:08,577 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:20:21,470 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:20:25,063 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:20:53,623 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:27:06,303 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:27:09,614 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:27:22,200 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:28:00,095 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:28:03,787 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:28:14,469 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:28:38,017 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:28:41,359 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:38:14,807 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:38:18,513 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:38:28,308 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:38:43,578 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:38:47,269 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:39:43,971 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:53:08,215 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:53:11,585 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:53:29,393 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:54:34,269 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:54:38,278 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:55:05,938 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 19:56:59,390 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 19:57:02,555 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 19:57:19,780 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:00:48,960 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:00:52,332 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:01:04,898 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:01:32,748 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:01:36,204 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:02:23,047 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:06:03,165 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:06:06,414 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:06:32,301 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:06:54,704 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:06:58,412 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:07:21,351 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:16:38,474 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:16:42,018 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:17:00,682 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:19:10,475 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:19:14,155 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:19:50,048 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:20:00,651 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:20:04,497 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:20:23,049 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:21:44,895 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:21:48,472 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:22:31,701 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:22:47,397 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:22:49,783 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:24:06,037 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:24:10,865 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:24:14,989 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:24:51,320 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:25:24,347 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:25:28,234 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:25:45,362 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:26:05,164 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:26:08,533 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:26:24,504 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:26:48,708 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:26:52,147 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:27:05,923 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 20:27:40,754 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 20:27:46,271 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 20:28:01,575 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:04:12,368 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Tue Apr 25 22:04:12 ICT 2017]; root of context hierarchy
+2017-04-25 22:04:12,477 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 22:04:13,118 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-25 22:04:13,493 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 22:04:13,711 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 22:04:14,040 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 22:04:14,055 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 22:04:14,071 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 22:04:14,071 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 22:04:14,118 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 22:04:14,180 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 22:04:14,258 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 22:04:15,168 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:04:15,762 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 22:04:15,762 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 22:04:17,012 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1da14d0] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 22:04:17,137 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-25 22:04:17,153 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-25 22:04:30,868 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:04:35,251 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:04:47,536 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:10:45,343 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Tue Apr 25 22:10:45 ICT 2017]; root of context hierarchy
+2017-04-25 22:10:45,437 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 22:10:46,296 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 22:10:46,468 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 22:10:46,734 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 22:10:46,765 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 22:10:46,765 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 22:10:46,765 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 22:10:46,812 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 22:10:46,859 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 22:10:46,921 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 22:10:47,695 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:10:48,195 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 22:10:48,195 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 22:10:49,351 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@772895] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 22:10:49,367 [main] INFO (Configuration.java:2073) ­ HHH000043: Configuring from resource: hibernate.cfg.xml
+2017-04-25 22:10:49,367 [main] INFO (Configuration.java:2092) ­ HHH000040: Configuration resource: hibernate.cfg.xml
+2017-04-25 22:10:49,367 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 22:10:49,382 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 22:10:49,467 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:10:49,530 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPENJUALAN drop constraint FK_jplh0qy8a7vecb3li2ahbfbme if exists
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPENJUALAN" not found; SQL statement:
+
+    alter table DETAILPENJUALAN 
+        drop constraint FK_jplh0qy8a7vecb3li2ahbfbme if exists [42102-176]
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table DETAILPENJUALAN drop constraint FK_gwjb98x4jrp0c5gfxbcenp7qr if exists
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:426) ­ Table "DETAILPENJUALAN" not found; SQL statement:
+
+    alter table DETAILPENJUALAN 
+        drop constraint FK_gwjb98x4jrp0c5gfxbcenp7qr if exists [42102-176]
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENJUALAN drop constraint FK_l8bdhih191krbjh6juuoj5lii if exists
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:426) ­ Table "PENJUALAN" not found; SQL statement:
+
+    alter table PENJUALAN 
+        drop constraint FK_l8bdhih191krbjh6juuoj5lii if exists [42102-176]
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:425) ­ HHH000389: Unsuccessful: alter table PENJUALAN drop constraint FK_5u5x2ebdf91jdtuem721jeenu if exists
+2017-04-25 22:10:49,561 [main] ERROR (SchemaExport.java:426) ­ Table "PENJUALAN" not found; SQL statement:
+
+    alter table PENJUALAN 
+        drop constraint FK_5u5x2ebdf91jdtuem721jeenu if exists [42102-176]
+2017-04-25 22:10:49,796 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-25 22:10:49,796 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:10:49,796 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:10:49,811 [main] INFO (SchemaExport.java:343) ­ HHH000227: Running hbm2ddl schema export
+2017-04-25 22:10:50,108 [main] INFO (SchemaExport.java:405) ­ HHH000230: Schema export complete
+2017-04-25 22:10:50,217 [Thread-3] INFO (AbstractApplicationContext.java:873) ­ Closing org.springframework.context.support.ClassPathXmlApplicationContext@1363fb3: startup date [Tue Apr 25 22:10:45 ICT 2017]; root of context hierarchy
+2017-04-25 22:21:32,139 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Tue Apr 25 22:21:32 ICT 2017]; root of context hierarchy
+2017-04-25 22:21:32,243 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-25 22:21:32,844 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-25 22:21:33,189 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-25 22:21:33,398 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-25 22:21:33,690 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-25 22:21:33,705 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-25 22:21:33,716 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-25 22:21:33,720 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-25 22:21:33,762 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-25 22:21:33,812 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-25 22:21:33,879 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-25 22:21:34,745 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-25 22:21:35,347 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-25 22:21:35,358 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-25 22:21:36,605 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@a5455e] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-25 22:21:36,741 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-25 22:21:36,751 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-25 22:21:43,426 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:21:48,130 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:22:15,256 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:26:15,706 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:26:19,977 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:28:13,696 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:28:17,269 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:28:46,061 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:28:59,125 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:29:02,755 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:29:29,879 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:30:42,701 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:30:46,501 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:31:17,357 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:31:52,985 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:31:56,423 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:32:24,070 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:33:38,344 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:33:42,090 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:33:50,531 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:35:00,161 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:35:03,871 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:35:19,803 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:35:43,249 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:35:46,921 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:36:07,851 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:36:25,843 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:36:29,378 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:37:22,905 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:38:02,806 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:38:08,446 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:38:15,144 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:38:27,753 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:38:31,505 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:38:49,912 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:39:04,755 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:39:08,000 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:39:35,653 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 22:41:20,119 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 22:41:23,560 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 22:42:19,372 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:04:52,320 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:04:55,940 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:05:42,583 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:05:46,228 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:07:22,392 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:08:22,790 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:08:53,568 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:10:02,355 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:10:05,745 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:17:39,224 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:17:42,637 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:17:45,130 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:17:58,565 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:19:54,545 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:19:57,954 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:20:10,619 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:20:58,670 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:21:01,891 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:21:20,739 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:22:07,502 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:22:11,123 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:22:28,921 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:23:32,267 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:23:35,718 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:23:51,937 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:26:29,426 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:26:47,880 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:27:38,477 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:27:42,430 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:29:48,848 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:29:56,702 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:29:57,558 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:30:42,197 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:31:25,169 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:31:32,513 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:31:46,643 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:32:25,706 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:32:37,772 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:38:54,537 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:47:06,534 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:47:10,661 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:48:10,440 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:48:42,588 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:48:46,185 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:49:15,457 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-25 23:49:54,579 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-25 23:49:58,482 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-25 23:50:56,669 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:20:55,051 [main] INFO (AbstractApplicationContext.java:513) ­ Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@2efe5d: startup date [Wed Apr 26 00:20:55 ICT 2017]; root of context hierarchy
+2017-04-26 00:20:55,161 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [applicationContext.xml]
+2017-04-26 00:20:55,816 [main] INFO (XmlBeanDefinitionReader.java:316) ­ Loading XML bean definitions from class path resource [serverContext.xml]
+2017-04-26 00:20:56,191 [main] INFO (PropertiesLoaderSupport.java:172) ­ Loading properties file from class path resource [jdbc.properties]
+2017-04-26 00:20:56,391 [main] INFO (DriverManagerDataSource.java:133) ­ Loaded JDBC driver: org.h2.Driver
+2017-04-26 00:20:56,691 [main] INFO (JavaReflectionManager.java:66) ­ HCANN000001: Hibernate Commons Annotations {4.0.4.Final}
+2017-04-26 00:20:56,706 [main] INFO (Version.java:54) ­ HHH000412: Hibernate Core {4.3.1.Final}
+2017-04-26 00:20:56,716 [main] INFO (Environment.java:239) ­ HHH000206: hibernate.properties not found
+2017-04-26 00:20:56,721 [main] INFO (Environment.java:346) ­ HHH000021: Bytecode provider name : javassist
+2017-04-26 00:20:56,761 [main] INFO (Configuration.java:2109) ­ HHH000044: Configuring from URL: file:/E:/Java%20File/Project/Girsang%20Toko/Girsang%20Toko%20Api/build/classes/hibernate.cfg.xml
+2017-04-26 00:20:56,811 [main] WARN (DTDEntityResolver.java:75) ­ HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2017-04-26 00:20:56,881 [main] INFO (Configuration.java:2214) ­ HHH000041: Configured SessionFactory: null
+2017-04-26 00:20:57,724 [main] INFO (Dialect.java:145) ­ HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2017-04-26 00:20:58,314 [main] INFO (TransactionFactoryInitiator.java:62) ­ HHH000399: Using default transaction strategy (direct JDBC transactions)
+2017-04-26 00:20:58,329 [main] INFO (ASTQueryTranslatorFactory.java:47) ­ HHH000397: Using ASTQueryTranslatorFactory
+2017-04-26 00:20:59,560 [main] INFO (HibernateTransactionManager.java:341) ­ Using DataSource [org.springframework.jdbc.datasource.DriverManagerDataSource@1da14d0] of Hibernate SessionFactory for HibernateTransactionManager
+2017-04-26 00:20:59,705 [main] INFO (SimpleHttpServerFactoryBean.java:166) ­ Starting HttpServer at address 0.0.0.0/0.0.0.0:9090
+2017-04-26 00:20:59,715 [main] INFO (ServerLauncher.java:26) ­ SERVER ONLINE
+2017-04-26 00:21:08,659 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:21:12,983 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:22:30,262 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:22:34,813 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:22:54,118 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:23:37,700 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:23:42,060 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:24:04,000 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:25:45,239 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:25:49,096 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:26:11,158 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:26:40,933 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:26:44,404 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:27:43,375 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:35:47,998 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:35:51,567 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:37:14,282 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:38:18,027 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:38:21,959 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:38:52,253 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:42:40,208 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:42:43,649 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:43:05,274 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 00:44:28,752 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 00:44:36,366 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 00:44:52,078 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:07:10,195 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:07:14,142 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:07:50,952 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:07:54,465 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:08:17,329 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:08:34,573 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:08:38,277 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:08:57,005 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:14:18,355 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:14:21,921 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:15:16,401 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:15:19,894 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:15:47,843 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:17:40,001 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:17:43,387 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:18:19,741 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:19:31,525 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:19:35,021 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:20:15,864 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:22:14,682 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:22:18,324 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:23:26,661 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:23:56,016 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:23:59,734 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:25:44,742 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:25:48,182 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:26:16,470 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:26:33,433 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:26:43,530 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:27:46,940 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:28:49,618 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:28:53,317 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:29:22,357 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:29:45,684 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:29:49,693 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:31:58,887 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:32:32,815 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:32:36,824 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:33:12,797 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:37:41,330 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:37:45,551 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:38:33,975 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:38:48,731 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:39:15,453 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:40:14,062 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:40:17,642 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:42:57,871 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT
+2017-04-26 01:45:17,873 [Thread-3] INFO (ConstantServiceImpl.java:62) ­ GIRSANG ONLINE
+2017-04-26 01:45:26,183 [Thread-3] INFO (ConstantServiceImpl.java:68) ­ ANDRI SAIFUL GIRSANG LOGIN
+2017-04-26 01:50:16,530 [Thread-3] INFO (ConstantServiceImpl.java:74) ­ ANDRI SAIFUL GIRSANG LOGOUT

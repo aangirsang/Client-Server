@@ -82,6 +82,12 @@ public class Penjualan implements Serializable{
     @Column(name="TOTAL")
     private BigDecimal total=BigDecimal.ZERO;
     
+    @Column(name="SUBTOTAL")
+    private BigDecimal subTotal=BigDecimal.ZERO;
+    
+    @Column(name="LOKASI",length=15)
+    private String lokasi;
+    
     @OneToMany(mappedBy = "penjualan", cascade = CascadeType.ALL)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     private List<PenjualanDetail> penjualanDetails = new ArrayList<PenjualanDetail>();
@@ -231,7 +237,23 @@ public class Penjualan implements Serializable{
         return total;
     }
 
+    public BigDecimal getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(BigDecimal subTotal) {
+        this.subTotal = subTotal;
+    }
+
     public void setTotal(BigDecimal total) {
         this.total = total;
+    }
+
+    public String getLokasi() {
+        return lokasi;
+    }
+
+    public void setLokasi(String lokasi) {
+        this.lokasi = lokasi;
     }
 }
