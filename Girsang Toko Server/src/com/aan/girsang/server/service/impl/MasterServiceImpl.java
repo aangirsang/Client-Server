@@ -146,6 +146,10 @@ public class MasterServiceImpl implements MasterService{
     public List<Barang> semuaBarang() {
         return barangDao.semua();
     }
+    @Override
+    public List<Barang> isJual(Boolean isJual){
+        return barangDao.isJual(isJual);
+    }
     
     @Override
     public List<Barang> cariNamaBarang(String Barang) {

@@ -51,7 +51,7 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
                 .setParameter("pelanggan", pelanggan)
                 .list();
     }
-    public List<Penjualan> pitangPelanggan(Pelanggan pelanggan){
+    public List<Penjualan> piutangPelanggan(Pelanggan pelanggan){
         BigDecimal piutang = new BigDecimal(0);
         return sessionFactory.getCurrentSession().createQuery(
                 "from Penjualan p where p.pelanggan=:pelanggan and p.saldoPiutang>:piutang")
@@ -63,6 +63,12 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
         return sessionFactory.getCurrentSession().createQuery(
                 "from Penjualan p where p.kasir=:pengguna")
                 .setParameter("pengguna", pengguna)
+                .list();
+    }
+    public List<Penjualan> pending(Boolean pending){
+        return sessionFactory.getCurrentSession().createQuery(
+                "from Penjualan p where p.isPending=:isPending")
+                .setParameter("isPending", pending)
                 .list();
     }
 }

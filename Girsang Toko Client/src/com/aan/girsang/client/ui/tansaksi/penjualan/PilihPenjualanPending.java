@@ -8,6 +8,7 @@ package com.aan.girsang.client.ui.tansaksi.penjualan;
 import com.aan.girsang.client.ui.master.barang.*;
 import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.Pelanggan;
+import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.ui.frame.FrameUtama;
@@ -33,106 +34,80 @@ import javax.swing.table.TableRowSorter;
  *
  * @author GIRSANG PC
  */
-public class PilihBarangPenjualan extends javax.swing.JDialog {
+public class PilihPenjualanPending extends javax.swing.JDialog {
 
-    private List<Barang> barangs;
-    private Barang barang;
+    private List<Penjualan> daftarPenjualan;
+    private Penjualan penjualan;
     private Pelanggan pelanggan;
-    String title, idSelect, lokasi;
+    String title, idSelect;
     /**
      * Creates new form PilihBarangDialog
      */
-    public PilihBarangPenjualan() {
+    public PilihPenjualanPending() {
         super(FrameUtama.getInstance(), true);
         initComponents();
         tblBarang.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         isiTabelBarang();
         initListener();
     }
-    public Object showDialog(String judul, String lokasi, Pelanggan p) {
-        this.lokasi = lokasi;
-        this.pelanggan = p;
+    public Penjualan showDialog(String judul) {
         pack();
         setTitle(judul);
         setLocationRelativeTo(null);
         setVisible(true);
-        return barang;
+        return penjualan;
     }
     private void ukuranTabelBarang() {
         tblBarang.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tblBarang.getColumnModel().getColumn(0).setPreferredWidth(100);//PLU
-        tblBarang.getColumnModel().getColumn(1).setPreferredWidth(150);//Barcode
-        tblBarang.getColumnModel().getColumn(2).setPreferredWidth(350);//Nama
-        tblBarang.getColumnModel().getColumn(3).setPreferredWidth(150);//Satuan
+        tblBarang.getColumnModel().getColumn(0).setPreferredWidth(150);//PLU
+        tblBarang.getColumnModel().getColumn(1).setPreferredWidth(100);//Barcode
+        tblBarang.getColumnModel().getColumn(2).setPreferredWidth(200);//Nama
+        tblBarang.getColumnModel().getColumn(3).setPreferredWidth(200);//Satuan
         tblBarang.getColumnModel().getColumn(4).setPreferredWidth(100);//Stok
         tblBarang.getColumnModel().getColumn(5).setPreferredWidth(100);//Stok Gudang
-        tblBarang.getColumnModel().getColumn(6).setPreferredWidth(100);//Harga Beli
-        tblBarang.getColumnModel().getColumn(7).setPreferredWidth(100);//Harga Normal
-        tblBarang.getColumnModel().getColumn(8).setPreferredWidth(100);//Harga Member
-        tblBarang.getColumnModel().getColumn(9).setPreferredWidth(90);//Status Jual
     }
     private void isiTabelBarang() {
-        barangs = ClientLauncher.getMasterService().semuaBarang();
-        RowSorter<TableModel> sorter = new TableRowSorter<>(new BarangTabelModel(barangs));
+        daftarPenjualan = ClientLauncher.getTransaksiService().pending(true);
+        RowSorter<TableModel> sorter = new TableRowSorter<>(new BarangTabelModel(daftarPenjualan));
         tblBarang.setRowSorter(sorter);
-        tblBarang.setModel(new BarangTabelModel(barangs));
+        tblBarang.setModel(new BarangTabelModel(daftarPenjualan));
         toolbar.getTxtCari().setText("");
         ukuranTabelBarang();
-        lblJumlahData.setText(barangs.size() + " Data Barang");
+        lblJumlahData.setText(daftarPenjualan.size() + " Data Barang");
         idSelect = "";
     }
-    private void loadFormToModel(Barang b) {
-        barang.setPlu(b.getPlu());
-        barang.setNamaBarang(b.getNamaBarang());
-        barang.setBarcode1(b.getBarcode1());
-        barang.setBarcode2(b.getBarcode2());
-        barang.setIsiPembelian(b.getIsiPembelian());
-        barang.setHargaBeli(b.getHargaBeli());
-        barang.setHargaNormal(b.getHargaNormal());
-        barang.setHargaMember(b.getHargaMember());
-        barang.setStokToko(b.getStokToko());
-        barang.setStokGudang(b.getStokGudang());
-        barang.setStokMax(b.getStokMax());
-        barang.setStokMin(b.getStokMin());
-
-        barang.setGolonganBarang(b.getGolonganBarang());
-        barang.setSatuan(b.getSatuan());
-        barang.setSatuanPembelian(b.getSatuanPembelian());
-
-        barang.setJual(b.getJual());
-        barang.setLimitWarning(b.getLimitWarning());
-    }
+    
     private void cariSelect() {
-        barang = new Barang();
-        barang = ClientLauncher.getMasterService().cariIdBarang(idSelect);
+        penjualan = new Penjualan();
+        penjualan = ClientLauncher.getTransaksiService().cariIDPenjualan(idSelect);
     }
     private class BarangTabelModel extends AbstractTableModel {
 
-        private final List<Barang> daftarProduk;
+        private final List<Penjualan> listPenjualan;
 
-        public BarangTabelModel(List<Barang> daftarBarang) {
-            this.daftarProduk = daftarBarang;
+        public BarangTabelModel(List<Penjualan> listPenjualan) {
+            this.listPenjualan = listPenjualan;
         }
 
         @Override
         public int getRowCount() {
-            return daftarProduk.size();
+            return listPenjualan.size();
         }
 
         @Override
         public int getColumnCount() {
-            return 10;
+            return 6;
         }
 
         @Override
         public String getColumnName(int col) {
             switch (col) {
-                case 0: return "PLU";
-                case 1: return "Barcode";
-                case 2: return "Nama Barang";
-                case 3: return "Satuan";
-                case 4: return "Stok";
-                case 5: return "Harga";
+                case 0: return "Tanggal";
+                case 1: return "No. Ref";
+                case 2: return "Kasir";
+                case 3: return "Pelanggan";
+                case 4: return "Total";
+                case 5: return "Lokasi";
                 default: return "";
             }
 
@@ -140,24 +115,19 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
 
         @Override
         public Object getValueAt(int rowIndex, int colIndex) {
-            Barang p = barangs.get(rowIndex);
+            Penjualan p = daftarPenjualan.get(rowIndex);
             switch (colIndex) {
-                case 0: return p.getPlu();
-                case 1: return p.getBarcode1();
-                case 2: return p.getNamaBarang();
-                case 3: return p.getSatuan();
-                case 4:
-                    if(lokasi.equals("Toko")){
-                        return p.getStokToko();
-                    }else if(lokasi.equals("Gudang")){
-                        return p.getStokGudang();
-                    }
-                case 5: 
-                    if(pelanggan!=null){
-                        return p.getHargaMember();
+                case 0: return p.getTanggal();
+                case 1: return p.getNoRef();
+                case 2: return p.getKasir().getNamaLengkap();
+                case 3: 
+                    if(p.getPelanggan()!=null){
+                        return p.getPelanggan().getNama();
                     }else{
-                        p.getHargaNormal();
+                        return "UMUM";
                     }
+                case 4: return p.getTotal();
+                case 5: return p.getLokasi();
                 default: return "";
             }
         }
@@ -166,7 +136,6 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
                 case 4: return BigDecimal.class;
-                case 5: return BigDecimal.class;
                 default: return String.class;
             }
         }
@@ -200,7 +169,7 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
         jScrollPane1.setViewportView(tblBarang);
 
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
-        lblJumlahData.setText(org.openide.util.NbBundle.getMessage(PilihBarangPenjualan.class, "PilihBarangPenjualan.lblJumlahData.text")); // NOI18N
+        lblJumlahData.setText(org.openide.util.NbBundle.getMessage(PilihPenjualanPending.class, "PilihPenjualanPending.lblJumlahData.text")); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -239,14 +208,14 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
                         JOptionPane.QUESTION_MESSAGE,
                         null, ObjButtons, ObjButtons[1]);
                 if (PromptResult == JOptionPane.YES_OPTION) {
-                    barang = null;
+                    penjualan = null;
                     dispose();
                 }
             }
         });
         tblBarang.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
             if (tblBarang.getSelectedRow() >= 0) {
-                idSelect = tblBarang.getValueAt(tblBarang.getSelectedRow(), 0).toString();
+                idSelect = tblBarang.getValueAt(tblBarang.getSelectedRow(), 1).toString();
             }
         });
         tblBarang.addMouseListener(new MouseAdapter() {
@@ -254,36 +223,13 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
             public void mouseClicked(MouseEvent me) {
                 if (me.getClickCount() == 2) {
                     cariSelect();
-                    if (barang == null) {
+                    if (penjualan == null) {
                         JOptionPane.showMessageDialog(null, "Data Barang Belum Dipilih");
                     } else {
                         cariSelect();
                         dispose();
                     }
                 }
-            }
-        });
-        toolbar.getTxtCari().addKeyListener(new KeyListener() {
-            @Override
-            public void keyReleased(KeyEvent ke) {
-                if ("".equals(toolbar.getTxtCari().getText())) {
-                    isiTabelBarang();
-                } else {
-                    barangs = ClientLauncher.getMasterService().cariNamaBarang(toolbar.getTxtCari().getText());
-                    tblBarang.setModel(new BarangTabelModel(barangs));
-                    RowSorter<TableModel> sorter = new TableRowSorter<>(new BarangTabelModel(barangs));
-                    tblBarang.setRowSorter(sorter);
-                    ukuranTabelBarang();
-                    int jml = barangs.size();
-                }
-            }
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent ke) {
             }
         });
 
@@ -293,7 +239,7 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
 
         toolbar.getBtnPilih().addActionListener(((ae) -> {
             cariSelect();
-            if (barang == null) {
+            if (penjualan == null) {
                 JOptionPane.showMessageDialog(null, "Data Barang Belum Dipilih");
             } else {
                 cariSelect();
@@ -309,7 +255,7 @@ public class PilihBarangPenjualan extends javax.swing.JDialog {
                     JOptionPane.QUESTION_MESSAGE,
                     null, ObjButtons, ObjButtons[1]);
                 if (PromptResult == JOptionPane.YES_OPTION) {
-                    barang = null;
+                    penjualan = null;
                     dispose();
                 }
         });

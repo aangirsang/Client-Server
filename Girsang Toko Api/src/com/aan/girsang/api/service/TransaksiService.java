@@ -60,5 +60,6 @@ public interface TransaksiService {
     public List<Penjualan> cariPelanggan(Pelanggan p);
     public List<Penjualan> cariPiutang(Pelanggan p);
     public List<Penjualan> cariKasir(Pengguna p);
+    public List<Penjualan> pending(Boolean pending);
     public List<PenjualanDetail> cariBarangJual(Barang b);
 }

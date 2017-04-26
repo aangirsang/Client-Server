@@ -20,16 +20,17 @@ import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
-import org.h2.util.MathUtils;
 
 /**
  *
@@ -40,7 +41,11 @@ public class DialogKasir extends javax.swing.JDialog {
     private Penjualan penjualan;
     private PenjualanDetail detail;
     private Pelanggan pelanggan;
+    private Barang barang;
     private List<PenjualanDetail> daftarDetail = new ArrayList<>();
+    private List<Barang> daftarBarang;
+    
+    private Boolean isPanelBarang = false;
 
    
     public DialogKasir() {
@@ -53,6 +58,8 @@ public class DialogKasir extends javax.swing.JDialog {
         setBounds(GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds());
         KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
         manager.addKeyEventDispatcher(new MyDispatcher());
+        TextComponentUtils.setAutoUpperCaseText(100, txtCariNamaBarang);
+        TextComponentUtils.setAutoUpperCaseText(10, txtKodePelanggan);
         TextComponentUtils.setCurrency(txtBayar);
         TextComponentUtils.setCurrency(txtDiscPersen);
         TextComponentUtils.setCurrency(txtDiscNilaiDiskon);
@@ -100,7 +107,21 @@ public class DialogKasir extends javax.swing.JDialog {
         cboLokasi.removeAllItems();
         cboLokasi.addItem("Toko");
         cboLokasi.addItem("Gudang");
+        
+        panelBarang.setVisible(isPanelBarang);
+        txtCariNamaBarang.setText("");
+
         kredit();
+    }
+    private void clearAll(){
+        penjualan = null;
+        detail = null;
+        daftarBarang = null;
+        daftarDetail = null;
+        pelanggan = null;
+        barang = null;
+        tabel.setModel(new TabelModel(daftarDetail));
+        clear();
     }
     private void kredit(){
         if (jcbKredit.isSelected()) {
@@ -120,6 +141,34 @@ public class DialogKasir extends javax.swing.JDialog {
         txtDiscPersen.setText(String.valueOf(pelanggan.getDisc()));
         
         harga();
+    }
+    private void tampilBarang(Barang b){
+        
+        if(b!=null){
+            BigDecimal hargaJual;
+            if(pelanggan!=null){
+                hargaJual = b.getHargaMember();
+            }else{
+                hargaJual = b.getHargaNormal();
+            }
+            lblPLU.setText(b.getPlu());
+            lblNamaBarang.setText(b.getNamaBarang());
+            lblSatuanBarang.setText(b.getSatuan());
+            lblStokToko.setText(String.valueOf(b.getKalkulasiStokToko()));
+            lblSatuanJualToko.setText(b.getSatuan());
+            lblStokGudang.setText(String.valueOf(b.getKalkulasiStokGudang()));
+            lblSatuanJualGudang.setText(b.getSatuan());
+            lblHargaJual.setText(TextComponentUtils.formatNumber(hargaJual));
+        } else{
+            lblPLU.setText("");
+            lblNamaBarang.setText("");
+            lblSatuanBarang.setText("");
+            lblStokToko.setText("");
+            lblSatuanJualToko.setText("");
+            lblStokGudang.setText("");
+            lblSatuanJualGudang.setText("");
+            lblHargaJual.setText("0");
+        }
     }
     private void harga(){
         if(pelanggan!=null){
@@ -205,6 +254,14 @@ public class DialogKasir extends javax.swing.JDialog {
         daftarDetail.add(detail);
         tabel.setModel(new TabelModel(daftarDetail));
     }
+    private void isiTabelBarang(){
+        tblBarang.setModel(new TabelBarangModel(daftarBarang));
+
+        tblBarang.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tblBarang.getColumnModel().getColumn(0).setPreferredWidth(80);//PLU
+        tblBarang.getColumnModel().getColumn(1).setPreferredWidth(230);//Nama Barang
+        tampilBarang(null);
+    }
     private void loadFormToPenjualan(){
         BigDecimal piutangAwal = new BigDecimal(0);
         if(jcbKredit.isSelected()){
@@ -228,22 +285,26 @@ public class DialogKasir extends javax.swing.JDialog {
         penjualan.setPiutangAwal(piutangAwal);
         
     }
-    private void loadBarangToDetail(Barang b){
-        BigDecimal harga;
-        if(pelanggan==null){
-            harga = b.getHargaNormal();
+    private void loadPenjualanToForm(Penjualan p){
+        txtNoRef.setText(p.getNoRef());
+        jdcTanggal.setDate(p.getTanggal());
+        cboLokasi.setSelectedItem(p.getLokasi());
+        jcbKredit.setSelected(p.getIsKredit());
+        jdcTglTempo.setDate(p.getTanggalTempo());
+        txtBayar.setText(TextComponentUtils.formatNumber(p.getBayar()));
+        
+        pelanggan = p.getPelanggan();
+        if(pelanggan!=null){
+            txtKodePelanggan.setText(p.getPelanggan().getIdPelanggan());
         }else{
-            harga = b.getHargaMember();
+            txtKodePelanggan.setText("");
         }
-        detail.setBarang(b);
-        detail.setSatuan(b.getSatuan());
-        detail.setKuantitas(0);
-        detail.setHargaJual(harga);
-        detail.setHpp(b.getHargaBeli());
-        detail.setSubTotal(new BigDecimal(0));
+        daftarDetail = p.getPenjualanDetails();
+        detailKosong();
+        kalkulasiTotal();
     }
     private void addBarang(Barang b){
-        boolean data = false;
+        boolean data = true;
         detail = new PenjualanDetail();
         loadFormToPenjualan();
         if(daftarDetail!=null){
@@ -253,10 +314,15 @@ public class DialogKasir extends javax.swing.JDialog {
                         data = true;
                         JOptionPane.showMessageDialog(null, 
                                 "Data Barang Sudah Terpilih");
+                        data = false;
                     }
                 }else{
                     detail = p;
-                    BigDecimal harga;
+                }
+            }
+        }
+        if(data==true){
+            BigDecimal harga;
                     if(pelanggan==null){
                         harga = b.getHargaNormal();
                     }else{
@@ -271,10 +337,8 @@ public class DialogKasir extends javax.swing.JDialog {
 
                     tabel.tableChanged(new TableModelEvent(tabel
                             .getModel(),tabel.getSelectedRow()));
-                }
-            }
-        }
         detailKosong();
+        }
         kalkulasiTotal();
     }
     private class TabelModel extends AbstractTableModel{
@@ -360,18 +424,59 @@ public class DialogKasir extends javax.swing.JDialog {
         }
         
     }
+    private class TabelBarangModel extends AbstractTableModel{
+        private List<Barang> listBarang;
+        public TabelBarangModel(List<Barang> listBarang){
+            this.listBarang = listBarang;
+        }
+        @Override
+        public int getRowCount() {
+            return listBarang.size();
+        }
+        @Override
+        public String getColumnName(int column){
+            switch(column){
+                case 0:return "PLU";
+                case 1:return "Nama Barang";
+                default:return"";
+            }
+        }
+
+        @Override
+        public int getColumnCount() {
+            return 2;
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            Barang b = listBarang.get(rowIndex);
+            switch(columnIndex){
+                case 0:return b.getPlu();
+                case 1:return b.getNamaBarang();
+                default:return "";
+            }
+        }
+        
+    }
     private class MyDispatcher implements KeyEventDispatcher {
         @Override
         public boolean dispatchKeyEvent(KeyEvent e) {
             if(e.getID() == KeyEvent.KEY_PRESSED){
                 if(e.getKeyCode() == KeyEvent.VK_F2){
-                    Barang b = (Barang) new PilihBarangPenjualan().showDialog(
-                            "Pilih Barang", 
-                            cboLokasi.getSelectedItem().toString(), 
-                            pelanggan);
-                    if(b!=null){
-                        detail = new PenjualanDetail();
-                        addBarang(b);
+                    if(isPanelBarang==false){
+                        panelBarang.setVisible(true);
+                        isPanelBarang=true;
+                        
+                        txtCariNamaBarang.requestFocus();
+                        daftarBarang = ClientLauncher.getMasterService().isJual(true);
+                        isiTabelBarang();
+                        
+                        barang = new Barang();
+                        tampilBarang(barang);
+                        
+                    }else if(isPanelBarang==true){
+                        panelBarang.setVisible(false);
+                        isPanelBarang=false;
                     }
                 }
             }
@@ -428,6 +533,27 @@ public class DialogKasir extends javax.swing.JDialog {
         lblJam = new javax.swing.JLabel();
         lblKasir = new javax.swing.JLabel();
         lblKetPelanggan = new javax.swing.JLabel();
+        panelBarang = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tblBarang = new javax.swing.JTable();
+        jPanel9 = new javax.swing.JPanel();
+        lblPLU = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        lblNamaBarang = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        lblSatuanBarang = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        lblStokToko = new javax.swing.JLabel();
+        lblSatuanJualToko = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblStokGudang = new javax.swing.JLabel();
+        lblSatuanJualGudang = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        lblHargaJual = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        txtCariNamaBarang = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -744,7 +870,7 @@ public class DialogKasir extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -754,18 +880,168 @@ public class DialogKasir extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        tblBarang.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane2.setViewportView(tblBarang);
+
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jPanel9.border.title"))); // NOI18N
+
+        lblPLU.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblPLU.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblPLU.text")); // NOI18N
+
+        jLabel7.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel7.text")); // NOI18N
+
+        lblNamaBarang.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblNamaBarang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblNamaBarang.text")); // NOI18N
+
+        jLabel15.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel15.text")); // NOI18N
+
+        lblSatuanBarang.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblSatuanBarang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblSatuanBarang.text")); // NOI18N
+
+        jLabel17.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel17.text")); // NOI18N
+
+        jLabel18.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel18.text")); // NOI18N
+
+        jLabel19.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel19.text")); // NOI18N
+
+        lblStokToko.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblStokToko.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblStokToko.text")); // NOI18N
+
+        lblSatuanJualToko.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblSatuanJualToko.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblSatuanJualToko.text")); // NOI18N
+
+        jLabel5.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel5.text")); // NOI18N
+
+        lblStokGudang.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblStokGudang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblStokGudang.text")); // NOI18N
+
+        lblSatuanJualGudang.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblSatuanJualGudang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblSatuanJualGudang.text")); // NOI18N
+
+        jLabel16.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel16.text")); // NOI18N
+
+        lblHargaJual.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        lblHargaJual.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblHargaJual.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel17)
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblStokToko)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblSatuanJualToko))
+                    .addGroup(jPanel9Layout.createSequentialGroup()
+                        .addComponent(jLabel19)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblStokGudang)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblSatuanJualGudang))
+                    .addComponent(lblPLU)
+                    .addComponent(jLabel7)
+                    .addComponent(lblNamaBarang)
+                    .addComponent(jLabel15)
+                    .addComponent(lblSatuanBarang)
+                    .addComponent(jLabel16)
+                    .addComponent(lblHargaJual))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblPLU)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNamaBarang)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblSatuanBarang)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblStokToko, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblSatuanJualToko, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(jLabel19)
+                    .addComponent(lblStokGudang)
+                    .addComponent(lblSatuanJualGudang))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHargaJual)
+                .addContainerGap())
+        );
+
+        jLabel24.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel24.text")); // NOI18N
+
+        txtCariNamaBarang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.txtCariNamaBarang.text")); // NOI18N
+
+        javax.swing.GroupLayout panelBarangLayout = new javax.swing.GroupLayout(panelBarang);
+        panelBarang.setLayout(panelBarangLayout);
+        panelBarangLayout.setHorizontalGroup(
+            panelBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtCariNamaBarang)
+                    .addGroup(panelBarangLayout.createSequentialGroup()
+                        .addGroup(panelBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel24))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        panelBarangLayout.setVerticalGroup(
+            panelBarangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelBarangLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel24)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCariNamaBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                .addGap(10, 10, 10)
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(panelBarang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelBarang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -785,6 +1061,20 @@ public class DialogKasir extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initListener(){
+        tblBarang.getSelectionModel().addListSelectionListener((lse) -> {
+            if(tblBarang.getSelectedRow() >=0){
+                barang = daftarBarang.get(tblBarang.getSelectedRow());
+                tampilBarang(barang);
+            }
+        });
+        tblBarang.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                if (me.getClickCount() == 2) {
+                    addBarang(barang);
+                }
+            }
+        });
         jcbKredit.addActionListener((ae) -> {
             if(pelanggan==null)jcbKredit.setSelected(false);
            kredit();
@@ -806,10 +1096,12 @@ public class DialogKasir extends javax.swing.JDialog {
                     lblKetPelanggan.setText("Pelanggan Umum");
                     txtDiscPersen.setText("0");
                     jcbKredit.setSelected(false);
+                    tampilBarang(barang);
                     kredit();
                     harga();
                 }else{
                     tampilPelanggan();
+                    tampilBarang(barang);
                 }
             }
 //<editor-fold defaultstate="collapsed" desc="--">
@@ -837,6 +1129,41 @@ public class DialogKasir extends javax.swing.JDialog {
                 kalkulasiTotal();
             }
         });
+        txtCariNamaBarang.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                daftarBarang = ClientLauncher.getMasterService().cariNamaBarang(txtCariNamaBarang.getText());
+                isiTabelBarang();}
+        });
+        btnPending.addActionListener((ae) -> {
+            penjualan = new Penjualan();
+            loadFormToPenjualan();
+            List<PenjualanDetail> list = new ArrayList<>();
+            for(PenjualanDetail p : daftarDetail){
+                if(p.getBarang()!=null){
+                    list.add(p);
+                }
+            }
+            penjualan.setPenjualanDetails(list);
+            penjualan.setIsPending(true);
+            
+            ClientLauncher.getTransaksiService().simpan(penjualan);
+            clearAll();
+        });
+        btnRecall.addActionListener((ae) -> {
+            Penjualan p = new PilihPenjualanPending().showDialog("Pilih Penjualan Pending");
+            if(p!=null){
+                loadPenjualanToForm(p);
+            }
+        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
@@ -850,9 +1177,17 @@ public class DialogKasir extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
@@ -863,19 +1198,32 @@ public class DialogKasir extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JCheckBox jcbKredit;
     private com.toedter.calendar.JDateChooser jdcTanggal;
     private com.toedter.calendar.JDateChooser jdcTglTempo;
+    private javax.swing.JLabel lblHargaJual;
     private javax.swing.JLabel lblJam;
     private javax.swing.JLabel lblKasir;
     private javax.swing.JLabel lblKetPelanggan;
     private javax.swing.JLabel lblKetSystem;
+    private javax.swing.JLabel lblNamaBarang;
+    private javax.swing.JLabel lblPLU;
+    private javax.swing.JLabel lblSatuanBarang;
+    private javax.swing.JLabel lblSatuanJualGudang;
+    private javax.swing.JLabel lblSatuanJualToko;
+    private javax.swing.JLabel lblStokGudang;
+    private javax.swing.JLabel lblStokToko;
     private javax.swing.JLabel lblTampilTotal;
     private javax.swing.JLabel lblTempo;
+    private javax.swing.JPanel panelBarang;
     private javax.swing.JTable tabel;
+    private javax.swing.JTable tblBarang;
     private javax.swing.JTextField txtBayar;
+    private javax.swing.JTextField txtCariNamaBarang;
     private javax.swing.JTextField txtDiscNilaiDiskon;
     private javax.swing.JTextField txtDiscPersen;
     private javax.swing.JTextField txtKodePelanggan;

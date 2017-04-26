@@ -401,37 +401,43 @@ public class TransaksiServiceImpl implements TransaksiService {
     }
 
     @Override
+    @Transactional
     public void hapus(Penjualan p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        penjualanDao.hapus(p);
     }
 
     @Override
     public Penjualan cariIDPenjualan(String id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.cariId(id);
     }
 
     @Override
     public List<Penjualan> semuaPenjualan() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.semua();
     }
 
     @Override
     public List<Penjualan> cariPelanggan(Pelanggan p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.cariPelanggan(p);
     }
 
     @Override
     public List<Penjualan> cariPiutang(Pelanggan p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.piutangPelanggan(p);
     }
 
     @Override
     public List<Penjualan> cariKasir(Pengguna p) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.cariKasir(p);
     }
 
     @Override
     public List<PenjualanDetail> cariBarangJual(Barang b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return penjualanDao.cariBarang(b);
+    }
+
+    @Override
+    public List<Penjualan> pending(Boolean pending) {
+        return penjualanDao.pending(pending);
     }
 }

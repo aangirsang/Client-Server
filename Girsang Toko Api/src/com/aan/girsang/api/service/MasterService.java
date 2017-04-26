@@ -45,6 +45,7 @@ public interface MasterService {
     public void hapus (Barang barang);
     public List<Barang> semuaBarang();
     public List<Barang> cariNamaBarang(String Barang);
+    public List<Barang> isJual(Boolean isJual);
     public Barang cariIdBarang(String id);
     public List<PembelianDetail> historyPembelian(Barang barang);
 //</editor-fold>

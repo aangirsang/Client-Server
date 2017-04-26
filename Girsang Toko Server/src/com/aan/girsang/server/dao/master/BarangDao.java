@@ -25,7 +25,8 @@ public class BarangDao extends BaseDaoHibernate<Barang> {
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Cari Nama">
     public List<Barang> cariNama(String brg) {
-        List<Barang> b = sessionFactory.getCurrentSession().createQuery("from Barang b where b.namaBarang LIKE :namaBarang")
+        List<Barang> b = sessionFactory.getCurrentSession().createQuery(
+                "from Barang b where b.namaBarang LIKE :namaBarang order by b.namaBarang asc")
                 .setParameter("namaBarang", "%" + brg.toUpperCase() + "%")
                 .list();
         return b;
@@ -46,4 +47,12 @@ public class BarangDao extends BaseDaoHibernate<Barang> {
                 .list();
     }
 //</editor-fold>
+    
+    public List<Barang> isJual(Boolean isJual){
+        List<Barang> b = (List<Barang>) sessionFactory.getCurrentSession().createQuery(
+                "from Barang b where b.jual=:isJual order by b.namaBarang asc")
+                .setParameter("isJual", isJual)
+                .list();
+        return b;
+    }
 }

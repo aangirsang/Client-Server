@@ -88,6 +88,9 @@ public class Penjualan implements Serializable{
     @Column(name="LOKASI",length=15)
     private String lokasi;
     
+    @Column(name="ISPENDING")
+    private Boolean isPending = Boolean.FALSE;
+    
     @OneToMany(mappedBy = "penjualan", cascade = CascadeType.ALL)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     private List<PenjualanDetail> penjualanDetails = new ArrayList<PenjualanDetail>();
@@ -256,4 +259,13 @@ public class Penjualan implements Serializable{
     public void setLokasi(String lokasi) {
         this.lokasi = lokasi;
     }
+
+    public Boolean getIsPending() {
+        return isPending;
+    }
+
+    public void setIsPending(Boolean isPending) {
+        this.isPending = isPending;
+    }
+    
 }
