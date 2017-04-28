@@ -74,7 +74,7 @@ public class Penjualan implements Serializable{
     private BigDecimal jumlahPenjualan=BigDecimal.ZERO;
     
     @Column(name="DISC_TOTAL")
-    private Integer discTotal;
+    private BigDecimal discTotal;
     
     @Column(name="PEMBULATAN")
     private BigDecimal pembulatan=BigDecimal.ZERO;
@@ -220,11 +220,11 @@ public class Penjualan implements Serializable{
         this.jumlahPenjualan = jumlahPenjualan;
     }
 
-    public Integer getDiscTotal() {
+    public BigDecimal getDiscTotal() {
         return discTotal;
     }
 
-    public void setDiscTotal(Integer discTotal) {
+    public void setDiscTotal(BigDecimal discTotal) {
         this.discTotal = discTotal;
     }
 

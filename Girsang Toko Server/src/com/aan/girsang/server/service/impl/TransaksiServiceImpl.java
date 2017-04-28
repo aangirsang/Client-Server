@@ -440,4 +440,8 @@ public class TransaksiServiceImpl implements TransaksiService {
     public List<Penjualan> pending(Boolean pending) {
         return penjualanDao.pending(pending);
     }
+    @Override
+    public List<PenjualanDetail> cariDetail(Penjualan p){
+        return penjualanDao.cariDetail(p);
+    }
 }

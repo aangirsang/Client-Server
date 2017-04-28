@@ -23,6 +23,8 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -32,10 +34,6 @@ import javax.swing.JTable;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
 
-/**
- *
- * @author GIRSANG PC
- */
 public class DialogKasir extends javax.swing.JDialog {
     
     private Penjualan penjualan;
@@ -69,6 +67,9 @@ public class DialogKasir extends javax.swing.JDialog {
         if(p==null){
             clear();
             detailKosong();
+        }else{
+            clear();
+            loadPenjualanToForm(p);
         }
         setLocationRelativeTo(null);
         setVisible(true);
@@ -102,6 +103,7 @@ public class DialogKasir extends javax.swing.JDialog {
         lblKasir.setText(ClientLauncher.getPenggunaAktif().getNamaLengkap());
         lblKetSystem.setText("SYSTEM STANBY");
         lblTampilTotal.setText("0");
+        lblJmlBarang.setText("");
         ClientLauncher.jam(lblJam);
         
         cboLokasi.removeAllItems();
@@ -116,8 +118,7 @@ public class DialogKasir extends javax.swing.JDialog {
     private void clearAll(){
         penjualan = null;
         detail = null;
-        daftarBarang = null;
-        daftarDetail = null;
+        daftarDetail.removeAll(daftarDetail);
         pelanggan = null;
         barang = null;
         tabel.setModel(new TabelModel(daftarDetail));
@@ -208,8 +209,10 @@ public class DialogKasir extends javax.swing.JDialog {
                 seribu;
         seribu = new BigDecimal(1000);
         subTotal = new BigDecimal(0);
+        Integer totalBarang = 0;
         for(int i=0;i<daftarDetail.size();i++){
             subTotal = subTotal.add(daftarDetail.get(i).getSubTotal());
+            totalBarang = totalBarang + daftarDetail.get(i).getKuantitas();
         }
         
         if(txtDiscPersen.getText().equals("")){
@@ -246,6 +249,8 @@ public class DialogKasir extends javax.swing.JDialog {
             lblKetSystem.setText("HUTANG");
             lblTampilTotal.setText(TextComponentUtils.formatNumber(tampil));
         }
+        
+        lblJmlBarang.setText(totalBarang + " Item");
     }
     private void detailKosong(){
         detail = new PenjualanDetail();
@@ -279,10 +284,12 @@ public class DialogKasir extends javax.swing.JDialog {
         penjualan.setTanggalTempo(jdcTglTempo.getDate());
         penjualan.setSubTotal(TextComponentUtils
                 .parseNumberToBigDecimal(txtSubTotal.getText()));
-        penjualan.setDiscTotal(Integer.valueOf(txtDiscPersen.getText()));
+        penjualan.setDiscTotal(TextComponentUtils
+                .parseNumberToBigDecimal(txtDiscNilaiDiskon.getText()));
         penjualan.setPembulatan(TextComponentUtils.parseNumberToBigDecimal(txtPembulatan.getText()));
         penjualan.setTotal(TextComponentUtils.parseNumberToBigDecimal(txtTotal.getText()));
         penjualan.setPiutangAwal(piutangAwal);
+        penjualan.setKasir(ClientLauncher.getPenggunaAktif());
         
     }
     private void loadPenjualanToForm(Penjualan p){
@@ -294,24 +301,32 @@ public class DialogKasir extends javax.swing.JDialog {
         txtBayar.setText(TextComponentUtils.formatNumber(p.getBayar()));
         
         pelanggan = p.getPelanggan();
-        if(pelanggan!=null){
-            txtKodePelanggan.setText(p.getPelanggan().getIdPelanggan());
+        if(pelanggan==null){
+            txtNamaPelanggan.setText("UMUM");
+            lblKetPelanggan.setText("Pelanggan Umum");
+            txtDiscPersen.setText("0");
+            jcbKredit.setSelected(false);
+            tampilBarang(barang);
+            harga();
         }else{
-            txtKodePelanggan.setText("");
+            tampilPelanggan();
+            tampilBarang(barang);
         }
-        daftarDetail = p.getPenjualanDetails();
+        daftarDetail = ClientLauncher.getTransaksiService().cariDetail(p);
         detailKosong();
         kalkulasiTotal();
+        kredit();
     }
     private void addBarang(Barang b){
         boolean data = true;
         detail = new PenjualanDetail();
         loadFormToPenjualan();
         if(daftarDetail!=null){
+        System.out.println(daftarDetail.size());
             for(PenjualanDetail p : daftarDetail){
                 if(p.getBarang()!=null){
-                    if(p.getBarang().equals(b)){
-                        data = true;
+                    if(p.getBarang().getPlu().equals(b.getPlu())){
+                        //data = true;
                         JOptionPane.showMessageDialog(null, 
                                 "Data Barang Sudah Terpilih");
                         data = false;
@@ -340,6 +355,26 @@ public class DialogKasir extends javax.swing.JDialog {
         detailKosong();
         }
         kalkulasiTotal();
+    }
+    private Boolean validateSimpan(){
+        boolean ckredit = jcbKredit.isSelected();
+        Double sisa = Double.valueOf(TextComponentUtils.getValueFromTextNumber(txtSubTotal)) - 
+                Double.valueOf(TextComponentUtils.getValueFromTextNumber(txtBayar));
+        
+        if(ckredit!=true && sisa>0){
+            JOptionPane.showMessageDialog(FrameUtama.getInstance(),
+                     "Jumlah Pembayaran Tidak Boleh Kurang",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            txtBayar.requestFocus();
+            return false;
+        }
+        if(txtSubTotal.getText().equals("0")){
+            JOptionPane.showMessageDialog(FrameUtama.getInstance(),
+                     "Jumlah Barang Masih Kosong",
+                    "Error", JOptionPane.ERROR_MESSAGE);
+            return false;
+        }
+        return true;
     }
     private class TabelModel extends AbstractTableModel{
         private List<PenjualanDetail> listDetail;
@@ -532,6 +567,7 @@ public class DialogKasir extends javax.swing.JDialog {
         lblTampilTotal = new javax.swing.JLabel();
         lblJam = new javax.swing.JLabel();
         lblKasir = new javax.swing.JLabel();
+        lblJmlBarang = new javax.swing.JLabel();
         lblKetPelanggan = new javax.swing.JLabel();
         panelBarang = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -766,6 +802,10 @@ public class DialogKasir extends javax.swing.JDialog {
         lblKasir.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         lblKasir.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblKasir.text")); // NOI18N
 
+        lblJmlBarang.setForeground(new java.awt.Color(255, 255, 255));
+        lblJmlBarang.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lblJmlBarang.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.lblJmlBarang.text")); // NOI18N
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -775,7 +815,8 @@ public class DialogKasir extends javax.swing.JDialog {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblTampilTotal)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblJmlBarang))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblKetSystem)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -796,7 +837,9 @@ public class DialogKasir extends javax.swing.JDialog {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(lblJam)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblKasir)))
+                        .addComponent(lblKasir)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblJmlBarang)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -1061,6 +1104,20 @@ public class DialogKasir extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void initListener(){
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent we) {
+                String ObjButtons[] = {"Ya", "Tidak"};
+                int PromptResult = JOptionPane.showOptionDialog(null, "Apakah Anda Yakin Ingin Membatalkan Editing", "Confirm",
+                        JOptionPane.YES_NO_OPTION,
+                        JOptionPane.QUESTION_MESSAGE,
+                        null, ObjButtons, ObjButtons[1]);
+                if (PromptResult == JOptionPane.YES_OPTION) {
+                    penjualan = null;
+                    dispose();
+                }
+            }
+        });
         tblBarang.getSelectionModel().addListSelectionListener((lse) -> {
             if(tblBarang.getSelectedRow() >=0){
                 barang = daftarBarang.get(tblBarang.getSelectedRow());
@@ -1164,6 +1221,23 @@ public class DialogKasir extends javax.swing.JDialog {
                 loadPenjualanToForm(p);
             }
         });
+        btnSimpan.addActionListener((ae) -> {
+            if(validateSimpan()){
+                penjualan = new Penjualan();
+                loadFormToPenjualan();
+                List<PenjualanDetail> list = new ArrayList<>();
+                for(PenjualanDetail p : daftarDetail){
+                    if(p.getBarang()!=null){
+                        list.add(p);
+                    }
+                }
+                penjualan.setPenjualanDetails(list);
+                penjualan.setIsPending(false);
+
+                ClientLauncher.getTransaksiService().simpan(penjualan);
+                clearAll();
+            }
+        });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
@@ -1207,6 +1281,7 @@ public class DialogKasir extends javax.swing.JDialog {
     private com.toedter.calendar.JDateChooser jdcTglTempo;
     private javax.swing.JLabel lblHargaJual;
     private javax.swing.JLabel lblJam;
+    private javax.swing.JLabel lblJmlBarang;
     private javax.swing.JLabel lblKasir;
     private javax.swing.JLabel lblKetPelanggan;
     private javax.swing.JLabel lblKetSystem;

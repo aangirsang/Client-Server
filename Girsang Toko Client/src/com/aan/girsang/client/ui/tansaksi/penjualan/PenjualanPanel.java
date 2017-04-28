@@ -40,8 +40,8 @@ import org.openide.util.Exceptions;
  */
 public class PenjualanPanel extends javax.swing.JPanel {
 
-    private List<Pembelian> pembelians;
-    private Pembelian pembelian;
+    private List<Penjualan> daftarPenjualan;
+    private Penjualan penjualan;
     private Supplier supplier;
 
 
@@ -49,89 +49,70 @@ public class PenjualanPanel extends javax.swing.JPanel {
     int aktifPanel = 0;
     String title, idSelect;
     ToolbarDenganFilter toolBar = new ToolbarDenganFilter();
-
     public int getIndexTab() {
         return IndexTab;
     }
-
     public void setIndexTab(int IndexTab) {
         this.IndexTab = IndexTab;
     }
-
     public int getAktifPanel() {
         return aktifPanel;
     }
-
     public void setAktifPanel(int aktifPanel) {
         this.aktifPanel = aktifPanel;
     }
-
     public ToolbarDenganFilter getToolbarDenganFilter1() {
         return toolbar;
     }
 
-    /**
-     * Creates new form KategoriPanel
-     */
     public PenjualanPanel() {
         initComponents();
         initListener();
-        tblPenjualan.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
-        tblPenjualan.setDefaultRenderer(Date.class, new DateRenderer());
-        tblPenjualan.setDefaultRenderer(Integer.class, new IntegerRenderer());
+        tabel.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
+        tabel.setDefaultRenderer(Date.class, new DateRenderer());
+        tabel.setDefaultRenderer(Integer.class, new IntegerRenderer());
         isiTabelKategori();
     }
-
     private void ukuranTabelBarang() {
-        tblPenjualan.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-        tblPenjualan.getColumnModel().getColumn(0).setPreferredWidth(200);//Tanggal
-        tblPenjualan.getColumnModel().getColumn(1).setPreferredWidth(100);//No. Ref
-        tblPenjualan.getColumnModel().getColumn(2).setPreferredWidth(100);//No. Faktur
-        tblPenjualan.getColumnModel().getColumn(3).setPreferredWidth(350);//Supplier
-        tblPenjualan.getColumnModel().getColumn(4).setPreferredWidth(50);//Kredit
-        tblPenjualan.getColumnModel().getColumn(5).setPreferredWidth(100);//Tgl. Tempo
-        tblPenjualan.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Pembelian
-        tblPenjualan.getColumnModel().getColumn(7).setPreferredWidth(300);//Pembuat
+        tabel.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        tabel.getColumnModel().getColumn(0).setPreferredWidth(200);//Tanggal
+        tabel.getColumnModel().getColumn(1).setPreferredWidth(100);//No. Ref
+        tabel.getColumnModel().getColumn(2).setPreferredWidth(100);//No. Faktur
+        tabel.getColumnModel().getColumn(3).setPreferredWidth(350);//Supplier
+        tabel.getColumnModel().getColumn(4).setPreferredWidth(50);//Kredit
+        tabel.getColumnModel().getColumn(5).setPreferredWidth(100);//Tgl. Tempo
+        tabel.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Pembelian
+        tabel.getColumnModel().getColumn(7).setPreferredWidth(300);//Pembuat
     }
     private void isiTabelKategori() {
-        pembelians = ClientLauncher.getTransaksiService().semuaPembelian();
-        RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(pembelians));
-        tblPenjualan.setRowSorter(sorter);
-        tblPenjualan.setModel(new TabelModel(pembelians));
+        daftarPenjualan = ClientLauncher.getTransaksiService().semuaPenjualan();
+        RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPenjualan));
+        tabel.setRowSorter(sorter);
+        tabel.setModel(new TabelModel(daftarPenjualan));
         toolbar.getTxtCari().setText("");
         ukuranTabelBarang();
-        lblJumlahData.setText(pembelians.size() + " Data Pembelian");
+        lblJumlahData.setText(daftarPenjualan.size() + " Data Pembelian");
         idSelect = "";
     }
-    
-    private void loadFormToModel(Pembelian p) {
-        pembelian.setNoRef(p.getNoRef());
-        pembelian.setTanggal(p.getTanggal());
-        pembelian.setNoFaktur(p.getNoFaktur());
-        pembelian.setSupplier(p.getSupplier());
-        pembelian.setKredit(p.getKredit());
-        pembelian.setDaftarKredit(p.getDaftarKredit());
-        pembelian.setTotal(p.getTotal());
-        pembelian.setPembuat(p.getPembuat());
-        pembelian.setPembelianDetails(p.getPembelianDetails());
-        pembelian.setLokasi(p.getLokasi());
+    private void loadFormToModel(Penjualan p) {
+        penjualan = p;
     }
     private void cariSelect() {
-        pembelian = new Pembelian();
-        pembelian = ClientLauncher.getTransaksiService().cariPembelian(idSelect);
+        penjualan = new Penjualan();
+        penjualan = ClientLauncher.getTransaksiService().cariIDPenjualan(idSelect);
     }
     private class TabelModel extends AbstractTableModel {
-        private final List<Pembelian> daftarPembelian;
-        public TabelModel(List<Pembelian> daftarPembelian) {
-            this.daftarPembelian = daftarPembelian;
+        private final List<Penjualan> listPenjualan;
+        public TabelModel(List<Penjualan> listPenjualan) {
+            this.listPenjualan = listPenjualan;
         }
         @Override
         public int getRowCount() {
-            return daftarPembelian.size();
+            return listPenjualan.size();
         }
         @Override
         public int getColumnCount() {
-            return 8;
+            return 10;
         }
 
         @Override
@@ -139,12 +120,14 @@ public class PenjualanPanel extends javax.swing.JPanel {
             switch (col) {
                 case 0:return "Tanggal";
                 case 1:return "No. Ref";
-                case 2:return "No. Faktur";
-                case 3:return "Supplier";
-                case 4:return "Kredit";
-                case 5:return "Tgl. Tempo";
-                case 6:return "Jlh. Pembelian";
-                case 7:return "Pembuat";
+                case 2:return "Pelanggan";
+                case 3:return "Kredit";
+                case 4:return "Tgl. Tempo";
+                case 5:return "Jenis";
+                case 6:return "Jlh. Penjualan";
+                case 7:return "Pembulatan";
+                case 8:return "Total";
+                case 9:return "Kasir";
                 default:return "";
             }
 
@@ -152,31 +135,28 @@ public class PenjualanPanel extends javax.swing.JPanel {
 
         @Override
         public Object getValueAt(int rowIndex, int colIndex) {
-            Pembelian p = pembelians.get(rowIndex);
+            Penjualan p = daftarPenjualan.get(rowIndex);
             switch (colIndex) {
                 case 0:return p.getTanggal();
                 case 1:return p.getNoRef();
                 case 2:
-                    if(p.getNoFaktur()!=""){
-                        return p.getNoFaktur();
+                    if(p.getPelanggan()!=null){
+                        return p.getPelanggan().getNama();
+                    }else{
+                        return "UMUM";
+                    }
+                case 3:return p.getIsKredit();
+                case 4:
+                    if(p.getIsKredit()==true){
+                        return p.getTanggalTempo();
                     }else{
                         return "-";
                     }
-                case 3:
-                    if(p.getSupplier()!=null){
-                        return p.getSupplier().getNamaSupplier();
-                    }else{
-                        return "-";
-                    }
-                case 4:return p.getKredit();
-                case 5:
-                if(p.getKredit()==true){
-                    return p.getDaftarKredit().getTanggalTempo();
-                }else{
-                    return "-";
-                }
-                case 6:return p.getTotal();
-                case 7:return p.getPembuat();
+                case 5:return p.getLokasi();
+                case 6:return p.getSubTotal().subtract(p.getDiscTotal());
+                case 7:return p.getPembulatan();
+                case 8:return p.getTotal();
+                case 9:return p.getKasir().getIdPengguna();
                 default:return "";
             }
         }
@@ -185,20 +165,21 @@ public class PenjualanPanel extends javax.swing.JPanel {
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
                 case 0:return Date.class;
-                case 4:return Boolean.class;
+                case 3:return Boolean.class;
                 case 6:return BigDecimal.class;
+                case 7:return BigDecimal.class;
+                case 8:return BigDecimal.class;
                 default:return String.class;
             }
         }
     }
-
     private void initListener() {
-        tblPenjualan.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
-            if (tblPenjualan.getSelectedRow() >= 0) {
-                idSelect = tblPenjualan.getValueAt(tblPenjualan.getSelectedRow(), 1).toString();
+        tabel.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
+            if (tabel.getSelectedRow() >= 0) {
+                idSelect = tabel.getValueAt(tabel.getSelectedRow(), 1).toString();
             }
         });
-        tblPenjualan.addMouseListener(new MouseAdapter() {
+        tabel.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent me) {
                 if (me.getClickCount() == 2) {
@@ -207,11 +188,11 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
                     } else {
                         cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian,pembelian.getSupplier(), title, false);
-                        pembelian = new Pembelian();
+                        Penjualan p = (Penjualan) new DialogKasir().showDialog(penjualan);
+                        penjualan = new Penjualan();
                         if (p != null) {
                             loadFormToModel(p);
-                            ClientLauncher.getTransaksiService().simpan(pembelian);
+                            ClientLauncher.getTransaksiService().simpan(penjualan);
                             isiTabelKategori();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
@@ -220,18 +201,18 @@ public class PenjualanPanel extends javax.swing.JPanel {
                 }
             }
         });
-        toolbar.getTxtCari().addKeyListener(new KeyListener() {
+        /*toolbar.getTxtCari().addKeyListener(new KeyListener() {
             @Override
             public void keyReleased(KeyEvent ke) {
                 if ("".equals(toolbar.getTxtCari().getText())) {
                     isiTabelKategori();
                 } else {
-                    pembelians = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
-                    tblPenjualan.setModel(new TabelModel(pembelians));
-                    RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(pembelians));
-                    tblPenjualan.setRowSorter(sorter);
+                    daftarPenjualan = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
+                    tabel.setModel(new TabelModel(daftarPenjualan));
+                    RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPenjualan));
+                    tabel.setRowSorter(sorter);
                     ukuranTabelBarang();
-                    int jml = pembelians.size();
+                    int jml = daftarPenjualan.size();
                 }
             }
 
@@ -242,7 +223,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
             @Override
             public void keyPressed(KeyEvent ke) {
             }
-        });
+        });*/
 
         toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
             isiTabelKategori();
@@ -254,16 +235,16 @@ public class PenjualanPanel extends javax.swing.JPanel {
         });
 
         toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
-            title = "Edit Data Barang";
-            if ("".equals(idSelect)) {
+            title = "Edit Data Pembelian";
+                    if ("".equals(idSelect)) {
                         JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
                     } else {
                         cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title,false);
-                        pembelian = new Pembelian();
+                        Penjualan p = (Penjualan) new DialogKasir().showDialog(penjualan);
+                        penjualan = new Penjualan();
                         if (p != null) {
                             loadFormToModel(p);
-                            ClientLauncher.getTransaksiService().simpan(pembelian);
+                            ClientLauncher.getTransaksiService().simpan(penjualan);
                             isiTabelKategori();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
@@ -272,13 +253,14 @@ public class PenjualanPanel extends javax.swing.JPanel {
         });
 
         toolbar.getBtnHapus().addActionListener((ActionEvent ae) -> {
-            /*if (pembelian == null) {
-            JOptionPane.showMessageDialog(null, "Data Barang Belum Terpilih");
+            cariSelect();
+            if (penjualan == null) {
+                JOptionPane.showMessageDialog(null, "Data Barang Belum Terpilih");
             } else {
-            FrameUtama.getMasterService().hapus(pembelian);
-            isiTabelKategori();
-            JOptionPane.showMessageDialog(null, "Hapus Data Berhasil");
-            }*/
+                ClientLauncher.getTransaksiService().hapus(penjualan);
+                isiTabelKategori();
+                JOptionPane.showMessageDialog(null, "Hapus Data Berhasil");
+            }
         });
         toolbar.getBtnFilter().addActionListener((ActionEvent ae) -> {
             /*List <Barang> list = new FilterBarang().showDialog();
@@ -286,11 +268,6 @@ public class PenjualanPanel extends javax.swing.JPanel {
         });
     }
 
-    /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
-     */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -300,7 +277,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblPenjualan = new javax.swing.JTable();
+        tabel = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter();
 
@@ -314,19 +291,15 @@ public class PenjualanPanel extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        tblPenjualan.setModel(new javax.swing.table.DefaultTableModel(
+        tabel.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Tanggal", "No. Ref", "Pelanggan", "Kredit", "Tgl. Tempo", "Jumlah Penjualan", "Pembulatan", "Total", "Kasir"
+
             }
         ));
-        jScrollPane1.setViewportView(tblPenjualan);
-        if (tblPenjualan.getColumnModel().getColumnCount() > 0) {
-            tblPenjualan.getColumnModel().getColumn(0).setResizable(false);
-            tblPenjualan.getColumnModel().getColumn(1).setResizable(false);
-        }
+        jScrollPane1.setViewportView(tabel);
 
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText("jLabel4");
@@ -395,7 +368,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblJumlahData;
-    private javax.swing.JTable tblPenjualan;
+    private javax.swing.JTable tabel;
     private com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter toolbar;
     // End of variables declaration//GEN-END:variables
 }

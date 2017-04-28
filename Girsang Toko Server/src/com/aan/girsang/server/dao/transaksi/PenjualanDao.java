@@ -35,8 +35,10 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
     
     @Override
     public List<Penjualan> semua(){
+        Boolean isPending = false;
         return sessionFactory.getCurrentSession().createQuery(
-                "from Penjualan p Order By p.tanggal Desc")
+                "from Penjualan p where p.isPending=:isPending Order By p.tanggal Desc")
+                .setParameter("isPending", isPending)
                 .list();
     }
     public List<PenjualanDetail> cariBarang(Barang b){
@@ -69,6 +71,12 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
         return sessionFactory.getCurrentSession().createQuery(
                 "from Penjualan p where p.isPending=:isPending")
                 .setParameter("isPending", pending)
+                .list();
+    }
+    public List<PenjualanDetail> cariDetail(Penjualan p){
+        return sessionFactory.getCurrentSession().createQuery(
+                "from PenjualanDetail p where p.penjualan=:penjualan")
+                .setParameter("penjualan", p)
                 .list();
     }
 }
