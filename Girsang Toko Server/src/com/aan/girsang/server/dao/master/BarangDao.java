@@ -55,4 +55,16 @@ public class BarangDao extends BaseDaoHibernate<Barang> {
                 .list();
         return b;
     }
+    public Barang cariBarcode1(String barcode1){
+        return (Barang) sessionFactory.getCurrentSession().createQuery(
+                "from Barang b where b.barcode1=:barcode1")
+                .setString("barcode1", barcode1)
+                .uniqueResult();
+    }
+    public Barang cariBarcode2(String barcode2){
+        return (Barang) sessionFactory.getCurrentSession().createQuery(
+                "from Barang b where b.barcode2=:barcode2")
+                .setString("barcode2", barcode2)
+                .uniqueResult();
+    }
 }

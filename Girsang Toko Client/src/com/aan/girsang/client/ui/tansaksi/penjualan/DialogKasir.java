@@ -31,6 +31,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
 
@@ -379,6 +381,7 @@ public class DialogKasir extends javax.swing.JDialog {
     private class TabelModel extends AbstractTableModel{
         private List<PenjualanDetail> listDetail;
         String columnNames[] = {
+            "Barcode",
             "PLU", 
             "Nama Barang", 
             "Satuan", 
@@ -408,20 +411,26 @@ public class DialogKasir extends javax.swing.JDialog {
             switch(columnIndex){
                 case 0:
                     if(p.getBarang()!=null){
-                        return p.getBarang().getPlu();
+                        return p.getBarang().getBarcode1();
                     }else{
                         return "";
                     }
                 case 1:
                     if(p.getBarang()!=null){
+                        return p.getBarang().getPlu();
+                    }else{
+                        return "";
+                    }
+                case 2:
+                    if(p.getBarang()!=null){
                         return p.getBarang().getNamaBarang();
                     }else{
                         return "";
                     }
-                case 2:return p.getSatuan();
-                case 3:return p.getHargaJual();
-                case 4:return p.getKuantitas();
-                case 5:return p.getSubTotal();
+                case 3:return p.getSatuan();
+                case 4:return p.getHargaJual();
+                case 5:return p.getKuantitas();
+                case 6:return p.getSubTotal();
                 default:return "";
             }
             
@@ -429,15 +438,16 @@ public class DialogKasir extends javax.swing.JDialog {
         @Override
         public Class<?> getColumnClass(int columnIndex) {
             switch (columnIndex) {
-                case 3:return BigDecimal.class;
-                case 4:return Integer.class;
-                case 5:return BigDecimal.class;
+                case 4:return BigDecimal.class;
+                case 5:return Integer.class;
+                case 6:return BigDecimal.class;
                 default:return String.class;
             }
         }
         @Override
         public boolean isCellEditable(int row, int columnIndex) {
-            if (columnIndex == 4 ) {
+            if (columnIndex == 5 ||
+                    columnIndex == 0) {
                 return true;
             } else {
                 return false;
@@ -447,8 +457,55 @@ public class DialogKasir extends javax.swing.JDialog {
         public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
             PenjualanDetail p = listDetail.get(rowIndex);
             switch(columnIndex){
-                case 4 :
-                    p.setKuantitas((Integer) aValue);
+                case 0 :
+                    String barcode = (String) aValue;
+                    Barang b = ClientLauncher.getMasterService().cariBarcode(barcode);
+                    if(b!=null){
+                        BigDecimal harga;
+                        if(pelanggan==null){
+                            harga = b.getHargaNormal();
+                        }else{
+                            harga = b.getHargaMember();
+                        }
+                            p.setBarang(b);
+                            p.setSatuan(b.getSatuan());
+                            p.setKuantitas(0);
+                            p.setHargaJual(harga);
+                            p.setHpp(b.getHargaBeli());
+                            p.setSubTotal(new BigDecimal(0));
+                        }else{
+                        p.setBarang(null);
+                        p.setSatuan("");
+                        p.setKuantitas(0);
+                        p.setHargaJual(new BigDecimal(0));
+                        p.setHpp(new BigDecimal(0));
+                        p.setSubTotal(new BigDecimal(0));
+                    }
+                    tabel.tableChanged(new TableModelEvent(tabel
+                            .getModel(),tabel.getSelectedRow()));
+                    break;
+                case 5 :
+                    Integer kuantitas = (Integer) aValue;
+                    String lokasi = cboLokasi.getSelectedItem().toString();
+                    if(lokasi.equals("Toko")){
+                        if(p.getBarang().getKalkulasiStokToko()< kuantitas ||
+                                p.getBarang().getKalkulasiStokToko()<0){
+                            JOptionPane.showMessageDialog(null, 
+                                    "<html>Stok Tidak Mencukupi<br> Karena Stok Toko Barang "+
+                                    p.getBarang().getNamaBarang()+"<br> Adalah "+
+                                    " "+p.getBarang().getKalkulasiStokToko()+"</html>");
+                        }
+                    }
+                    if(lokasi.equals("Gudang")){
+                        if(p.getBarang().getKalkulasiStokGudang()< kuantitas ||
+                                p.getBarang().getKalkulasiStokGudang()<0){
+                            JOptionPane.showMessageDialog(null, 
+                                    "<html>Stok Tidak Mencukupi<br> Karena Stok Gudang Barang "+
+                                    p.getBarang().getNamaBarang()+"<br> Adalah "+
+                                    " "+p.getBarang().getKalkulasiStokGudang()+"</html>");
+                        }
+                    }
+                    p.setKuantitas(kuantitas);
                     p.setSubTotal(p.getHargaJual()
                             .multiply(new BigDecimal(p.getKuantitas())));
                     fireTableCellUpdated(rowIndex, columnIndex); // Total may also have changed
@@ -1118,6 +1175,18 @@ public class DialogKasir extends javax.swing.JDialog {
                 }
             }
         });
+        tabel.getDefaultEditor(String.class).addCellEditorListener(
+                new CellEditorListener() {
+                    @Override
+                    public void editingCanceled(ChangeEvent e) {
+                        System.out.println("editingCanceled");
+                    }
+
+                    @Override
+                    public void editingStopped(ChangeEvent e) {
+                        System.out.println("editingStopped: apply additional action");
+                    }
+                });
         tblBarang.getSelectionModel().addListSelectionListener((lse) -> {
             if(tblBarang.getSelectedRow() >=0){
                 barang = daftarBarang.get(tblBarang.getSelectedRow());
@@ -1199,6 +1268,20 @@ public class DialogKasir extends javax.swing.JDialog {
             public void keyReleased(KeyEvent ke) {
                 daftarBarang = ClientLauncher.getMasterService().cariNamaBarang(txtCariNamaBarang.getText());
                 isiTabelBarang();}
+        });
+        txtDiscPersen.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                kalkulasiTotal();
+            }
         });
         btnPending.addActionListener((ae) -> {
             penjualan = new Penjualan();

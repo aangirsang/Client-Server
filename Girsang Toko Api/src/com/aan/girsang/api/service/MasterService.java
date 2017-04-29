@@ -47,6 +47,7 @@ public interface MasterService {
     public List<Barang> cariNamaBarang(String Barang);
     public List<Barang> isJual(Boolean isJual);
     public Barang cariIdBarang(String id);
+    public Barang cariBarcode(String barcode);
     public List<PembelianDetail> historyPembelian(Barang barang);
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="HPP Barang">

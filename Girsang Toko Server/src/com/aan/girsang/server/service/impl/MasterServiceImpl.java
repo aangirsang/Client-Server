@@ -161,6 +161,18 @@ public class MasterServiceImpl implements MasterService{
         return barangDao.cariId(id);
     }
     @Override
+    public Barang cariBarcode(String barcode){
+        Barang b1 = barangDao.cariBarcode1(barcode);
+        Barang b2 = barangDao.cariBarcode2(barcode);
+        
+        if(b1!=null){
+            return b1;
+        }else if(b2!=null){
+            return b2;
+        }
+        return null;
+    }
+    @Override
     public List<PembelianDetail> historyPembelian(Barang barang) {
         return barangDao.historyPembelian(barang);
     }

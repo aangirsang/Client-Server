@@ -25,6 +25,7 @@ import com.aan.girsang.api.util.TextComponentUtils;
 import com.aan.girsang.server.dao.master.BarangDao;
 import com.aan.girsang.server.dao.master.HPPDao;
 import com.aan.girsang.server.dao.constant.RunningNumberDao;
+import com.aan.girsang.server.dao.master.PelangganDao;
 import com.aan.girsang.server.dao.master.SupplierDao;
 import com.aan.girsang.server.dao.transaksi.PelunasanHutangDao;
 import com.aan.girsang.server.dao.transaksi.PembelianDao;
@@ -52,6 +53,7 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Autowired RunningNumberDao runningNumberDao;
     @Autowired HPPDao hPPDao;
     @Autowired SupplierDao supplierDao;
+    @Autowired PelangganDao pelangganDao;
     @Autowired PelunasanHutangDao pelunasanHutangDao;
     @Autowired ReturPembelianDao returPembelianDao;
     @Autowired PenjualanDao penjualanDao;
@@ -168,6 +170,86 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Override
     public PembelianDetail cariDetailBeli(String id) {
         return pembelianDao.cariIDDetail(id);
+    }
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Penjualan">
+    @Override
+    @Transactional(isolation=Isolation.SERIALIZABLE)
+    public void simpan(Penjualan p) {
+        Penjualan penjualan = penjualanDao.cariId(p.getNoRef());
+        if(penjualan == null){
+            p.setNoRef(runningNumberDao.ambilBerikutnyaDanSimpan(TransaksiRunningNumberEnum.PENJUALAN));
+            int i = 1;
+            for(PenjualanDetail detail : p.getPenjualanDetails()){
+                detail.setId(p.getNoRef() + i++);
+            }
+        }else{
+            int i = 1;
+            for(PenjualanDetail detail : p.getPenjualanDetails()){
+                try {
+                    i++;
+                    if (detail.getId() == null) {
+                        detail.setId(p.getNoRef() + i++);
+                    }
+                } catch (Exception e) {
+                    i = i + 1;
+                    if (detail.getId() == null) {
+                        detail.setId(p.getNoRef() + i++);
+                    }
+                }
+                if (detail.getId() == null) {
+                    detail.setId(p.getNoRef() + i++);
+                }
+            }
+        }
+        penjualanDao.merge(p);
+        simpanStokPenjualan(p);
+        simpanPiutang();
+    }
+    
+    @Override
+    @Transactional
+    public void hapus(Penjualan p) {
+        penjualanDao.hapus(p);
+    }
+    
+    @Override
+    public Penjualan cariIDPenjualan(String id) {
+        return penjualanDao.cariId(id);
+    }
+    
+    @Override
+    public List<Penjualan> semuaPenjualan() {
+        return penjualanDao.semua();
+    }
+    
+    @Override
+    public List<Penjualan> cariPelanggan(Pelanggan p) {
+        return penjualanDao.cariPelanggan(p);
+    }
+    
+    @Override
+    public List<Penjualan> cariPiutang(Pelanggan p) {
+        return penjualanDao.piutangPelanggan(p);
+    }
+    
+    @Override
+    public List<Penjualan> cariKasir(Pengguna p) {
+        return penjualanDao.cariKasir(p);
+    }
+    
+    @Override
+    public List<PenjualanDetail> cariBarangJual(Barang b) {
+        return penjualanDao.cariBarang(b);
+    }
+    
+    @Override
+    public List<Penjualan> pending(Boolean pending) {
+        return penjualanDao.pending(pending);
+    }
+    @Override
+    public List<PenjualanDetail> cariDetail(Penjualan p){
+        return penjualanDao.cariDetail(p);
     }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Retur Pembelian">
@@ -321,6 +403,31 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Simpan Piutang">
+    private void simpanPiutang(){
+        List<Pelanggan> daftarPelanggan = pelangganDao.semua();
+        for(Pelanggan p : daftarPelanggan){
+            List<Penjualan> daftarPenjualan = penjualanDao.cariPelanggan(p);
+            //List<PelunasanHutang> hutangs = pelunasanHutangDao.cariSupplier(p);
+            
+            BigDecimal piutang = new BigDecimal(0);
+//            BigDecimal pembayaranHutang = new BigDecimal(0);
+            
+            for(int i=0;i<daftarPenjualan.size();i++){
+                Penjualan jual = daftarPenjualan.get(i);
+                piutang = piutang.add(jual.getPiutangAwal());
+            }
+            
+//            for(int i=0;i<hutangs.size();i++){
+//                PelunasanHutang pH = hutangs.get(i);
+//                pembayaranHutang = pembayaranHutang.add(pH.getJlhBayar());
+//            }
+            p.setSaldoPiutang(piutang);
+            
+            pelangganDao.simpan(p);
+        }
+    }
+//</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Simpan Stok Pembelian">
     private void simpanStokPembelian(Pembelian p) {
         Integer stokToko = 0;
@@ -339,6 +446,28 @@ public class TransaksiServiceImpl implements TransaksiService {
             }
             b.setStokPembelianToko(stokToko);
             b.setStokPembelianGudang(stokGudang);
+            barangDao.simpan(b);
+        }
+    }
+//</editor-fold>
+    //<editor-fold defaultstate="collapsed" desc="Simpan Stok Penjualan">
+    private void simpanStokPenjualan(Penjualan p) {
+        Integer stokToko = 0;
+        Integer stokGudang = 0;
+        for (PenjualanDetail detail : p.getPenjualanDetails()) {
+                    stokToko = 0;
+                    stokGudang = 0;
+            Barang b = barangDao.cariId(detail.getBarang().getPlu());
+            List<PembelianDetail> PD = pembelianDao.cariBarang(detail.getBarang());
+            for (PembelianDetail PD1 : PD) {
+                if("Toko".equals(PD1.getPembelian().getLokasi())){
+                    stokToko = stokToko + (PD1.getKuantitas() * PD1.getIsiPembelian());
+                }else if("Gudang".equals(PD1.getPembelian().getLokasi())){
+                    stokGudang = stokGudang + (PD1.getKuantitas() * PD1.getIsiPembelian());
+                }
+            }
+            b.setStokPenjualanToko(stokToko);
+            b.setStokPenjualanGudang(stokGudang);
             barangDao.simpan(b);
         }
     }
@@ -367,81 +496,4 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
-
-    @Override
-    @Transactional(isolation=Isolation.SERIALIZABLE)
-    public void simpan(Penjualan p) {
-        Penjualan penjualan = penjualanDao.cariId(p.getNoRef());
-        if(penjualan == null){
-            p.setNoRef(runningNumberDao.ambilBerikutnyaDanSimpan(TransaksiRunningNumberEnum.PENJUALAN));
-            int i = 1;
-            for(PenjualanDetail detail : p.getPenjualanDetails()){
-                detail.setId(p.getNoRef() + i++);
-            }
-        }else{
-            int i = 1;
-            for(PenjualanDetail detail : p.getPenjualanDetails()){
-                try {
-                    i++;
-                    if (detail.getId() == null) {
-                        detail.setId(p.getNoRef() + i++);
-                    }
-                } catch (Exception e) {
-                    i = i + 1;
-                    if (detail.getId() == null) {
-                        detail.setId(p.getNoRef() + i++);
-                    }
-                }
-                if (detail.getId() == null) {
-                    detail.setId(p.getNoRef() + i++);
-                }
-            }
-        }
-        penjualanDao.merge(p);
-    }
-
-    @Override
-    @Transactional
-    public void hapus(Penjualan p) {
-        penjualanDao.hapus(p);
-    }
-
-    @Override
-    public Penjualan cariIDPenjualan(String id) {
-        return penjualanDao.cariId(id);
-    }
-
-    @Override
-    public List<Penjualan> semuaPenjualan() {
-        return penjualanDao.semua();
-    }
-
-    @Override
-    public List<Penjualan> cariPelanggan(Pelanggan p) {
-        return penjualanDao.cariPelanggan(p);
-    }
-
-    @Override
-    public List<Penjualan> cariPiutang(Pelanggan p) {
-        return penjualanDao.piutangPelanggan(p);
-    }
-
-    @Override
-    public List<Penjualan> cariKasir(Pengguna p) {
-        return penjualanDao.cariKasir(p);
-    }
-
-    @Override
-    public List<PenjualanDetail> cariBarangJual(Barang b) {
-        return penjualanDao.cariBarang(b);
-    }
-
-    @Override
-    public List<Penjualan> pending(Boolean pending) {
-        return penjualanDao.pending(pending);
-    }
-    @Override
-    public List<PenjualanDetail> cariDetail(Penjualan p){
-        return penjualanDao.cariDetail(p);
-    }
 }

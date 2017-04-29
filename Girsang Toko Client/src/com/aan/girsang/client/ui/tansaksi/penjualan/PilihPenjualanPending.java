@@ -5,16 +5,12 @@
  */
 package com.aan.girsang.client.ui.tansaksi.penjualan;
 
-import com.aan.girsang.client.ui.master.barang.*;
-import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.Pelanggan;
 import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.ui.frame.FrameUtama;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
