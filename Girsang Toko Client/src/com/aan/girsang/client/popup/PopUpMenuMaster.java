@@ -10,6 +10,7 @@ import com.aan.girsang.client.ui.master.golongan.PanelGolonganBarang;
 import com.aan.girsang.client.ui.master.pelanggan.PanelPelanggan;
 import com.aan.girsang.client.ui.master.satuan.SatuanBarangPanel;
 import com.aan.girsang.client.ui.master.supplier.SupplierPanel;
+import com.aan.girsang.client.ui.report.TestReportPanel;
 import com.aan.girsang.client.ui.security.pengguna.PenggunaPanel;
 import com.aan.girsang.client.ui.security.tingkatAkses.TingkatAksesPanel;
 import java.awt.event.ActionEvent;
@@ -36,9 +37,31 @@ public class PopUpMenuMaster extends AbstractButton {
     PenggunaPanel penggunaPanel = new PenggunaPanel();
     TingkatAksesPanel aksesPanel = new TingkatAksesPanel();
     PanelPelanggan panelPelanggan = new PanelPelanggan();
+    TestReportPanel testReportPanel = new TestReportPanel();
     
     
     public PopUpMenuMaster(JTabbedPane TP, JPopupMenu popupMenuMaster, JButton btnMaster) {
+        popupMenuMaster.add(new JMenuItem(new AbstractAction("Test Report") {
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                if (testReportPanel.getAktifPanel() == 1) {
+                    TP.setSelectedIndex(testReportPanel.getIndexTab());
+                } else {
+                    testReportPanel = new TestReportPanel();
+                    testReportPanel.setName("Test Report");
+                    testReportPanel.setAktifPanel(testReportPanel.getAktifPanel() + 1);
+                    TP.addTab(testReportPanel.getName(), testReportPanel);
+                    testReportPanel.setIndexTab(TP.getTabCount() - 1);
+                    TP.setSelectedIndex(testReportPanel.getIndexTab());
+                    
+                    testReportPanel.getBtnTutup().addActionListener((ae1) -> {
+                        TP.remove(testReportPanel);
+                        testReportPanel.setAktifPanel(testReportPanel.getAktifPanel() - 1);
+                        TP.setSelectedIndex(testReportPanel.getIndexTab() -1);
+                    });
+                }
+            }
+        }));
         popupMenuMaster.add(new JMenuItem(new AbstractAction("Golongan Barang") {
             @Override
             public void actionPerformed(ActionEvent ae) {

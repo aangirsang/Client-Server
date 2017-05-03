@@ -8,6 +8,7 @@ package com.aan.girsang.client.launcher;
 import com.aan.girsang.api.model.security.Pengguna;
 import com.aan.girsang.api.service.ConstantService;
 import com.aan.girsang.api.service.MasterService;
+import com.aan.girsang.api.service.ReportService;
 import com.aan.girsang.api.service.SecurityService;
 import com.aan.girsang.api.service.TransaksiService;
 import com.aan.girsang.client.ui.frame.FrameUtama;
@@ -36,6 +37,7 @@ public class ClientLauncher {
     private static MasterService masterService;
     private static TransaksiService transaksiService;
     private static SecurityService securityService;
+    private static ReportService reportService;
     private static Pengguna penggunaAktif;
     private static Date tanggalServer;
 
@@ -53,6 +55,10 @@ public class ClientLauncher {
 
     public static SecurityService getSecurityService() {
         return securityService;
+    }
+
+    public static ReportService getReportService() {
+        return reportService;
     }
 
     public static void setPenggunaAktif(Pengguna p) {
@@ -98,6 +104,7 @@ public class ClientLauncher {
         securityService = (SecurityService) ctx.getBean("securityServiceRemote");
         masterService = (MasterService) ctx.getBean("masterServiceRemote");
         transaksiService = (TransaksiService) ctx.getBean("transaksiServiceRemote");
+        reportService = (ReportService) ctx.getBean("reportServiceRemote");
         String computerName = InetAddress.getLocalHost().getHostName();
         
         constantService.clientOnline(computerName);

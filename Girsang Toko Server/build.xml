@@ -10,6 +10,25 @@
 <project name="Girsang_Toko_Server" default="default" basedir=".">
     <description>Builds, tests, and runs the project Girsang Toko Server.</description>
     <import file="nbproject/build-impl.xml"/>
+	<taskdef name="jrc"
+    classname="net.sf.jasperreports.ant.JRAntCompileTask">
+    <classpath>
+        <fileset dir="./lib">
+            <include name="**/*.jar"/>
+        </fileset>
+    </classpath>
+</taskdef>
+	<target name="-post-compile">
+    <mkdir dir="./build/com/aan/girsang/server/report"/>
+	    <delete>
+        <fileset file="./src/com/aan/girsang/server/report*.jasper"/>
+    </delete>
+    <jrc srcdir="./src/com/aan/girsang/server/report" destdir="./src/com/aan/girsang/server/report"
+        tempdir="./build/com/aan/girsang/server/report"
+        keepjava="true" xmlvalidation="true">
+        <include name="**/*.jrxml"/>
+    </jrc>
+	</target>
     <!--
 
     There exist several targets which are by default empty and which can be 

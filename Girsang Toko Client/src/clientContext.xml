@@ -26,4 +26,9 @@
         <property name="serviceUrl" value="http://localhost:9090/TransaksiService"/>
         <property name="serviceInterface" value="com.aan.girsang.api.service.TransaksiService"/>
     </bean>
+    <bean id="reportServiceRemote"
+    class="org.springframework.remoting.httpinvoker.HttpInvokerProxyFactoryBean">
+        <property name="serviceUrl" value="http://localhost:9090/ReportService"/>
+        <property name="serviceInterface" value="com.aan.girsang.api.service.ReportService"/>
+    </bean>
 </beans>

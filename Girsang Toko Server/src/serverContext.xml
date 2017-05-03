@@ -18,6 +18,8 @@
                        value-ref="securityServiceHttpInvoker"/>
                 <entry key="/TransaksiService" 
                        value-ref="transaksiServiceHttpInvoker"/>
+                <entry key="/ReportService" 
+                       value-ref="reportServiceHttpInvoker"/>
             </map>
         </property>
         <property name="port" value="9090" />
@@ -31,13 +33,17 @@
     <bean id="masterServiceHttpInvoker" 
           class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
           p:service-ref="masterService"
-          p:serviceInterface="com.aan.girsang.api.service.MasterService"    />
+          p:serviceInterface="com.aan.girsang.api.service.MasterService"/>
     <bean id="securityServiceHttpInvoker" 
           class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
           p:service-ref="securityService"
-          p:serviceInterface="com.aan.girsang.api.service.SecurityService"    />
+          p:serviceInterface="com.aan.girsang.api.service.SecurityService"/>
     <bean id="transaksiServiceHttpInvoker" 
           class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
           p:service-ref="transaksiService"
-          p:serviceInterface="com.aan.girsang.api.service.TransaksiService"    />
+          p:serviceInterface="com.aan.girsang.api.service.TransaksiService"/>
+    <bean id="reportServiceHttpInvoker" 
+          class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter"
+          p:service-ref="reportService"
+          p:serviceInterface="com.aan.girsang.api.service.ReportService"/>
 </beans>
