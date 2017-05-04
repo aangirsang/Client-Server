@@ -3,12 +3,16 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="date" class="java.util.Date"/>
 	<field name="namaBarang" class="java.lang.String"/>
-	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="jumlah" class="java.lang.Long"/>
 	<field name="subTotal" class="java.math.BigDecimal"/>
-	<variable name="sumJumlah" class="java.lang.Integer" calculation="Sum"/>
-	<variable name="sumSubTotal" class="java.math.BigDecimal" calculation="Sum"/>
+	<field name="hargaJual" class="java.math.BigDecimal"/>
+	<variable name="sumJumlah" class="java.lang.Long" calculation="Sum">
+		<variableExpression><![CDATA[$F{jumlah}]]></variableExpression>
+	</variable>
+	<variable name="sumSubTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{subTotal}]]></variableExpression>
+	</variable>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
@@ -21,7 +25,7 @@
 	<columnHeader>
 		<band height="60" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="40" width="372" height="20" uuid="a6bfc010-41d6-4c73-87cc-a9a02b27c533"/>
+				<reportElement x="0" y="40" width="349" height="20" uuid="a6bfc010-41d6-4c73-87cc-a9a02b27c533"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -49,7 +53,7 @@
 				<text><![CDATA[SubTotal]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="372" y="40" width="100" height="20" uuid="1430ece7-48ab-4555-99ca-7cfe1f1fed1b"/>
+				<reportElement x="433" y="40" width="39" height="20" uuid="1430ece7-48ab-4555-99ca-7cfe1f1fed1b"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -67,17 +71,24 @@
 				<textElement verticalAlignment="Middle"/>
 				<text><![CDATA[Tanggal :]]></text>
 			</staticText>
-			<textField pattern="dd MMMMM yyyy">
-				<reportElement x="59" y="0" width="100" height="20" uuid="8ff43bfd-197a-46c5-bcb4-52d5c3f10d5f"/>
-				<textElement verticalAlignment="Middle"/>
-				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
-			</textField>
+			<staticText>
+				<reportElement x="349" y="40" width="84" height="20" uuid="64b3fecd-194d-43f0-99d2-47bd8cace505"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Harga Jual]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField>
-				<reportElement x="0" y="0" width="372" height="20" uuid="0a29072b-516d-4457-a774-d711c49e45c5"/>
+				<reportElement x="0" y="0" width="349" height="20" uuid="0a29072b-516d-4457-a774-d711c49e45c5"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -105,7 +116,7 @@
 				<textFieldExpression><![CDATA[$F{subTotal}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="372" y="0" width="100" height="20" uuid="a8afd5ad-4b0b-4556-b66b-09969c620b6a"/>
+				<reportElement x="433" y="0" width="39" height="20" uuid="a8afd5ad-4b0b-4556-b66b-09969c620b6a"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -118,6 +129,20 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
 			</textField>
+			<textField pattern="#,###">
+				<reportElement x="349" y="0" width="84" height="20" uuid="536376e7-a1f1-49e4-af86-0098804dd194"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{hargaJual}]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 	<columnFooter>
@@ -128,8 +153,23 @@
 	</pageFooter>
 	<summary>
 		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="433" height="20" uuid="6d169f3d-7a25-4254-9702-f652fa49aac0"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font isBold="true"/>
+					<paragraph rightIndent="5"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
 			<textField>
-				<reportElement x="372" y="0" width="100" height="20" uuid="e6f5da00-c27d-443c-b0e2-fd9b27cba28a"/>
+				<reportElement x="433" y="0" width="39" height="20" uuid="6382104b-6f1c-439d-ade7-8125269688eb"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -144,7 +184,7 @@
 				<textFieldExpression><![CDATA[$V{sumJumlah}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,###">
-				<reportElement x="472" y="0" width="100" height="20" uuid="2239b857-818d-4bf8-8756-af93329f4c27"/>
+				<reportElement x="472" y="0" width="100" height="20" uuid="00afd678-2c81-4b97-b742-6d08399ddb27"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -158,21 +198,6 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$V{sumSubTotal}]]></textFieldExpression>
 			</textField>
-			<staticText>
-				<reportElement x="0" y="0" width="372" height="20" uuid="6d169f3d-7a25-4254-9702-f652fa49aac0"/>
-				<box>
-					<pen lineWidth="0.0"/>
-					<topPen lineWidth="0.0"/>
-					<leftPen lineWidth="0.0"/>
-					<bottomPen lineWidth="0.0"/>
-					<rightPen lineWidth="0.0"/>
-				</box>
-				<textElement textAlignment="Right" verticalAlignment="Middle">
-					<font isBold="true"/>
-					<paragraph rightIndent="5"/>
-				</textElement>
-				<text><![CDATA[Total]]></text>
-			</staticText>
 		</band>
 	</summary>
 </jasperReport>

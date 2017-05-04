@@ -14,5 +14,5 @@ import net.sf.jasperreports.engine.JasperPrint;
  */
 public interface ReportService {
     JasperPrint testReport();
-    JasperPrint penjualanBarang(Date date);
+    JasperPrint penjualanBarang();
 }

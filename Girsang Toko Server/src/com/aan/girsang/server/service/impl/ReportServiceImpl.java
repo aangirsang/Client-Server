@@ -59,24 +59,22 @@ public class ReportServiceImpl implements ReportService {
     }
 
     @Override
-    public JasperPrint penjualanBarang(Date date) {
+    public JasperPrint penjualanBarang() {
         try {
             List<ReportPenjualanBarang> reportPenjualanBarang = 
                     sessionFactory.getCurrentSession().createQuery(
                             "select p.barang.namaBarang as namaBarang, "
                                     + "sum(p.kuantitas) as jumlah, "
-                                    + "sum(p.subTotal) as subTotal "
+                                    + "sum(p.subTotal) as subTotal, "
+                                    + "p.hargaJual as hargaJual "
                                     + "from PenjualanDetail p "
-                                    + "where day(p.penjualan.tanggal) = day(:date) "
                                     + "group by p.barang.namaBarang order by p.barang.namaBarang")
-                            .setParameter("date", date)
                             .setResultTransformer(Transformers.aliasToBean(ReportPenjualanBarang.class))
                             .list();
             
             InputStream is = ReportServiceImpl.class.getResourceAsStream(
                     "/com/aan/girsang/server/report/PenjualanBarang.jasper");
             Map<String,Object> parameters = new HashMap<>();
-            parameters.put("date", date);
             
             return JasperFillManager.fillReport(is,parameters,
                     new JRBeanCollectionDataSource(reportPenjualanBarang));

@@ -113,7 +113,7 @@ public class ReportPenjualanBarangPanel extends javax.swing.JPanel {
 
     private void initListener(){
         btnView.addActionListener((ae) -> {
-            JasperPrint print = ClientLauncher.getReportService().penjualanBarang(jdcTanggal.getDate());
+            JasperPrint print = ClientLauncher.getReportService().penjualanBarang();
             JRViewer viewer = new JRViewer(print);
             System.out.println(getPreferredSize());
             viewer.setPreferredSize(getPreferredSize());

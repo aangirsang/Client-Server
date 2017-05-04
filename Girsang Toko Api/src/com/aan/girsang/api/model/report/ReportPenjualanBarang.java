@@ -15,6 +15,7 @@ public class ReportPenjualanBarang {
     private String namaBarang;
     private Long jumlah;
     private BigDecimal subTotal;
+    private BigDecimal hargaJual;
 
     public String getNamaBarang() {
         return namaBarang;
@@ -38,6 +39,14 @@ public class ReportPenjualanBarang {
 
     public void setSubTotal(BigDecimal subTotal) {
         this.subTotal = subTotal;
+    }
+
+    public BigDecimal getHargaJual() {
+        return hargaJual;
+    }
+
+    public void setHargaJual(BigDecimal hargaJual) {
+        this.hargaJual = hargaJual;
     }
     
 }
