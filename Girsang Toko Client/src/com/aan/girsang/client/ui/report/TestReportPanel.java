@@ -7,8 +7,10 @@ package com.aan.girsang.client.ui.report;
 
 import com.aan.girsang.client.launcher.ClientLauncher;
 import java.awt.BorderLayout;
+import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.view.JRViewer;
 import net.sf.jasperreports.view.JasperViewer;
@@ -116,19 +118,15 @@ public class TestReportPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
-        // TODO add your handling code here:
         JasperPrint print = ClientLauncher.getReportService().testReport();
-        JasperViewer viewer = new JasperViewer(print);
-        viewer.setVisible(true);
-//        reportPanel.removeAll();
-//        reportPanel.add(viewer, BorderLayout.CENTER);
-//
-//        JLabel lbl = new JLabel("Label Coba");
-//        lbl.setVisible(true);
-//        reportPanel.add(lbl);
-//        reportPanel.revalidate();
-//        reportPanel.repaint();
-//        validate();
+        JRViewer viewer = new JRViewer(print);
+        System.out.println(getPreferredSize());
+        viewer.setPreferredSize(getPreferredSize());
+        reportPanel.removeAll();
+        reportPanel.setLayout(new BorderLayout());
+        reportPanel.add(viewer, BorderLayout.CENTER);
+        reportPanel.revalidate();
+        reportPanel.repaint();
     }//GEN-LAST:event_btnViewActionPerformed
 
 

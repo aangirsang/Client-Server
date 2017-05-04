@@ -10,6 +10,7 @@ import com.aan.girsang.client.ui.master.golongan.PanelGolonganBarang;
 import com.aan.girsang.client.ui.master.pelanggan.PanelPelanggan;
 import com.aan.girsang.client.ui.master.satuan.SatuanBarangPanel;
 import com.aan.girsang.client.ui.master.supplier.SupplierPanel;
+import com.aan.girsang.client.ui.report.ReportPenjualanBarangPanel;
 import com.aan.girsang.client.ui.report.TestReportPanel;
 import com.aan.girsang.client.ui.security.pengguna.PenggunaPanel;
 import com.aan.girsang.client.ui.security.tingkatAkses.TingkatAksesPanel;
@@ -37,27 +38,27 @@ public class PopUpMenuMaster extends AbstractButton {
     PenggunaPanel penggunaPanel = new PenggunaPanel();
     TingkatAksesPanel aksesPanel = new TingkatAksesPanel();
     PanelPelanggan panelPelanggan = new PanelPelanggan();
-    TestReportPanel testReportPanel = new TestReportPanel();
+    ReportPenjualanBarangPanel reportPenjualanBarang = new ReportPenjualanBarangPanel();
     
     
     public PopUpMenuMaster(JTabbedPane TP, JPopupMenu popupMenuMaster, JButton btnMaster) {
-        popupMenuMaster.add(new JMenuItem(new AbstractAction("Test Report") {
+        popupMenuMaster.add(new JMenuItem(new AbstractAction("Penjualan Barang") {
             @Override
             public void actionPerformed(ActionEvent ae) {
-                if (testReportPanel.getAktifPanel() == 1) {
-                    TP.setSelectedIndex(testReportPanel.getIndexTab());
+                if (reportPenjualanBarang.getAktifPanel() == 1) {
+                    TP.setSelectedIndex(reportPenjualanBarang.getIndexTab());
                 } else {
-                    testReportPanel = new TestReportPanel();
-                    testReportPanel.setName("Test Report");
-                    testReportPanel.setAktifPanel(testReportPanel.getAktifPanel() + 1);
-                    TP.addTab(testReportPanel.getName(), testReportPanel);
-                    testReportPanel.setIndexTab(TP.getTabCount() - 1);
-                    TP.setSelectedIndex(testReportPanel.getIndexTab());
+                    reportPenjualanBarang = new ReportPenjualanBarangPanel();
+                    reportPenjualanBarang.setName("Penjualan Barang");
+                    reportPenjualanBarang.setAktifPanel(reportPenjualanBarang.getAktifPanel() + 1);
+                    TP.addTab(reportPenjualanBarang.getName(), reportPenjualanBarang);
+                    reportPenjualanBarang.setIndexTab(TP.getTabCount() - 1);
+                    TP.setSelectedIndex(reportPenjualanBarang.getIndexTab());
                     
-                    testReportPanel.getBtnTutup().addActionListener((ae1) -> {
-                        TP.remove(testReportPanel);
-                        testReportPanel.setAktifPanel(testReportPanel.getAktifPanel() - 1);
-                        TP.setSelectedIndex(testReportPanel.getIndexTab() -1);
+                    reportPenjualanBarang.getBtnTutup().addActionListener((ae1) -> {
+                        TP.remove(reportPenjualanBarang);
+                        reportPenjualanBarang.setAktifPanel(reportPenjualanBarang.getAktifPanel() - 1);
+                        TP.setSelectedIndex(reportPenjualanBarang.getIndexTab() -1);
                     });
                 }
             }

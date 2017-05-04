@@ -6,8 +6,10 @@
 package com.aan.girsang.server.service.impl;
 
 import com.aan.girsang.api.model.report.ReportBarang;
+import com.aan.girsang.api.model.report.ReportPenjualanBarang;
 import com.aan.girsang.api.service.ReportService;
 import java.io.InputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -49,6 +51,35 @@ public class ReportServiceImpl implements ReportService {
             System.out.println("Report Tampil");
             return JasperFillManager.fillReport(is, parameters,
                     new JRBeanCollectionDataSource(reportBarang));
+        } catch (JRException ex) {
+            log.error("error generate DailySalesReport", ex);
+            ex.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
+    public JasperPrint penjualanBarang(Date date) {
+        try {
+            List<ReportPenjualanBarang> reportPenjualanBarang = 
+                    sessionFactory.getCurrentSession().createQuery(
+                            "select p.barang.namaBarang as namaBarang, "
+                                    + "sum(p.kuantitas) as jumlah, "
+                                    + "sum(p.subTotal) as subTotal "
+                                    + "from PenjualanDetail p "
+                                    + "where day(p.penjualan.tanggal) = day(:date) "
+                                    + "group by p.barang.namaBarang order by p.barang.namaBarang")
+                            .setParameter("date", date)
+                            .setResultTransformer(Transformers.aliasToBean(ReportPenjualanBarang.class))
+                            .list();
+            
+            InputStream is = ReportServiceImpl.class.getResourceAsStream(
+                    "/com/aan/girsang/server/report/PenjualanBarang.jasper");
+            Map<String,Object> parameters = new HashMap<>();
+            parameters.put("date", date);
+            
+            return JasperFillManager.fillReport(is,parameters,
+                    new JRBeanCollectionDataSource(reportPenjualanBarang));
         } catch (JRException ex) {
             log.error("error generate DailySalesReport", ex);
             ex.printStackTrace();

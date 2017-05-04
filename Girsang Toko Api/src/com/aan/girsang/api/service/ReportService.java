@@ -5,6 +5,7 @@
  */
 package com.aan.girsang.api.service;
 
+import java.util.Date;
 import net.sf.jasperreports.engine.JasperPrint;
 
 /**
@@ -13,4 +14,5 @@ import net.sf.jasperreports.engine.JasperPrint;
  */
 public interface ReportService {
     JasperPrint testReport();
+    JasperPrint penjualanBarang(Date date);
 }

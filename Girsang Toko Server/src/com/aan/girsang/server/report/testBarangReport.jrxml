@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="testBarangReport" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5f613da6-bff3-4334-b997-294a63a8ae07">
-	<property name="ireport.zoom" value="2.0"/>
-	<property name="ireport.x" value="477"/>
-	<property name="ireport.y" value="168"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
 	<field name="plu" class="java.lang.String"/>
 	<field name="namaBarang" class="java.lang.String"/>
 	<field name="hargaBeli" class="java.math.BigDecimal"/>
@@ -10,7 +10,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="74" splitType="Stretch">
+		<band height="47" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="555" height="47" uuid="2d468548-ff86-4b0f-a774-fd1893f79fc4"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -26,7 +26,7 @@
 	<columnHeader>
 		<band height="20" splitType="Stretch">
 			<staticText>
-				<reportElement x="0" y="0" width="100" height="20" uuid="1d99cfd6-bb1d-45d9-9767-07fe6894ed3d"/>
+				<reportElement x="0" y="0" width="100" height="20" uuid="7a84eeaa-107f-4a57-9ca2-902f87fa8b74"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -34,13 +34,11 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[PLU]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="100" y="0" width="350" height="20" uuid="82cd7976-fc19-4932-8b29-4d5ac8c11280"/>
+				<reportElement x="100" y="0" width="350" height="20" uuid="ecbfb58f-5d9a-4db5-b104-687374ef012d"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -48,13 +46,11 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<text><![CDATA[Nama Barang]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="450" y="0" width="100" height="20" uuid="571655cf-2a72-4a40-b3f4-042a0adc6832"/>
+				<reportElement x="450" y="0" width="100" height="20" uuid="4943973d-cde8-457b-b7e8-d801b08f072f"/>
 				<box>
 					<pen lineWidth="1.0"/>
 					<topPen lineWidth="1.0"/>
@@ -62,10 +58,8 @@
 					<bottomPen lineWidth="1.0"/>
 					<rightPen lineWidth="1.0"/>
 				</box>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font isBold="true"/>
-				</textElement>
-				<text><![CDATA[Harga Beli]]></text>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Harga Barang]]></text>
 			</staticText>
 		</band>
 	</columnHeader>
@@ -111,15 +105,15 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<paragraph rightIndent="5"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{hargaBeli}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("#,###").format($F{hargaBeli})]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
 	<columnFooter>
-		<band height="45" splitType="Stretch"/>
+		<band height="37" splitType="Stretch"/>
 	</columnFooter>
 	<pageFooter>
-		<band height="54" splitType="Stretch">
+		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="215" y="0" width="80" height="20" uuid="a89fc851-ea3e-4795-87a0-b936b568eb7e"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle"/>
@@ -133,6 +127,6 @@
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="42" splitType="Stretch"/>
+		<band splitType="Stretch"/>
 	</summary>
 </jasperReport>
