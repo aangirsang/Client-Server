@@ -33,6 +33,8 @@ import com.aan.girsang.server.dao.transaksi.PenjualanDao;
 import com.aan.girsang.server.dao.transaksi.ReturPembelianDao;
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.time.Month;
+import java.time.Year;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -496,4 +498,9 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
+
+    @Override
+    public List<Penjualan> filterBulanTahun(int bulan, int tahun) {
+        return penjualanDao.filterBulanTahun(bulan, tahun);
+    }
 }

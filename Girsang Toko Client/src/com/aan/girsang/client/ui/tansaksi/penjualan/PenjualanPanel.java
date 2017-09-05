@@ -17,17 +17,30 @@ import com.aan.girsang.client.ui.frame.FrameUtama;
 import com.aan.girsang.client.ui.tansaksi.pembelian.DialogPembelian;
 import com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.beans.PropertyVetoException;
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Month;
+import java.time.Year;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.AncestorEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -71,26 +84,57 @@ public class PenjualanPanel extends javax.swing.JPanel {
         tabel.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         tabel.setDefaultRenderer(Date.class, new DateRenderer());
         tabel.setDefaultRenderer(Integer.class, new IntegerRenderer());
-        isiTabelKategori();
+        jspTahun.setModel(new SpinnerNumberModel(0, 0, 5000, 1));
+        jspTahun.setEditor(new JSpinner.NumberEditor(jspTahun, "0"));
+        isiCombo();
+        isiTabelPenjualan();
     }
-    private void ukuranTabelBarang() {
+    private void isiCombo(){
+        Date tanggal = new Date();
+        SimpleDateFormat dfBulan = new SimpleDateFormat("M");
+        SimpleDateFormat dfTahun = new SimpleDateFormat("yyyy");
+        
+        cboBulan.removeAllItems();
+        
+        cboBulan.addItem("Januari");
+        cboBulan.addItem("Februari");
+        cboBulan.addItem("Maret");
+        cboBulan.addItem("April");
+        cboBulan.addItem("Mei");
+        cboBulan.addItem("Juni");
+        cboBulan.addItem("Juli");
+        cboBulan.addItem("Agustus");
+        cboBulan.addItem("September");
+        cboBulan.addItem("Oktober");
+        cboBulan.addItem("November");
+        cboBulan.addItem("Desember");
+        
+        cboBulan.setSelectedIndex(Integer.parseInt(dfBulan.format(tanggal)) - 1);
+        jspTahun.setValue(Integer.parseInt(dfTahun.format(tanggal)));
+    }
+    private void ukuranTabel() {
         tabel.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tabel.getColumnModel().getColumn(0).setPreferredWidth(200);//Tanggal
         tabel.getColumnModel().getColumn(1).setPreferredWidth(100);//No. Ref
-        tabel.getColumnModel().getColumn(2).setPreferredWidth(100);//No. Faktur
-        tabel.getColumnModel().getColumn(3).setPreferredWidth(350);//Supplier
-        tabel.getColumnModel().getColumn(4).setPreferredWidth(50);//Kredit
-        tabel.getColumnModel().getColumn(5).setPreferredWidth(100);//Tgl. Tempo
-        tabel.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Pembelian
-        tabel.getColumnModel().getColumn(7).setPreferredWidth(300);//Pembuat
+        tabel.getColumnModel().getColumn(2).setPreferredWidth(100);//Pelanggan
+        tabel.getColumnModel().getColumn(3).setPreferredWidth(70);//Kredit
+        tabel.getColumnModel().getColumn(4).setPreferredWidth(100);//Tgl Tempo
+        tabel.getColumnModel().getColumn(5).setPreferredWidth(100);//Janis
+        tabel.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Penjualan
+        tabel.getColumnModel().getColumn(7).setPreferredWidth(80);//pembulatan
+        tabel.getColumnModel().getColumn(8).setPreferredWidth(80);//Total
+        tabel.getColumnModel().getColumn(9).setPreferredWidth(90);//Kasir
     }
-    private void isiTabelKategori() {
-        daftarPenjualan = ClientLauncher.getTransaksiService().semuaPenjualan();
+    private void isiTabelPenjualan() {
+        //daftarPenjualan = ClientLauncher.getTransaksiService().semuaPenjualan();
+        System.out.println("tahun = "+jspTahun.getValue());
+        daftarPenjualan = ClientLauncher.getTransaksiService()
+                .filterBulanTahun(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPenjualan));
         tabel.setRowSorter(sorter);
         tabel.setModel(new TabelModel(daftarPenjualan));
         toolbar.getTxtCari().setText("");
-        ukuranTabelBarang();
+        ukuranTabel();
         lblJumlahData.setText(daftarPenjualan.size() + " Data Pembelian");
         idSelect = "";
     }
@@ -193,7 +237,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         if (p != null) {
                             loadFormToModel(p);
                             ClientLauncher.getTransaksiService().simpan(penjualan);
-                            isiTabelKategori();
+                            isiTabelPenjualan();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -201,32 +245,9 @@ public class PenjualanPanel extends javax.swing.JPanel {
                 }
             }
         });
-        /*toolbar.getTxtCari().addKeyListener(new KeyListener() {
-            @Override
-            public void keyReleased(KeyEvent ke) {
-                if ("".equals(toolbar.getTxtCari().getText())) {
-                    isiTabelKategori();
-                } else {
-                    daftarPenjualan = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
-                    tabel.setModel(new TabelModel(daftarPenjualan));
-                    RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPenjualan));
-                    tabel.setRowSorter(sorter);
-                    ukuranTabelBarang();
-                    int jml = daftarPenjualan.size();
-                }
-            }
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent ke) {
-            }
-        });*/
 
         toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
+            isiCombo();
         });
 
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
@@ -245,7 +266,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         if (p != null) {
                             loadFormToModel(p);
                             ClientLauncher.getTransaksiService().simpan(penjualan);
-                            isiTabelKategori();
+                            isiTabelPenjualan();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -258,13 +279,20 @@ public class PenjualanPanel extends javax.swing.JPanel {
                 JOptionPane.showMessageDialog(null, "Data Barang Belum Terpilih");
             } else {
                 ClientLauncher.getTransaksiService().hapus(penjualan);
-                isiTabelKategori();
+                isiTabelPenjualan();
                 JOptionPane.showMessageDialog(null, "Hapus Data Berhasil");
-            }
+            }   
         });
         toolbar.getBtnFilter().addActionListener((ActionEvent ae) -> {
             /*List <Barang> list = new FilterBarang().showDialog();
             System.out.println("Fiter Barang");*/
+        });
+        cboBulan.addActionListener((ActionEvent ae) -> {
+            System.out.println(cboBulan.getSelectedIndex());
+            isiTabelPenjualan();
+        });
+        jspTahun.addChangeListener((ChangeEvent ce) -> {
+            isiTabelPenjualan();
         });
     }
 
@@ -280,6 +308,8 @@ public class PenjualanPanel extends javax.swing.JPanel {
         tabel = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter();
+        cboBulan = new javax.swing.JComboBox<>();
+        jspTahun = new javax.swing.JSpinner();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Cash register-64x64.png"))); // NOI18N
 
@@ -304,6 +334,8 @@ public class PenjualanPanel extends javax.swing.JPanel {
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText("jLabel4");
 
+        cboBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -317,13 +349,23 @@ public class PenjualanPanel extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addGap(5, 5, 5))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblJumlahData)
                 .addContainerGap())
@@ -362,11 +404,13 @@ public class PenjualanPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cboBulan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jspTahun;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tabel;
     private com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter toolbar;

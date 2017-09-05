@@ -12,6 +12,11 @@ import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.server.dao.BaseDaoHibernate;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.time.Month;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
@@ -77,6 +82,23 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
         return sessionFactory.getCurrentSession().createQuery(
                 "from PenjualanDetail p where p.penjualan=:penjualan")
                 .setParameter("penjualan", p)
+                .list();
+    }
+    public List<Penjualan> filterBulanTahun(int bulan, int tahun){
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.MONTH, bulan);
+        calendar.set(Calendar.YEAR, tahun);
+        Date date = calendar.getTime();
+        System.out.println("bulan calendar " +calendar.getTime().getMonth());
+        System.out.println("tahun calendar " +calendar.getTime().getYear());
+        System.out.println("tahun dikirim "+tahun);
+        System.out.println(date);
+        
+        String tgl = new SimpleDateFormat("MM yyyy").format(date);
+        return sessionFactory.getCurrentSession().createQuery(
+                "from Penjualan p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan")
+                .setParameter("bulan","%"+tgl+"%")
                 .list();
     }
 }

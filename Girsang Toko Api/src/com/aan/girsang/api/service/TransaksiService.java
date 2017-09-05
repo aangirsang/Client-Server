@@ -17,6 +17,8 @@ import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.api.model.transaksi.ReturPembelian;
 import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
+import java.time.Month;
+import java.time.Year;
 import java.util.List;
 
 /**
@@ -61,6 +63,7 @@ public interface TransaksiService {
     public List<Penjualan> cariPiutang(Pelanggan p);
     public List<Penjualan> cariKasir(Pengguna p);
     public List<Penjualan> pending(Boolean pending);
+    public List<Penjualan> filterBulanTahun(int bulan, int tahun);
     public List<PenjualanDetail> cariBarangJual(Barang b);
     public List<PenjualanDetail> cariDetail(Penjualan p);
 }
