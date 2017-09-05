@@ -20,6 +20,8 @@ import com.aan.girsang.client.ui.master.barang.PilihBarangDialog;
 import com.aan.girsang.client.ui.master.supplier.PilihSupplierDialog;
 import java.awt.Component;
 import java.awt.Container;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
@@ -33,6 +35,7 @@ import javax.swing.JTable;
 import javax.swing.SpinnerNumberModel;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -176,6 +179,7 @@ public class DialogPembelian extends javax.swing.JDialog {
         }
     }
     private void kredit() {
+        BigDecimal nol = new BigDecimal(0);
         if (jcbKredit.isSelected() == true) {
             kredit.setTanggalTempo(jdcTglTempo.getDate());
             kredit.setJumlahKredit(TextComponentUtils
@@ -190,9 +194,9 @@ public class DialogPembelian extends javax.swing.JDialog {
                             .parseNumberToBigDecimal(txtBayar.getText())));
         } else {
             kredit.setTanggalTempo(null);
-            kredit.setJumlahKredit(null);
-            kredit.setJumlahBayar(null);
-            kredit.setSisaKredit(null);
+            kredit.setJumlahKredit(nol);
+            kredit.setJumlahBayar(nol);
+            kredit.setSisaKredit(nol);
         }
     }
     private void loadFormToModel() {
@@ -334,6 +338,31 @@ public class DialogPembelian extends javax.swing.JDialog {
                     pembelian = null;
                     dispose();
                 }
+            }
+        });
+        tblPembelianDetail.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+                int code = ke.getKeyCode();
+                if(code==KeyEvent.VK_DELETE){
+                    pembelianDetail = new PembelianDetail();
+                    pembelianDetail = pembelianDetails.get(tblPembelianDetail.getSelectedRow());
+                    pembelianDetails.remove(tblPembelianDetail.getSelectedRow());
+                    tblPembelianDetail.setModel(new PembelianDetailTabelModel(pembelianDetails));
+                    ukuranTabelBarang();
+                    kalkulasiTotal();
+                    kalkulasiJumlahBarang(pembelianDetails);
+                    System.out.println(pembelianDetail.getHargaBarang());
+                }
+                    
+            }
+
+            @Override
+            public void keyReleased(KeyEvent ke) {
             }
         });
     }
@@ -928,7 +957,8 @@ public class DialogPembelian extends javax.swing.JDialog {
         // TODO add your handling code here:
         kalkulasiPembayaran();
     }//GEN-LAST:event_txtBayarKeyReleased
-
+    
+    
     /**
      * @param args the command line arguments
      */

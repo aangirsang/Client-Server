@@ -190,7 +190,7 @@ public class PanelPembelian extends javax.swing.JPanel {
                 case 6:
                     return p.getTotal();
                 case 7:
-                    return p.getPembuat().getNamaLengkap();
+                    return p.getPembuat().getIdPengguna();
                 default:
                     return "";
             }

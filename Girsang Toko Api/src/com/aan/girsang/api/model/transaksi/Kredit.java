@@ -63,6 +63,10 @@ public class Kredit implements Serializable{
     public void setSisaKredit(BigDecimal sisaKredit) {
         this.sisaKredit = sisaKredit;
     }
+
+    public void setJumlahKredit(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }
