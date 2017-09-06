@@ -19,11 +19,15 @@ import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -48,32 +52,30 @@ public class PanelPembelian extends javax.swing.JPanel {
     public int getIndexTab() {
         return IndexTab;
     }
-
     public void setIndexTab(int IndexTab) {
         this.IndexTab = IndexTab;
     }
-
     public int getAktifPanel() {
         return aktifPanel;
     }
-
     public void setAktifPanel(int aktifPanel) {
         this.aktifPanel = aktifPanel;
     }
-
     public ToolbarDenganFilter getToolbarDenganFilter1() {
         return toolbar;
     }
-
+    
     public PanelPembelian() {
         initComponents();
         initListener();
         tblPembelian.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         tblPembelian.setDefaultRenderer(Date.class, new DateRenderer());
         tblPembelian.setDefaultRenderer(Integer.class, new IntegerRenderer());
-        isiTabelKategori();
+        jspTahun.setModel(new SpinnerNumberModel(2010, 0, 5000, 1));
+        jspTahun.setEditor(new JSpinner.NumberEditor(jspTahun, "0"));
+        isiCombo();
+        isiTabel();
     }
-
     private void ukuranTabelBarang() {
         tblPembelian.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         tblPembelian.getColumnModel().getColumn(0).setPreferredWidth(200);//Tanggal
@@ -85,9 +87,33 @@ public class PanelPembelian extends javax.swing.JPanel {
         tblPembelian.getColumnModel().getColumn(6).setPreferredWidth(100);//Jlh. Pembelian
         tblPembelian.getColumnModel().getColumn(7).setPreferredWidth(300);//Pembuat
     }
-
-    private void isiTabelKategori() {
-        pembelians = ClientLauncher.getTransaksiService().semuaPembelian();
+    private void isiCombo(){
+        Date tanggal = new Date();
+        SimpleDateFormat dfBulan = new SimpleDateFormat("M");
+        SimpleDateFormat dfTahun = new SimpleDateFormat("yyyy");
+        
+        cboBulan.removeAllItems();
+        
+        cboBulan.addItem("Januari");
+        cboBulan.addItem("Februari");
+        cboBulan.addItem("Maret");
+        cboBulan.addItem("April");
+        cboBulan.addItem("Mei");
+        cboBulan.addItem("Juni");
+        cboBulan.addItem("Juli");
+        cboBulan.addItem("Agustus");
+        cboBulan.addItem("September");
+        cboBulan.addItem("Oktober");
+        cboBulan.addItem("November");
+        cboBulan.addItem("Desember");
+        
+        cboBulan.setSelectedIndex(Integer.parseInt(dfBulan.format(tanggal)) - 1);
+        jspTahun.setValue(Integer.parseInt(dfTahun.format(tanggal)));
+    }
+    private void isiTabel() {
+        //pembelians = ClientLauncher.getTransaksiService().semuaPembelian();
+        pembelians = ClientLauncher.getTransaksiService()
+                .filterBulanTahunBeli(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
         tblPembelian.setRowSorter(sorter);
         tblPembelian.setModel(new PembelianTabelModel(pembelians));
@@ -96,7 +122,6 @@ public class PanelPembelian extends javax.swing.JPanel {
         lblJumlahData.setText(pembelians.size() + " Data Pembelian");
         idSelect = "";
     }
-
     private void loadFormToModel(Pembelian p) {
         pembelian.setNoRef(p.getNoRef());
         pembelian.setTanggal(p.getTanggal());
@@ -109,13 +134,11 @@ public class PanelPembelian extends javax.swing.JPanel {
         pembelian.setPembelianDetails(p.getPembelianDetails());
         pembelian.setLokasi(p.getLokasi());
     }
-
     private void cariSelect() {
         pembelian = new Pembelian();
         pembelian = ClientLauncher.getTransaksiService().cariPembelian(idSelect);
         validateEdit(pembelian);
     }
-
     private class PembelianTabelModel extends AbstractTableModel {
 
         private final List<Pembelian> daftarPembelian;
@@ -210,7 +233,6 @@ public class PanelPembelian extends javax.swing.JPanel {
             }
         }
     }
-
     private void validateEdit(Pembelian p) {
         if (p.getIsRetur() == true) {
             JOptionPane.showMessageDialog(this,
@@ -222,7 +244,118 @@ public class PanelPembelian extends javax.swing.JPanel {
             edit = true;
         }
     }
+    private void initListener() {
+        tblPembelian.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
+            if (tblPembelian.getSelectedRow() >= 0) {
+                idSelect = tblPembelian.getValueAt(tblPembelian.getSelectedRow(), 1).toString();
+            }
+        });
+        tblPembelian.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent me) {
+                if (me.getClickCount() == 2) {
+                    title = "Edit Data Pembelian";
+                    if ("".equals(idSelect)) {
+                        JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
+                    } else {
+                        cariSelect();
+                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
+                        pembelian = new Pembelian();
+                        if (p != null) {
+                            loadFormToModel(p);
+                            ClientLauncher.getTransaksiService().simpan(pembelian);
+                            isiTabel();
+                            JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
+                            title = null;
+                        }
+                    }
+                }
+            }
+        });
+        toolbar.getTxtCari().addKeyListener(new KeyListener() {
+            @Override
+            public void keyReleased(KeyEvent ke) {
+                if ("".equals(toolbar.getTxtCari().getText())) {
+                    isiTabel();
+                } else {
+                    pembelians = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
+                    tblPembelian.setModel(new PembelianTabelModel(pembelians));
+                    RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
+                    tblPembelian.setRowSorter(sorter);
+                    ukuranTabelBarang();
+                    int jml = pembelians.size();
+                }
+            }
 
+            @Override
+            public void keyTyped(KeyEvent ke) {
+            }
+
+            @Override
+            public void keyPressed(KeyEvent ke) {
+            }
+        });
+
+        toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
+            isiCombo();
+            isiTabel();
+        });
+
+        toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
+            isiTabel();
+            pembelian = null;
+            supplier = null;
+            title = "Tambah Data Barang";
+            edit = true;
+            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title, edit);
+            pembelian = new Pembelian();
+            if (p != null) {
+                loadFormToModel(p);
+                pembelian.setNoRef("");
+                ClientLauncher.getTransaksiService().simpan(pembelian);
+                isiTabel();
+                JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
+                title = null;
+            }
+            pembelian = null;
+        });
+
+        toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
+            title = "Edit Data Barang";
+            if ("".equals(idSelect)) {
+                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
+            } else {
+                cariSelect();
+                Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
+                pembelian = new Pembelian();
+                if (p != null) {
+                    loadFormToModel(p);
+                    ClientLauncher.getTransaksiService().simpan(pembelian);
+                    isiTabel();
+                    JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
+                    title = null;
+                }
+            }
+        });
+
+        toolbar.getBtnHapus().addActionListener((ActionEvent ae) -> {
+            if ("".equals(idSelect)) {
+                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
+            } else {
+                cariSelect();
+                ClientLauncher.getTransaksiService().hapus(pembelian);
+                JOptionPane.showMessageDialog(null, "Hapus Data Pembelian Berhasil");
+                isiTabel();
+            }
+        });
+        cboBulan.addActionListener((ActionEvent ae) -> {
+            isiTabel();
+        });
+        jspTahun.addChangeListener((ChangeEvent ce) -> {
+            isiTabel();
+        });
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -240,6 +373,8 @@ public class PanelPembelian extends javax.swing.JPanel {
         tblPembelian = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter();
+        cboBulan = new javax.swing.JComboBox<>();
+        jspTahun = new javax.swing.JSpinner();
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/1411950132.png"))); // NOI18N
 
@@ -268,6 +403,8 @@ public class PanelPembelian extends javax.swing.JPanel {
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText("jLabel4");
 
+        cboBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -281,13 +418,23 @@ public class PanelPembelian extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addGap(5, 5, 5))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblJumlahData)
                 .addContainerGap())
@@ -323,122 +470,15 @@ public class PanelPembelian extends javax.swing.JPanel {
                 .addGap(5, 5, 5))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void initListener() {
-        tblPembelian.getSelectionModel().addListSelectionListener((ListSelectionEvent lse) -> {
-            if (tblPembelian.getSelectedRow() >= 0) {
-                idSelect = tblPembelian.getValueAt(tblPembelian.getSelectedRow(), 1).toString();
-            }
-        });
-        tblPembelian.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent me) {
-                if (me.getClickCount() == 2) {
-                    title = "Edit Data Pembelian";
-                    if ("".equals(idSelect)) {
-                        JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
-                    } else {
-                        cariSelect();
-                        Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
-                        pembelian = new Pembelian();
-                        if (p != null) {
-                            loadFormToModel(p);
-                            ClientLauncher.getTransaksiService().simpan(pembelian);
-                            isiTabelKategori();
-                            JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                            title = null;
-                        }
-                    }
-                }
-            }
-        });
-        toolbar.getTxtCari().addKeyListener(new KeyListener() {
-            @Override
-            public void keyReleased(KeyEvent ke) {
-                if ("".equals(toolbar.getTxtCari().getText())) {
-                    isiTabelKategori();
-                } else {
-                    pembelians = (List<Pembelian>) ClientLauncher.getTransaksiService().cariPembelian(toolbar.getTxtCari().getText());
-                    tblPembelian.setModel(new PembelianTabelModel(pembelians));
-                    RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(pembelians));
-                    tblPembelian.setRowSorter(sorter);
-                    ukuranTabelBarang();
-                    int jml = pembelians.size();
-                }
-            }
-
-            @Override
-            public void keyTyped(KeyEvent ke) {
-            }
-
-            @Override
-            public void keyPressed(KeyEvent ke) {
-            }
-        });
-
-        toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
-        });
-
-        toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
-            pembelian = null;
-            supplier = null;
-            title = "Tambah Data Barang";
-            edit = true;
-            Pembelian p = new DialogPembelian().showDialog(pembelian, supplier, title, edit);
-            pembelian = new Pembelian();
-            if (p != null) {
-                loadFormToModel(p);
-                pembelian.setNoRef("");
-                ClientLauncher.getTransaksiService().simpan(pembelian);
-                isiTabelKategori();
-                JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                title = null;
-            }
-            pembelian = null;
-        });
-
-        toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
-            title = "Edit Data Barang";
-            if ("".equals(idSelect)) {
-                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
-            } else {
-                cariSelect();
-                Pembelian p = new DialogPembelian().showDialog(pembelian, pembelian.getSupplier(), title, edit);
-                pembelian = new Pembelian();
-                if (p != null) {
-                    loadFormToModel(p);
-                    ClientLauncher.getTransaksiService().simpan(pembelian);
-                    isiTabelKategori();
-                    JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
-                    title = null;
-                }
-            }
-        });
-
-        toolbar.getBtnHapus().addActionListener((ActionEvent ae) -> {
-            if ("".equals(idSelect)) {
-                JOptionPane.showMessageDialog(null, "Data Pembelian Belum Terpilih");
-            } else {
-                cariSelect();
-                ClientLauncher.getTransaksiService().hapus(pembelian);
-                JOptionPane.showMessageDialog(null, "Hapus Data Pembelian Berhasil");
-                isiTabelKategori();
-            }
-        });
-        toolbar.getBtnFilter().addActionListener((ActionEvent ae) -> {
-            /*List <Barang> list = new FilterBarang().showDialog();
-            System.out.println("Fiter Barang");*/
-        });
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cboBulan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jspTahun;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tblPembelian;
     private com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter toolbar;

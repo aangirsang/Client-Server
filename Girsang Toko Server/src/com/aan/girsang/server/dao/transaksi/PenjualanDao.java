@@ -90,10 +90,6 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
         calendar.set(Calendar.MONTH, bulan);
         calendar.set(Calendar.YEAR, tahun);
         Date date = calendar.getTime();
-        System.out.println("bulan calendar " +calendar.getTime().getMonth());
-        System.out.println("tahun calendar " +calendar.getTime().getYear());
-        System.out.println("tahun dikirim "+tahun);
-        System.out.println(date);
         
         String tgl = new SimpleDateFormat("MM yyyy").format(date);
         return sessionFactory.getCurrentSession().createQuery(

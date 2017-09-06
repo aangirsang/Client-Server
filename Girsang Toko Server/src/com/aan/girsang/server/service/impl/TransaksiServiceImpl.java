@@ -173,6 +173,10 @@ public class TransaksiServiceImpl implements TransaksiService {
     public PembelianDetail cariDetailBeli(String id) {
         return pembelianDao.cariIDDetail(id);
     }
+    @Override
+    public List<Pembelian> filterBulanTahunBeli(int bulan, int tahun) {
+        return pembelianDao.filterBulanTahun(bulan, tahun);
+    }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Penjualan">
     @Override
@@ -252,6 +256,10 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Override
     public List<PenjualanDetail> cariDetail(Penjualan p){
         return penjualanDao.cariDetail(p);
+    }
+    @Override
+    public List<Penjualan> filterBulanTahunJual(int bulan, int tahun) {
+        return penjualanDao.filterBulanTahun(bulan, tahun);
     }
 //</editor-fold>
     //<editor-fold defaultstate="collapsed" desc="Retur Pembelian">
@@ -498,9 +506,4 @@ public class TransaksiServiceImpl implements TransaksiService {
         }
     }
 //</editor-fold>
-
-    @Override
-    public List<Penjualan> filterBulanTahun(int bulan, int tahun) {
-        return penjualanDao.filterBulanTahun(bulan, tahun);
-    }
 }

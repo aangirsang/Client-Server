@@ -12,6 +12,9 @@ import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.model.transaksi.PembelianDetail;
 import com.aan.girsang.server.dao.BaseDaoHibernate;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
@@ -83,6 +86,21 @@ public class PembelianDao extends BaseDaoHibernate<Pembelian>{
         return (List<Pembelian>) sessionFactory.getCurrentSession().createQuery(
                 "from Pembelian p where p.supplier=:supplier order by p.noRef desc")
                 .setParameter("supplier", s)
+                .list();
+    }
+//</editor-fold>
+//<editor-fold defaultstate="collapsed" desc="Filter Bulan">
+    public List<Pembelian> filterBulanTahun(int bulan, int tahun){
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.MONTH, bulan);
+        calendar.set(Calendar.YEAR, tahun);
+        Date date = calendar.getTime();
+        
+        String tgl = new SimpleDateFormat("MM yyyy").format(date);
+        return sessionFactory.getCurrentSession().createQuery(
+                "from Pembelian p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan")
+                .setParameter("bulan","%"+tgl+"%")
                 .list();
     }
 //</editor-fold>

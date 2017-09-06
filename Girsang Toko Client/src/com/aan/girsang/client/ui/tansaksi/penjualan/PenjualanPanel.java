@@ -6,30 +6,17 @@
 package com.aan.girsang.client.ui.tansaksi.penjualan;
 
 import com.aan.girsang.api.model.master.Supplier;
-import com.aan.girsang.api.model.transaksi.Pembelian;
-import com.aan.girsang.api.model.transaksi.PembelianDetail;
 import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.api.util.DateRenderer;
 import com.aan.girsang.api.util.IntegerRenderer;
 import com.aan.girsang.client.launcher.ClientLauncher;
-import com.aan.girsang.client.ui.frame.FrameUtama;
-import com.aan.girsang.client.ui.tansaksi.pembelian.DialogPembelian;
 import com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.beans.PropertyVetoException;
 import java.math.BigDecimal;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.time.Month;
-import java.time.Year;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
@@ -37,15 +24,11 @@ import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
 import javax.swing.SpinnerNumberModel;
-import javax.swing.event.AncestorEvent;
-import javax.swing.event.AncestorListener;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import org.openide.util.Exceptions;
 
 /**
  *
@@ -127,9 +110,8 @@ public class PenjualanPanel extends javax.swing.JPanel {
     }
     private void isiTabelPenjualan() {
         //daftarPenjualan = ClientLauncher.getTransaksiService().semuaPenjualan();
-        System.out.println("tahun = "+jspTahun.getValue());
         daftarPenjualan = ClientLauncher.getTransaksiService()
-                .filterBulanTahun(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
+                .filterBulanTahunJual(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPenjualan));
         tabel.setRowSorter(sorter);
         tabel.setModel(new TabelModel(daftarPenjualan));
@@ -288,7 +270,6 @@ public class PenjualanPanel extends javax.swing.JPanel {
             System.out.println("Fiter Barang");*/
         });
         cboBulan.addActionListener((ActionEvent ae) -> {
-            System.out.println(cboBulan.getSelectedIndex());
             isiTabelPenjualan();
         });
         jspTahun.addChangeListener((ChangeEvent ce) -> {

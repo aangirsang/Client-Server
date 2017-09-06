@@ -34,6 +34,7 @@ public interface TransaksiService {
     public List<Pembelian> descPembelian();
     public List<Pembelian> hutangPembelian(Supplier s);
     public List<Pembelian> cariSupplierPembelian (Supplier s);
+    public List<Pembelian> filterBulanTahunBeli(int bulan, int tahun);
     public List<PembelianDetail> cariPembelianDetail(Pembelian p);
     public List<PembelianDetail> cariBarang(Barang barang);
     public PembelianDetail cariDetailBeli(String id);
@@ -55,6 +56,7 @@ public interface TransaksiService {
     public List<PelunasanHutangDetail> cariDetail(PelunasanHutang p);
     public List<PelunasanHutangDetail> cariPembelian(Pembelian pembelian);
 //</editor-fold>
+//<editor-fold defaultstate="collapsed" desc="Penjualan">
     public void simpan(Penjualan p);
     public void hapus(Penjualan p);
     public Penjualan cariIDPenjualan(String id);
@@ -63,7 +65,8 @@ public interface TransaksiService {
     public List<Penjualan> cariPiutang(Pelanggan p);
     public List<Penjualan> cariKasir(Pengguna p);
     public List<Penjualan> pending(Boolean pending);
-    public List<Penjualan> filterBulanTahun(int bulan, int tahun);
+    public List<Penjualan> filterBulanTahunJual(int bulan, int tahun);
     public List<PenjualanDetail> cariBarangJual(Barang b);
     public List<PenjualanDetail> cariDetail(Penjualan p);
+//</editor-fold>
 }

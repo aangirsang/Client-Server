@@ -31,6 +31,7 @@ public class BarangDao extends BaseDaoHibernate<Barang> {
                 .list();
         return b;
     }
+    
 //</editor-fold>
 //<editor-fold defaultstate="collapsed" desc="Semua">
     @Override
