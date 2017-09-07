@@ -297,6 +297,7 @@ public class DialogKasir extends javax.swing.JDialog {
         tampilRincianBarang(null);
     }
     private void loadFormToPenjualan(){
+        if(!daftarDetail.isEmpty()){
         BigDecimal piutangAwal = new BigDecimal(0);
         if(jcbKredit.isSelected()){
             if(new Double(txtTotal.getText()) >= new Double(txtBayar.getText())){
@@ -319,7 +320,9 @@ public class DialogKasir extends javax.swing.JDialog {
         penjualan.setTotal(TextComponentUtils.parseNumberToBigDecimal(txtTotal.getText()));
         penjualan.setPiutangAwal(piutangAwal);
         penjualan.setKasir(ClientLauncher.getPenggunaAktif());
-        
+        }else{
+            JOptionPane.showMessageDialog(this, "Belum Ada Transaksi");
+        }
     }
     private void loadPenjualanToForm(Penjualan p){
         txtNoRef.setText(p.getNoRef());
@@ -346,44 +349,49 @@ public class DialogKasir extends javax.swing.JDialog {
         kredit();
     }
     private void addBarangToDetail(Barang b){
-        detail.setPenjualan(penjualan);
-        detail.setBarang(b);
-        detail.setSatuan(b.getSatuan());
-        detail.setKuantitas(Integer.parseInt(txtQty.getText()));
-        detail.setHargaJual(TextComponentUtils.parseNumberToBigDecimal(txtHarga.getText()));
-        detail.setHpp(b.getHargaBeli());
-        detail.setSubTotal(TextComponentUtils.parseNumberToBigDecimal(txtSubtotal.getText()));
+        if(b!=null){
+            detail.setPenjualan(penjualan);
+            detail.setBarang(b);
+            detail.setSatuan(b.getSatuan());
+            detail.setKuantitas(Integer.parseInt(txtQty.getText()));
+            detail.setHargaJual(TextComponentUtils.parseNumberToBigDecimal(txtHarga.getText()));
+            detail.setHpp(b.getHargaBeli());
+            detail.setSubTotal(TextComponentUtils.parseNumberToBigDecimal(txtSubtotal.getText()));
+        }
     }
     private void addBarang(Barang b){
-        boolean data = false;
-        detail = new PenjualanDetail();
-        addBarangToDetail(b);
-        if(daftarDetail!=null){
-            for(int i=0;i<daftarDetail.size();i++){
-                if(daftarDetail.get(i).getBarang().getPlu()
-                        .equals(detail.getBarang().getPlu())){
-                    detail = daftarDetail.get(i);
-                    detail.setHargaJual(TextComponentUtils
-                        .parseNumberToBigDecimal(txtHarga.getText()));
-                    detail.setKuantitas(daftarDetail.get(i)
-                            .getKuantitas() + Integer.parseInt(txtQty.getText()));
-                    detail.setSubTotal(TextComponentUtils.parseNumberToBigDecimal(txtHarga.getText())
-                    .multiply(new BigDecimal(detail.getKuantitas())));
-                    
-                    data = true;
+        if(b!=null){
+            boolean data = false;
+            detail = new PenjualanDetail();
+            addBarangToDetail(b);
+            if(daftarDetail!=null){
+                for(int i=0;i<daftarDetail.size();i++){
+                    if(daftarDetail.get(i).getBarang().getPlu()
+                            .equals(detail.getBarang().getPlu())){
+                        detail = daftarDetail.get(i);
+                        detail.setHargaJual(TextComponentUtils
+                            .parseNumberToBigDecimal(txtHarga.getText()));
+                        detail.setKuantitas(daftarDetail.get(i)
+                                .getKuantitas() + Integer.parseInt(txtQty.getText()));
+                        detail.setSubTotal(TextComponentUtils.parseNumberToBigDecimal(txtHarga.getText())
+                        .multiply(new BigDecimal(detail.getKuantitas())));
+
+                        data = true;
+                    }
                 }
             }
+            if(data==false){
+                daftarDetail.add(detail);
+                tabel.setModel(new TabelModel(daftarDetail));
+                clearBarang();
+            }else if(data==true){
+                tabel.tableChanged(new TableModelEvent(tabel.getModel(),
+                tabel.getSelectedRow()));
+                clearBarang();
+            }
+            kalkulasiTotal();
+            barang = null;
         }
-        if(data==false){
-            daftarDetail.add(detail);
-            tabel.setModel(new TabelModel(daftarDetail));
-            clearBarang();
-        }else if(data==true){
-            tabel.tableChanged(new TableModelEvent(tabel.getModel(),
-            tabel.getSelectedRow()));
-            clearBarang();
-        }
-        kalkulasiTotal();
     }
     private Boolean validateSimpan(){
         boolean ckredit = jcbKredit.isSelected();
@@ -1421,6 +1429,7 @@ public class DialogKasir extends javax.swing.JDialog {
             Penjualan p = new PilihPenjualanPending().showDialog("Pilih Penjualan Pending");
             if(p!=null){
                 loadPenjualanToForm(p);
+                tabel.setModel(new TabelModel(p.getPenjualanDetails()));
             }
         });
         btnSimpan.addActionListener((ae) -> {

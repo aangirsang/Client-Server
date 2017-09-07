@@ -234,7 +234,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
 
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
             Penjualan d = (Penjualan) new DialogKasir().showDialog(null);
-            
+            isiTabelPenjualan();
         });
 
         toolbar.getBtnEdit().addActionListener((ActionEvent ae) -> {
@@ -292,7 +292,7 @@ public class PenjualanPanel extends javax.swing.JPanel {
         cboBulan = new javax.swing.JComboBox<>();
         jspTahun = new javax.swing.JSpinner();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/Cash register-64x64.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Cash register-64x64.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Daftar Transaksi Penjualan");

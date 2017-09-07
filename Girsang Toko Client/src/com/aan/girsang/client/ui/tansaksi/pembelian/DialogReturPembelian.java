@@ -585,7 +585,6 @@ public class DialogReturPembelian extends javax.swing.JDialog {
         }
     }//GEN-LAST:event_btnCariPembelianActionPerformed
     private void btnSimpanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSimpanActionPerformed
-        // TODO add your handling code here:
         returPembelian = new ReturPembelian();
         loadFormToModel();
         returPembelian.setReturPembelianDetails(daftarDetail);

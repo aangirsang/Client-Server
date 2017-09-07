@@ -10,6 +10,9 @@ import com.aan.girsang.api.model.transaksi.PelunasanHutang;
 import com.aan.girsang.api.model.transaksi.PelunasanHutangDetail;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.server.dao.BaseDaoHibernate;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
@@ -71,4 +74,19 @@ public class PelunasanHutangDao extends BaseDaoHibernate<PelunasanHutang>{
                 .list();
     }
 //</editor-fold>
+    public List<PelunasanHutang> filterBulanPH(int bulan, int tahun) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.clear();
+        calendar.set(Calendar.MONTH, bulan);
+        calendar.set(Calendar.YEAR, tahun);
+        Date date = calendar.getTime();
+        
+        String tgl = new SimpleDateFormat("MM yyyy").format(date);
+        
+        return sessionFactory.getCurrentSession().createQuery(
+                "from PelunasanHutang p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan "
+                        + "Order By p.tanggal Desc")
+                .setParameter("bulan","%"+tgl+"%")
+                .list();
+    }
 }

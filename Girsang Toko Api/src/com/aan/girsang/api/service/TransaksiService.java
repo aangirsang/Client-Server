@@ -17,8 +17,6 @@ import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.api.model.transaksi.ReturPembelian;
 import com.aan.girsang.api.model.transaksi.ReturPembelianDetail;
-import java.time.Month;
-import java.time.Year;
 import java.util.List;
 
 /**
@@ -44,6 +42,7 @@ public interface TransaksiService {
     public ReturPembelian cariReturPembelian(String id);
     public List<ReturPembelian> semuaReturPembelian();
     public List<ReturPembelian> descReturPembelian();
+    public List<ReturPembelian> filterBulanRP(int bulan, int tahun);
     public List<ReturPembelianDetail> cariReturPembelianDetail(ReturPembelian p);
     public List<ReturPembelianDetail> cariBarangReturPembelian(Barang barang);
 //</editor-fold>
@@ -53,6 +52,7 @@ public interface TransaksiService {
     public PelunasanHutang cariId(String id);
     public List<PelunasanHutang> semua();
     public List<PelunasanHutang> cariSupplier(Supplier s);
+    public List<PelunasanHutang> filterBulanPH(int bulan, int tahun);
     public List<PelunasanHutangDetail> cariDetail(PelunasanHutang p);
     public List<PelunasanHutangDetail> cariPembelian(Pembelian pembelian);
 //</editor-fold>

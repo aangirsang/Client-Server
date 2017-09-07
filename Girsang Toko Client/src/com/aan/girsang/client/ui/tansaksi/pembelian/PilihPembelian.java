@@ -5,8 +5,6 @@
  */
 package com.aan.girsang.client.ui.tansaksi.pembelian;
 
-import com.aan.girsang.client.ui.master.barang.*;
-import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.Supplier;
 import com.aan.girsang.api.model.transaksi.Pembelian;
 import com.aan.girsang.api.util.BigDecimalRenderer;
@@ -20,11 +18,15 @@ import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -48,6 +50,9 @@ public class PilihPembelian extends javax.swing.JDialog {
         super(FrameUtama.getInstance(), true);
         initComponents();
         tabel.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
+        jspTahun.setModel(new SpinnerNumberModel(2010, 0, 5000, 1));
+        jspTahun.setEditor(new JSpinner.NumberEditor(jspTahun, "0"));
+        isiCombo();
         isiTabel();
         initListener();
     }
@@ -67,8 +72,33 @@ public class PilihPembelian extends javax.swing.JDialog {
         tabel.getColumnModel().getColumn(4).setPreferredWidth(100);//Stok
         tabel.getColumnModel().getColumn(5).setPreferredWidth(100);//Stok Gudang
     }
+    private void isiCombo(){
+        Date tanggal = new Date();
+        SimpleDateFormat dfBulan = new SimpleDateFormat("M");
+        SimpleDateFormat dfTahun = new SimpleDateFormat("yyyy");
+        
+        cboBulan.removeAllItems();
+        
+        cboBulan.addItem("Januari");
+        cboBulan.addItem("Februari");
+        cboBulan.addItem("Maret");
+        cboBulan.addItem("April");
+        cboBulan.addItem("Mei");
+        cboBulan.addItem("Juni");
+        cboBulan.addItem("Juli");
+        cboBulan.addItem("Agustus");
+        cboBulan.addItem("September");
+        cboBulan.addItem("Oktober");
+        cboBulan.addItem("November");
+        cboBulan.addItem("Desember");
+        
+        cboBulan.setSelectedIndex(Integer.parseInt(dfBulan.format(tanggal)) - 1);
+        jspTahun.setValue(Integer.parseInt(dfTahun.format(tanggal)));
+    }
     private void isiTabel() {
-        daftarPembelian = ClientLauncher.getTransaksiService().semuaPembelian();
+        //daftarPembelian = ClientLauncher.getTransaksiService().semuaPembelian();
+        daftarPembelian = ClientLauncher.getTransaksiService()
+                .filterBulanTahunBeli(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarPembelian));
         tabel.setRowSorter(sorter);
         tabel.setModel(new TabelModel(daftarPembelian));
@@ -164,6 +194,8 @@ public class PilihPembelian extends javax.swing.JDialog {
         tabel = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolBarSelectTanpaInput();
+        cboBulan = new javax.swing.JComboBox<>();
+        jspTahun = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -180,26 +212,37 @@ public class PilihPembelian extends javax.swing.JDialog {
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText(org.openide.util.NbBundle.getMessage(PilihPembelian.class, "PilihPembelian.lblJumlahData.text")); // NOI18N
 
+        cboBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblJumlahData, javax.swing.GroupLayout.PREFERRED_SIZE, 539, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(421, 421, 421))
-                    .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addComponent(toolbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 235, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblJumlahData)
                 .addContainerGap())
@@ -268,6 +311,7 @@ public class PilihPembelian extends javax.swing.JDialog {
         });
 
         toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
+            isiCombo();
             isiTabel();
         });
 
@@ -293,11 +337,19 @@ public class PilihPembelian extends javax.swing.JDialog {
                     dispose();
                 }
         });
+        cboBulan.addActionListener((ActionEvent ae) -> {
+            isiTabel();
+        });
+        jspTahun.addChangeListener((ChangeEvent ce) -> {
+            isiTabel();
+        });
         
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cboBulan;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jspTahun;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tabel;
     private com.aangirsang.girsang.toko.toolbar.ToolBarSelectTanpaInput toolbar;

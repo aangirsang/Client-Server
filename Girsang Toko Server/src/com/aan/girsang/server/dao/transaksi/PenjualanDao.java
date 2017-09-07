@@ -85,6 +85,7 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
                 .list();
     }
     public List<Penjualan> filterBulanTahun(int bulan, int tahun){
+        Boolean isPending = false;
         Calendar calendar = Calendar.getInstance();
         calendar.clear();
         calendar.set(Calendar.MONTH, bulan);
@@ -93,7 +94,9 @@ public class PenjualanDao extends BaseDaoHibernate<Penjualan>{
         
         String tgl = new SimpleDateFormat("MM yyyy").format(date);
         return sessionFactory.getCurrentSession().createQuery(
-                "from Penjualan p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan")
+                "from Penjualan p where p.isPending=:isPending AND TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan "
+                        + "Order By p.tanggal Desc")
+                .setParameter("isPending", isPending)
                 .setParameter("bulan","%"+tgl+"%")
                 .list();
     }

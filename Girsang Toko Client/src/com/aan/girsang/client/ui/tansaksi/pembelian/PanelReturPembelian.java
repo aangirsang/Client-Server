@@ -16,11 +16,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -63,7 +67,10 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         tblReturPembelian.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         tblReturPembelian.setDefaultRenderer(Date.class, new DateRenderer());
         tblReturPembelian.setDefaultRenderer(Integer.class, new IntegerRenderer());
-        isiTabelKategori();
+        jspTahun.setModel(new SpinnerNumberModel(2010, 0, 5000, 1));
+        jspTahun.setEditor(new JSpinner.NumberEditor(jspTahun, "0"));
+        isiCombo();
+        isiTabel();
     }
     private void ukuranTabelBarang() {
         tblReturPembelian.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -74,8 +81,33 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         tblReturPembelian.getColumnModel().getColumn(4).setPreferredWidth(50);//Kredit
         tblReturPembelian.getColumnModel().getColumn(5).setPreferredWidth(100);//Tgl. Tempo
     }
-    private void isiTabelKategori() {
-        daftarReturPembelian = ClientLauncher.getTransaksiService().semuaReturPembelian();
+    private void isiCombo(){
+        Date tanggal = new Date();
+        SimpleDateFormat dfBulan = new SimpleDateFormat("M");
+        SimpleDateFormat dfTahun = new SimpleDateFormat("yyyy");
+        
+        cboBulan.removeAllItems();
+        
+        cboBulan.addItem("Januari");
+        cboBulan.addItem("Februari");
+        cboBulan.addItem("Maret");
+        cboBulan.addItem("April");
+        cboBulan.addItem("Mei");
+        cboBulan.addItem("Juni");
+        cboBulan.addItem("Juli");
+        cboBulan.addItem("Agustus");
+        cboBulan.addItem("September");
+        cboBulan.addItem("Oktober");
+        cboBulan.addItem("November");
+        cboBulan.addItem("Desember");
+        
+        cboBulan.setSelectedIndex(Integer.parseInt(dfBulan.format(tanggal)) - 1);
+        jspTahun.setValue(Integer.parseInt(dfTahun.format(tanggal)));
+    }
+    private void isiTabel() {
+        //daftarReturPembelian = ClientLauncher.getTransaksiService().semuaReturPembelian();
+        daftarReturPembelian = ClientLauncher.getTransaksiService()
+                .filterBulanRP(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new TabelModel(daftarReturPembelian));
         tblReturPembelian.setRowSorter(sorter);
         tblReturPembelian.setModel(new TabelModel(daftarReturPembelian));
@@ -156,7 +188,6 @@ public class PanelReturPembelian extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -164,8 +195,9 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         tblReturPembelian = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter();
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/1411950132.png"))); // NOI18N
+        cboBulan = new javax.swing.JComboBox<>();
+        jspTahun = new javax.swing.JSpinner();
+        jLabel4 = new javax.swing.JLabel();
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Daftar Transaksi Pembelian");
@@ -188,6 +220,8 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText("jLabel4");
 
+        cboBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -201,17 +235,29 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addGap(5, 5, 5))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblJumlahData)
                 .addContainerGap())
         );
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/GolonganBarang 63X63.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -219,8 +265,8 @@ public class PanelReturPembelian extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
+                .addGap(5, 5, 5)
+                .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
@@ -232,13 +278,12 @@ public class PanelReturPembelian extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(23, 23, 23)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(5, 5, 5))
         );
@@ -264,7 +309,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                         if (retur != null) {
                             loadFormToModel(retur);
                             ClientLauncher.getTransaksiService().simpan(returPembelian);
-                            isiTabelKategori();
+                            isiTabel();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -275,11 +320,12 @@ public class PanelReturPembelian extends javax.swing.JPanel {
         
 
         toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
+            isiCombo();
+            isiTabel();
         });
 
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
+            isiTabel();
             returPembelian = null;
             supplier = null;
             title = "Tambah Data Retur Pembelian";
@@ -289,7 +335,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                 loadFormToModel(retur);
                 returPembelian.setNoRef("");
                 ClientLauncher.getTransaksiService().simpan(returPembelian);
-                isiTabelKategori();
+                isiTabel();
                 JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                 title = null;
             }
@@ -307,7 +353,7 @@ public class PanelReturPembelian extends javax.swing.JPanel {
                         if (p != null) {
                             loadFormToModel(p);
                             ClientLauncher.getTransaksiService().simpan(returPembelian);
-                            isiTabelKategori();
+                            isiTabel();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -327,14 +373,22 @@ public class PanelReturPembelian extends javax.swing.JPanel {
             /*List <Barang> list = new FilterBarang().showDialog();
             System.out.println("Fiter Barang");*/
         });
+        cboBulan.addActionListener((ActionEvent ae) -> {
+            isiTabel();
+        });
+        jspTahun.addChangeListener((ChangeEvent ce) -> {
+            isiTabel();
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> cboBulan;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jspTahun;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tblReturPembelian;
     private com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter toolbar;

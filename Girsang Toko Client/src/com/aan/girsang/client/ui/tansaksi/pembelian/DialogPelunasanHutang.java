@@ -439,9 +439,11 @@ public class DialogPelunasanHutang extends javax.swing.JDialog {
         // TODO add your handling code here:
         String judul = "Pilih Supplier Pembelian";
         Supplier s = (Supplier) new PilihSupplierDialog().showDialog(judul);
+        if(s !=null){
         tampilDetails(s);
-        supplier = new Supplier();
-        supplier = ClientLauncher.getMasterService().cariIdSupplier(s.getId());
+            supplier = new Supplier();
+            supplier = ClientLauncher.getMasterService().cariIdSupplier(s.getId());
+        }
     }//GEN-LAST:event_btnCariActionPerformed
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

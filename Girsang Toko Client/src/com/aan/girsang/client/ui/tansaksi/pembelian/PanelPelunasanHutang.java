@@ -16,27 +16,20 @@ import com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.math.BigDecimal;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JSpinner;
 import javax.swing.JTable;
 import javax.swing.RowSorter;
+import javax.swing.SpinnerNumberModel;
+import javax.swing.event.ChangeEvent;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.util.CellRangeAddress;
 
 /**
  *
@@ -75,7 +68,10 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
         tblPelunasan.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         tblPelunasan.setDefaultRenderer(Date.class, new DateRenderer());
         tblPelunasan.setDefaultRenderer(Integer.class, new IntegerRenderer());
-        isiTabelKategori();
+        jspTahun.setModel(new SpinnerNumberModel(2010, 0, 5000, 1));
+        jspTahun.setEditor(new JSpinner.NumberEditor(jspTahun, "0"));
+        isiCombo();
+        isiTabel();
     }
     private void ukuranTabelBarang() {
         tblPelunasan.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
@@ -86,8 +82,9 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
         tblPelunasan.getColumnModel().getColumn(4).setPreferredWidth(100);//Jlh Bayar
         tblPelunasan.getColumnModel().getColumn(5).setPreferredWidth(300);//Pembuat
     }
-    private void isiTabelKategori() {
-        daftarPelunasan = ClientLauncher.getTransaksiService().semua();
+    private void isiTabel() {
+        //daftarPelunasan = ClientLauncher.getTransaksiService().semua();
+        daftarPelunasan = ClientLauncher.getTransaksiService().filterBulanPH(cboBulan.getSelectedIndex(), (int) jspTahun.getValue());
         RowSorter<TableModel> sorter = new TableRowSorter<>(new PembelianTabelModel(daftarPelunasan));
         tblPelunasan.setRowSorter(sorter);
         tblPelunasan.setModel(new PembelianTabelModel(daftarPelunasan));
@@ -95,6 +92,29 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
         ukuranTabelBarang();
         lblJumlahData.setText(daftarPelunasan.size() + " Data Pembelian");
         idSelect = "";
+    }
+    private void isiCombo(){
+        Date tanggal = new Date();
+        SimpleDateFormat dfBulan = new SimpleDateFormat("M");
+        SimpleDateFormat dfTahun = new SimpleDateFormat("yyyy");
+        
+        cboBulan.removeAllItems();
+        
+        cboBulan.addItem("Januari");
+        cboBulan.addItem("Februari");
+        cboBulan.addItem("Maret");
+        cboBulan.addItem("April");
+        cboBulan.addItem("Mei");
+        cboBulan.addItem("Juni");
+        cboBulan.addItem("Juli");
+        cboBulan.addItem("Agustus");
+        cboBulan.addItem("September");
+        cboBulan.addItem("Oktober");
+        cboBulan.addItem("November");
+        cboBulan.addItem("Desember");
+        
+        cboBulan.setSelectedIndex(Integer.parseInt(dfBulan.format(tanggal)) - 1);
+        jspTahun.setValue(Integer.parseInt(dfTahun.format(tanggal)));
     }
     
     private void loadFormToModel(PelunasanHutang p) {
@@ -185,8 +205,10 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
         tblPelunasan = new javax.swing.JTable();
         lblJumlahData = new javax.swing.JLabel();
         toolbar = new com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter();
+        cboBulan = new javax.swing.JComboBox<>();
+        jspTahun = new javax.swing.JSpinner();
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/gambar/1411950132.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Gambar/Supplier 63X63.png"))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
         jLabel2.setText("Daftar Transaksi Pelunasan Hutang");
@@ -213,6 +235,8 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
         lblJumlahData.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         lblJumlahData.setText("jLabel4");
 
+        cboBulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -226,13 +250,23 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(jScrollPane1))
                 .addGap(5, 5, 5))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(toolbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cboBulan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jspTahun, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblJumlahData)
                 .addContainerGap())
@@ -289,7 +323,7 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
                         if (p != null) {
                             loadFormToModel(p);
                             ClientLauncher.getTransaksiService().simpan(pelunasanHutang);
-                            isiTabelKategori();
+                            isiTabel();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -298,11 +332,12 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
             }
         });
         toolbar.getBtnRefresh().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
+            isiCombo();
+            isiTabel();
         });
 
         toolbar.getBtnBaru().addActionListener((ActionEvent ae) -> {
-            isiTabelKategori();
+            isiTabel();
             pelunasanHutang = null;
             supplier = null;
             title = "Tambah Data Barang";
@@ -312,7 +347,7 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
                 loadFormToModel(p);
                 pelunasanHutang.setNoRef("");
                 ClientLauncher.getTransaksiService().simpan(pelunasanHutang);
-                isiTabelKategori();
+                isiTabel();
                 JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                 title = null;
             }
@@ -330,7 +365,7 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
                         if (p != null) {
                             loadFormToModel(p);
                             ClientLauncher.getTransaksiService().simpan(pelunasanHutang);
-                            isiTabelKategori();
+                            isiTabel();
                             JOptionPane.showMessageDialog(null, "Penyimpanan Berhasil");
                             title = null;
                         }
@@ -343,7 +378,7 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
             } else {
                 cariSelect();
                 ClientLauncher.getTransaksiService().hapus(pelunasanHutang);
-                isiTabelKategori();
+                isiTabel();
                 JOptionPane.showMessageDialog(null, "Hapus Data Berhasil");
             }
         });
@@ -351,14 +386,22 @@ public class PanelPelunasanHutang extends javax.swing.JPanel {
             /*List <Barang> list = new FilterBarang().showDialog();
             System.out.println("Fiter Barang");*/
         });
+        cboBulan.addActionListener((ActionEvent ae) -> {
+            isiTabel();
+        });
+        jspTahun.addChangeListener((ChangeEvent ce) -> {
+            isiTabel();
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cboBulan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSpinner jspTahun;
     private javax.swing.JLabel lblJumlahData;
     private javax.swing.JTable tblPelunasan;
     private com.aangirsang.girsang.toko.toolbar.ToolbarDenganFilter toolbar;

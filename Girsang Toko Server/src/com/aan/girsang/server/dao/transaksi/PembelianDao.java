@@ -99,7 +99,8 @@ public class PembelianDao extends BaseDaoHibernate<Pembelian>{
         
         String tgl = new SimpleDateFormat("MM yyyy").format(date);
         return sessionFactory.getCurrentSession().createQuery(
-                "from Pembelian p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan")
+                "from Pembelian p where TO_CHAR(p.tanggal, 'MM yyyy') LIKE :bulan "
+                        + "order by p.noRef desc")
                 .setParameter("bulan","%"+tgl+"%")
                 .list();
     }

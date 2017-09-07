@@ -313,6 +313,10 @@ public class TransaksiServiceImpl implements TransaksiService {
             public List<ReturPembelian> descReturPembelian() {
                 return returPembelianDao.semua();
             }
+            @Override
+            public List<ReturPembelian> filterBulanRP(int bulan, int tahun){
+                return returPembelianDao.filterBulanRP(bulan, tahun);
+            }
 
             @Override
             public List<ReturPembelianDetail> cariReturPembelianDetail(ReturPembelian p) {
@@ -376,6 +380,10 @@ public class TransaksiServiceImpl implements TransaksiService {
     @Override
     public List<PelunasanHutang> cariSupplier(Supplier s) {
         return pelunasanHutangDao.cariSupplier(s);
+    }
+    @Override
+    public List<PelunasanHutang> filterBulanPH(int bulan, int tahun) {
+        return pelunasanHutangDao.filterBulanPH(bulan, tahun);
     }
     
     @Override
