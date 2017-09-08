@@ -7,7 +7,6 @@ package com.aan.girsang.client.ui.tansaksi.penjualan;
 
 import com.aan.girsang.api.model.master.Barang;
 import com.aan.girsang.api.model.master.Pelanggan;
-import com.aan.girsang.api.model.transaksi.PembelianDetail;
 import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.model.transaksi.PenjualanDetail;
 import com.aan.girsang.api.util.BigDecimalRenderer;
@@ -20,12 +19,10 @@ import java.awt.GraphicsEnvironment;
 import java.awt.KeyEventDispatcher;
 import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.math.BigDecimal;
@@ -34,11 +31,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.event.CellEditorListener;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
-import javax.swing.table.TableModel;
 
 public class DialogKasir extends javax.swing.JDialog {
     
@@ -407,11 +401,51 @@ public class DialogKasir extends javax.swing.JDialog {
         }
         if(txtSubTotal.getText().equals("0")){
             JOptionPane.showMessageDialog(FrameUtama.getInstance(),
-                     "Jumlah Barang Masih Kosong",
+                     "Belum Ada Transaksi",
                     "Error", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         return true;
+    }
+    private void simpan(){
+        if(validateSimpan()){
+                penjualan = new Penjualan();
+                loadFormToPenjualan();
+                List<PenjualanDetail> list = new ArrayList<>();
+                for(PenjualanDetail p : daftarDetail){
+                    if(p.getBarang()!=null){
+                        list.add(p);
+                    }
+                }
+                penjualan.setPenjualanDetails(list);
+                penjualan.setIsPending(false);
+
+                ClientLauncher.getTransaksiService().simpan(penjualan);
+                clearAll();
+            }
+    }
+    private void pending(){
+        penjualan = new Penjualan();
+            loadFormToPenjualan();
+            List<PenjualanDetail> list = new ArrayList<>();
+            for(PenjualanDetail p : daftarDetail){
+                if(p.getBarang()!=null){
+                    list.add(p);
+                }
+            }
+            penjualan.setPenjualanDetails(list);
+            penjualan.setIsPending(true);
+            if(!penjualan.getPenjualanDetails().isEmpty()){
+                ClientLauncher.getTransaksiService().simpan(penjualan);
+                clearAll();
+            }
+    }
+    private void reCall(){
+        Penjualan p = new PilihPenjualanPending().showDialog("Pilih Penjualan Pending");
+        if(p!=null){
+            loadPenjualanToForm(p);
+            tabel.setModel(new TabelModel(p.getPenjualanDetails()));
+        }
     }
     private class TabelModel extends AbstractTableModel{
         private List<PenjualanDetail> listDetail;
@@ -589,22 +623,50 @@ public class DialogKasir extends javax.swing.JDialog {
         @Override
         public boolean dispatchKeyEvent(KeyEvent e) {
             if(e.getID() == KeyEvent.KEY_PRESSED){
-                if(e.getKeyCode() == KeyEvent.VK_F2){
+                if(e.isAltDown() && e.getKeyCode() == KeyEvent.VK_B){
+                    txtBayar.requestFocus();
+                }else if(e.isAltDown() && e.getKeyCode() == KeyEvent.VK_Q){
+                    txtQty.requestFocus();
+                }else if(e.getKeyCode() ==KeyEvent.VK_INSERT){
                     if(isPanelBarang==false){
                         panelBarang.setVisible(true);
                         isPanelBarang=true;
-                        
+
                         txtCariNamaBarang.requestFocus();
                         daftarBarang = ClientLauncher.getMasterService().isJual(true);
                         isiTabelBarang();
-                        
+
                         barang = new Barang();
                         tampilRincianBarang(barang);
-                        
+
                     }else if(isPanelBarang==true){
                         panelBarang.setVisible(false);
                         isPanelBarang=false;
                     }
+                }else if(e.getKeyCode() ==KeyEvent.VK_HOME){
+                    txtBarcode.requestFocus();
+                }else if(e.getKeyCode() ==KeyEvent.VK_F12){
+                    if(penjualan != null){
+                        String ObjButtons[] = {"Ya", "Tidak"};
+                        int PromptResult = JOptionPane.showOptionDialog(null,
+                                "Apakah Anda Yakin Ingin Membatalkan Editing", "Confirm",
+                                JOptionPane.YES_NO_OPTION,
+                                JOptionPane.QUESTION_MESSAGE,
+                                null, ObjButtons, ObjButtons[1]);
+                        if (PromptResult == JOptionPane.YES_OPTION) {
+                            penjualan = null;
+                            dispose();
+                        }
+                    }else{
+                        penjualan = null;
+                        dispose();
+                    }
+                }else if(e.getKeyCode() ==KeyEvent.VK_F4){
+                    simpan();
+                }else if(e.getKeyCode() ==KeyEvent.VK_F5){
+                    pending();
+                }else if(e.getKeyCode() ==KeyEvent.VK_F6){
+                    reCall();
                 }
             }
             return false;
@@ -647,6 +709,13 @@ public class DialogKasir extends javax.swing.JDialog {
         jLabel13 = new javax.swing.JLabel();
         txtTotal = new javax.swing.JTextField();
         txtBayar = new javax.swing.JTextField();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
+        jLabel27 = new javax.swing.JLabel();
+        jLabel28 = new javax.swing.JLabel();
+        jLabel29 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jPanel8 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -654,6 +723,7 @@ public class DialogKasir extends javax.swing.JDialog {
         btnPending = new javax.swing.JButton();
         btnRecall = new javax.swing.JButton();
         btnSwitch = new javax.swing.JButton();
+        btnKeluar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lblKetSystem = new javax.swing.JLabel();
         lblTampilTotal = new javax.swing.JLabel();
@@ -808,7 +878,7 @@ public class DialogKasir extends javax.swing.JDialog {
                                 .addComponent(jLabel11)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtDiscNilaiDiskon)))
-                        .addGap(154, 154, 154)
+                        .addGap(21, 21, 21)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel12)
                             .addComponent(jLabel13))
@@ -844,6 +914,68 @@ public class DialogKasir extends javax.swing.JDialog {
 
         jPanel6.add(jPanel5);
 
+        jPanel11.setPreferredSize(new java.awt.Dimension(300, 100));
+
+        jLabel23.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel23.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel23.text")); // NOI18N
+
+        jLabel25.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel25.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel25.text")); // NOI18N
+
+        jLabel26.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel26.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel26.text")); // NOI18N
+
+        jLabel27.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel27.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel27.text")); // NOI18N
+
+        jLabel28.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel28.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel28.text")); // NOI18N
+
+        jLabel29.setFont(new java.awt.Font("Tahoma", 3, 11)); // NOI18N
+        jLabel29.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.jLabel29.text")); // NOI18N
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel23)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel25))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel26)
+                            .addComponent(jLabel29))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel27)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(jLabel28)))
+                .addContainerGap())
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(jLabel29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel25))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel27)
+                    .addComponent(jLabel28))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel26)
+                .addContainerGap())
+        );
+
+        jPanel6.add(jPanel11);
+
         btnSimpan.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.btnSimpan.text")); // NOI18N
 
         btnPending.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.btnPending.text")); // NOI18N
@@ -851,6 +983,8 @@ public class DialogKasir extends javax.swing.JDialog {
         btnRecall.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.btnRecall.text")); // NOI18N
 
         btnSwitch.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.btnSwitch.text")); // NOI18N
+
+        btnKeluar.setText(org.openide.util.NbBundle.getMessage(DialogKasir.class, "DialogKasir.btnKeluar.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -865,6 +999,8 @@ public class DialogKasir extends javax.swing.JDialog {
                 .addComponent(btnRecall, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnSwitch, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnKeluar, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -878,7 +1014,8 @@ public class DialogKasir extends javax.swing.JDialog {
                     .addComponent(btnSimpan)
                     .addComponent(btnPending)
                     .addComponent(btnRecall)
-                    .addComponent(btnSwitch))
+                    .addComponent(btnSwitch)
+                    .addComponent(btnKeluar))
                 .addGap(0, 0, 0))
         );
 
@@ -1089,7 +1226,7 @@ public class DialogKasir extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1283,12 +1420,18 @@ public class DialogKasir extends javax.swing.JDialog {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent we) {
-                String ObjButtons[] = {"Ya", "Tidak"};
-                int PromptResult = JOptionPane.showOptionDialog(null, "Apakah Anda Yakin Ingin Membatalkan Editing", "Confirm",
-                        JOptionPane.YES_NO_OPTION,
-                        JOptionPane.QUESTION_MESSAGE,
-                        null, ObjButtons, ObjButtons[1]);
-                if (PromptResult == JOptionPane.YES_OPTION) {
+                if(penjualan != null){
+                    String ObjButtons[] = {"Ya", "Tidak"};
+                    int PromptResult = JOptionPane.showOptionDialog(null,
+                            "Apakah Anda Yakin Ingin Membatalkan Editing", "Confirm",
+                            JOptionPane.YES_NO_OPTION,
+                            JOptionPane.QUESTION_MESSAGE,
+                            null, ObjButtons, ObjButtons[1]);
+                    if (PromptResult == JOptionPane.YES_OPTION) {
+                        penjualan = null;
+                        dispose();
+                    }
+                }else{
                     penjualan = null;
                     dispose();
                 }
@@ -1411,43 +1554,13 @@ public class DialogKasir extends javax.swing.JDialog {
             }
         });
         btnPending.addActionListener((ae) -> {
-            penjualan = new Penjualan();
-            loadFormToPenjualan();
-            List<PenjualanDetail> list = new ArrayList<>();
-            for(PenjualanDetail p : daftarDetail){
-                if(p.getBarang()!=null){
-                    list.add(p);
-                }
-            }
-            penjualan.setPenjualanDetails(list);
-            penjualan.setIsPending(true);
-            
-            ClientLauncher.getTransaksiService().simpan(penjualan);
-            clearAll();
+            pending();
         });
         btnRecall.addActionListener((ae) -> {
-            Penjualan p = new PilihPenjualanPending().showDialog("Pilih Penjualan Pending");
-            if(p!=null){
-                loadPenjualanToForm(p);
-                tabel.setModel(new TabelModel(p.getPenjualanDetails()));
-            }
+            reCall();
         });
         btnSimpan.addActionListener((ae) -> {
-            if(validateSimpan()){
-                penjualan = new Penjualan();
-                loadFormToPenjualan();
-                List<PenjualanDetail> list = new ArrayList<>();
-                for(PenjualanDetail p : daftarDetail){
-                    if(p.getBarang()!=null){
-                        list.add(p);
-                    }
-                }
-                penjualan.setPenjualanDetails(list);
-                penjualan.setIsPending(false);
-
-                ClientLauncher.getTransaksiService().simpan(penjualan);
-                clearAll();
-            }
+            simpan();
         });
         txtBarcode.addKeyListener(new KeyListener() {
             @Override
@@ -1505,6 +1618,7 @@ public class DialogKasir extends javax.swing.JDialog {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCari;
+    private javax.swing.JButton btnKeluar;
     private javax.swing.JButton btnPending;
     private javax.swing.JButton btnRecall;
     private javax.swing.JButton btnSimpan;
@@ -1525,7 +1639,13 @@ public class DialogKasir extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
+    private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
+    private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1535,6 +1655,7 @@ public class DialogKasir extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;

@@ -10,8 +10,11 @@ import com.aan.girsang.api.model.transaksi.Penjualan;
 import com.aan.girsang.api.util.BigDecimalRenderer;
 import com.aan.girsang.client.launcher.ClientLauncher;
 import com.aan.girsang.client.ui.frame.FrameUtama;
+import java.awt.KeyEventDispatcher;
+import java.awt.KeyboardFocusManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -37,12 +40,12 @@ public class PilihPenjualanPending extends javax.swing.JDialog {
     private Penjualan penjualan;
     private Pelanggan pelanggan;
     String title, idSelect;
-    /**
-     * Creates new form PilihBarangDialog
-     */
+    
     public PilihPenjualanPending() {
         super(FrameUtama.getInstance(), true);
         initComponents();
+        KeyboardFocusManager manager = KeyboardFocusManager.getCurrentKeyboardFocusManager();
+        manager.addKeyEventDispatcher(new MyDispatcher());
         tblBarang.setDefaultRenderer(BigDecimal.class, new BigDecimalRenderer());
         isiTabelBarang();
         initListener();
@@ -137,7 +140,18 @@ public class PilihPenjualanPending extends javax.swing.JDialog {
             }
         }
     }
-    
+    private class MyDispatcher implements KeyEventDispatcher {
+
+        @Override
+        public boolean dispatchKeyEvent(KeyEvent e) {
+            if(e.getKeyCode()==KeyEvent.VK_ESCAPE){
+                penjualan = null;
+                dispose();
+            }
+            return false;
+        }
+        
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
